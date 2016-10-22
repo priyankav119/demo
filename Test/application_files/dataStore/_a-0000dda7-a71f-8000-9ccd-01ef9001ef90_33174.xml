@@ -7,9 +7,15 @@
         <dataSourceKey>jdbc/SqlServerDS</dataSourceKey>
         <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
         <autoUpdateSchema>false</autoUpdateSchema>
-        <entities/>
+        <entities>
+            <entity>
+                <uuid>08037745-ec56-496a-8557-38576c1b321e</uuid>
+                <name>Test_User</name>
+                <type>{urn:com:appian:types}Test_User</type>
+            </entity>
+        </entities>
     </dataStore>
-    <isPublished>false</isPublished>
+    <isPublished>true</isPublished>
     <roleMap>
         <role allowForAll="false" inherit="false" name="administrators">
             <users/>

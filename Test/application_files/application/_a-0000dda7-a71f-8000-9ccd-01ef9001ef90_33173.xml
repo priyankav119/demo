@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <application>
         <name>Test</name>
         <uuid>_a-0000dda7-a71f-8000-9ccd-01ef9001ef90_33173</uuid>
@@ -21,7 +20,9 @@
             <globalIdMap>
                 <item>
                     <type>datatype</type>
-                    <uuids/>
+                    <uuids>
+                        <uuid>{urn:com:appian:types}Test_User</uuid>
+                    </uuids>
                 </item>
                 <item>
                     <type>dataStore</type>
@@ -228,4 +229,4 @@
             </role>
         </contentRoleMap>
     </roleMap>
-</applicationHaul>
+</applicationHaul><!--updated on 2016-10-22T12:45:13.653-->
