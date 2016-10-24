@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiDashboardSRTasks</name>
         <uuid>02125719-851d-4e63-b9e6-5c381fad080b</uuid>
@@ -14,42 +13,42 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+        <definition>=#"SYSTEM_SYSRULES_dashboardLayout"(
   firstColumnContents: {
     load(
-      local!gridPI:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,10,#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;c2&quot;)),
+      local!gridPI:#"SYSTEM_SYSRULES_pagingInfo"(1,10,#"SYSTEM_SYSRULES_sortInfo"(field:"c2")),
       local!statusFilter:-1,
       local!nameFilter,
       with(
         local!srTasks:a!queryProcessAnalytics(
-          report:#&quot;_a-0000dac9-8638-8000-9ba2-011c48011c48_5756&quot;,
-          contextProcessModels:{#&quot;_a-0000dac9-8638-8000-9ba2-011c48011c48_5757&quot;},
-          query:#&quot;SYSTEM_SYSRULES_query&quot;(
-            logicalExpression:#&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
-              operator:&quot;AND&quot;,
+          report:#"_a-0000dac9-8638-8000-9ba2-011c48011c48_5756",
+          contextProcessModels:{#"_a-0000dac9-8638-8000-9ba2-011c48011c48_5757"},
+          query:#"SYSTEM_SYSRULES_query"(
+            logicalExpression:#"SYSTEM_SYSRULES_queryLogicalExpression"(
+              operator:"AND",
               filters:{
-                if(local!statusFilter=-1, null,#&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;c5&quot;,operator:&quot;=&quot;,value:local!statusFilter)),
-                if(isnull(local!nameFilter), null,#&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;c0&quot;,operator:&quot;includes&quot;,value:local!nameFilter))
+                if(local!statusFilter=-1, null,#"SYSTEM_SYSRULES_queryFilter"(field:"c5",operator:"=",value:local!statusFilter)),
+                if(isnull(local!nameFilter), null,#"SYSTEM_SYSRULES_queryFilter"(field:"c0",operator:"includes",value:local!nameFilter))
               }
             ),
             pagingInfo:local!gridPI
           )
         ),
         {
-          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+          #"SYSTEM_SYSRULES_sectionLayout"(
             firstColumnContents:{
-              #&quot;SYSTEM_SYSRULES_textField&quot;(
-                label:&quot;Task Name&quot;,
-                instructions:&quot;Filters the report based on task name.&quot;,
+              #"SYSTEM_SYSRULES_textField"(
+                label:"Task Name",
+                instructions:"Filters the report based on task name.",
                 value:local!nameFilter,
                 saveInto:local!nameFilter
               )
             },
             secondColumnContents:{
-              #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-                label: &quot;Status&quot;,
-                instructions:&quot;Filters the report based on Task Status&quot;,
-                choiceLabels: {&quot;All&quot;, &quot;Assigned&quot;, &quot;Accepted&quot;},
+              #"SYSTEM_SYSRULES_dropdownField"(
+                label: "Status",
+                instructions:"Filters the report based on Task Status",
+                choiceLabels: {"All", "Assigned", "Accepted"},
                 choiceValues: {-1,0,1},
                 value: local!statusFilter,
                 saveInto: {
@@ -59,12 +58,12 @@
               )
             }
           ),
-          #&quot;SYSTEM_SYSRULES_gridField&quot;(
-            label:&quot;Customer Service Requests Tasks&quot;,
-            instructions:&quot;A list of all tasks for the current user.&quot;,
+          #"SYSTEM_SYSRULES_gridField"(
+            label:"Customer Service Requests Tasks",
+            instructions:"A list of all tasks for the current user.",
             totalCount:local!srTasks.totalCount,
             columns:apply(
-              #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897&quot;(columnConfig:_, data:local!srTasks.data, showLink:true),
+              #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897"(columnConfig:_, data:local!srTasks.data, showLink:true),
               local!srTasks.columnConfigs
             ),
             value:local!gridPI,
@@ -77,6 +76,7 @@
   }
 )</definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -88,9 +88,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -106,4 +104,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.956-->

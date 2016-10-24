@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getallOrderFieldsbyOrderNum</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8248</uuid>
@@ -14,73 +13,73 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition> #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-  entity: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6305&quot;,
-  query: #&quot;SYSTEM_SYSRULES_query&quot;(
-    selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(
+        <definition> #"SYSTEM_SYSRULES_queryEntity"(
+  entity: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6305",
+  query: #"SYSTEM_SYSRULES_query"(
+    selection: #"SYSTEM_SYSRULES_querySelection"(
       columns: {
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;id&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "id"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;OrderNum&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "OrderNum"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;OrderDate&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "OrderDate"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;PurchaserName&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "PurchaserName"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;PurchaserEmail&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "PurchaserEmail"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;PurchaserPhone&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "PurchaserPhone"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;CustomerOrderRefNumb&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "CustomerOrderRefNumb"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;TaxRate&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "TaxRate"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;ShippingCost&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "ShippingCost"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Total&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Total"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Status&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Status"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Customer&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Customer"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;ShippingAddress&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "ShippingAddress"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;BillingAddress&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "BillingAddress"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;OrderItems&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "OrderItems"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;OrderDateTime&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "OrderDateTime"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;TrackingNumber&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "TrackingNumber"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;processId&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "processId"
         )				
       }
     ),
-    filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-      field: &quot;OrderNum&quot;,
-      operator: &quot;=&quot;,
+    filter: #"SYSTEM_SYSRULES_queryFilter"(
+      field: "OrderNum",
+      operator: "=",
       value: ri!orderNum
     ),
-    pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
       startIndex: 1,
       batchSize: 500
     )
@@ -95,6 +94,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -106,9 +106,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -124,4 +122,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.758-->

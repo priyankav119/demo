@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ProductDashboard</name>
         <uuid>9f4012f6-8eab-4827-884e-0c0501db8244</uuid>
@@ -14,21 +13,21 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+        <definition>=#"SYSTEM_SYSRULES_dashboardLayout"(
   firstColumnContents: {
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Category Statistics&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Category Statistics",
       firstColumnContents: {
-          #&quot;8174497e-d081-4d34-91e1-e4e39007829c&quot;()
+          #"8174497e-d081-4d34-91e1-e4e39007829c"()
       },
       secondColumnContents: {
-        #&quot;aca869b8-a362-4c23-9c9b-3b8eba71b1a0&quot;()
+        #"aca869b8-a362-4c23-9c9b-3b8eba71b1a0"()
       }
     ),
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Manufacturer Statistics&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Manufacturer Statistics",
       firstColumnContents: {
-        #&quot;219c0ed6-2675-4fad-b8a3-d447d4c96cea&quot;()
+        #"219c0ed6-2675-4fad-b8a3-d447d4c96cea"()
       },
       secondColumnContents: {
    
@@ -37,6 +36,7 @@
   }
 )</definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -48,9 +48,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -66,4 +64,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.329-->

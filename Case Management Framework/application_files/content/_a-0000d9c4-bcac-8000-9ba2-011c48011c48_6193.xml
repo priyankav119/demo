@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <folder>
         <name>CASE_APP Orders Templates</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6193</uuid>
-        <description></description>
+        <description/>
         <parentUuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6192</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -41,4 +40,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.442-->

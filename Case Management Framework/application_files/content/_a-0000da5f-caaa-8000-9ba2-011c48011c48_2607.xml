@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getFirstProductImageForOrderItem</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2607</uuid>
-        <description></description>
+        <description>Retrieves a product image to display for an order item</description>
         <parentUuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_5996</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -14,7 +13,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:todocument(ri!orderItem.Product.productImageId[1]))</definition>
+        <definition>#"SYSTEM_SYSRULES_documentImage"(document:todocument(ri!orderItem.Product.productImageId[1]))</definition>
         <namedTypedValue>
             <name>orderItem</name>
             <type>
@@ -23,6 +22,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -34,9 +34,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -52,4 +50,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:05.369-->

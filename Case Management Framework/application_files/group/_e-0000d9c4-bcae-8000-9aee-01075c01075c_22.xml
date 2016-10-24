@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <group>
         <name>CASE_APP Sales</name>
         <securityMap>SECURITYMAP_PUBLIC</securityMap>
@@ -16,6 +15,7 @@
             <userUuid>kevin.reed</userUuid>
             <userUuid>debra.harrison</userUuid>
             <userUuid>christopher.harris</userUuid>
+            <userUuid>john.rogers</userUuid>
             <userUuid>patricia.johnson</userUuid>
             <userUuid>chris.watkins</userUuid>
             <userUuid>christine.chenal</userUuid>
@@ -25,19 +25,16 @@
             <userUuid>robert.ward</userUuid>
             <userUuid>gary.howard</userUuid>
             <userUuid>lisa.walker</userUuid>
-            <userUuid>zach.messler</userUuid>
             <userUuid>susan.williams</userUuid>
             <userUuid>phillip.sanchez</userUuid>
             <userUuid>stephen.singh</userUuid>
             <userUuid>maria.lopez</userUuid>
             <userUuid>karen.anderson</userUuid>
-            <userUuid>jorge.sanchez</userUuid>
             <userUuid>george.garcia</userUuid>
             <userUuid>brian.chen</userUuid>
             <userUuid>martin.morgan</userUuid>
             <userUuid>donna.miller</userUuid>
             <userUuid>sharon.white</userUuid>
-            <userUuid>malcolm.ross@appian.com</userUuid>
             <userUuid>sandra.taylor</userUuid>
             <userUuid>carol.wilson</userUuid>
             <userUuid>mary.lawson</userUuid>
@@ -54,4 +51,4 @@
         </groups>
     </admins>
     <ruleSet/>
-</groupHaul>
+</groupHaul><!--updated on 2016-10-24T12:43:56.881-->

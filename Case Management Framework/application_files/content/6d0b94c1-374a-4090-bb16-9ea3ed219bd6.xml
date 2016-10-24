@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_uiGridOrdersByCustomer</name>
         <uuid>6d0b94c1-374a-4090-bb16-9ea3ed219bd6</uuid>
@@ -15,77 +14,77 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!gridSelection: #&quot;SYSTEM_SYSRULES_gridSelection&quot;(
-    pagingInfo:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!gridSelection: #"SYSTEM_SYSRULES_gridSelection"(
+    pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(
       startIndex: 1,
       batchSize: ri!itemsPerPage,
-      sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-        field: &quot;OrderDate&quot;,
+      sort: #"SYSTEM_SYSRULES_sortInfo"(
+        field: "OrderDate",
         ascending: false
       )
     ),
-    selected:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!selectedOrder),null,ri!selectedOrder.id)
+    selected:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!selectedOrder),null,ri!selectedOrder.id)
   ),
   with(
     local!gridData: queryrecord(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;OrderNum&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;PurchaserName&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;OrderDate&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Total&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Status&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Customer.id&quot;),    
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;OrderItems&quot;),  
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
+      #"SYSTEM_SYSRULES_query"(
+        selection: #"SYSTEM_SYSRULES_querySelection"(columns: {
+          #"SYSTEM_SYSRULES_queryColumn"(field: "OrderNum"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "PurchaserName"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "OrderDate"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Total"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Status"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "id"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Customer.id"),    
+          #"SYSTEM_SYSRULES_queryColumn"(field: "OrderItems"),  
         }),
-        filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-          field: &quot;Customer.id&quot;,
-          operator: &quot;=&quot;,
+        filter: #"SYSTEM_SYSRULES_queryFilter"(
+          field: "Customer.id",
+          operator: "=",
           value: ri!customerId
         ),
         pagingInfo: local!gridSelection.pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_gridField&quot;(
+    #"SYSTEM_SYSRULES_gridField"(
       label: ri!gridLabel,
       instructions: ri!gridInstructions,
       totalCount: local!gridData.totalCount,
       columns: {
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Order#&quot;,
-          field: &quot;OrderNum&quot;,
-          data: index(local!gridData.data, &quot;OrderNum&quot;, {}),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Order#",
+          field: "OrderNum",
+          data: index(local!gridData.data, "OrderNum", {}),
           links: apply(
-            #&quot;SYSTEM_SYSRULES_recordLink&quot;(
-              label: &quot;Go to record dashboard&quot;,
-              recordType: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
+            #"SYSTEM_SYSRULES_recordLink"(
+              label: "Go to record dashboard",
+              recordType: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
               identifier: _,
-              dashboard: &quot;summary&quot;
+              dashboard: "summary"
             ),
             local!gridData.identifiers
           )
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Purchaser Name&quot;,
-          field: &quot;PurchaserName&quot;,
-          data: index(local!gridData.data, &quot;PurchaserName&quot;, {})
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Purchaser Name",
+          field: "PurchaserName",
+          data: index(local!gridData.data, "PurchaserName", {})
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Order Date&quot;,
-          field: &quot;OrderDate&quot;,
-          data: index(local!gridData.data, &quot;OrderDate&quot;, {})
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Order Date",
+          field: "OrderDate",
+          data: index(local!gridData.data, "OrderDate", {})
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Total&quot;,
-          field: &quot;Total&quot;,
-          data: dollar(index(local!gridData.data, &quot;Total&quot;, {}), 2, 0)
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Total",
+          field: "Total",
+          data: dollar(index(local!gridData.data, "Total", {}), 2, 0)
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Status&quot;,
-          field: &quot;Status&quot;,
-          data: index(local!gridData.data, &quot;Status&quot;, {})
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Status",
+          field: "Status",
+          data: index(local!gridData.data, "Status", {})
         )
       },
       identifiers:local!gridData.data.id,
@@ -94,7 +93,7 @@
         local!gridSelection,
         a!save(
           target:ri!selectedOrder,
-          value:if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(local!gridSelection.selected),
+          value:if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(local!gridSelection.selected),
             null,
             local!gridData.data[wherecontains(tointeger(local!gridSelection.selected),tointeger(local!gridData.data.id))][1]
           )
@@ -105,7 +104,7 @@
         a!save(target:ri!gridSelection.selected, value:null)
       },
       selection:ri!isSelectable,
-      validations: if(count(local!gridSelection.selected)&gt;1, &quot;You may only select one order&quot;, null)
+      validations: if(count(local!gridSelection.selected)&gt;1, "You may only select one order", null)
     )
   )
 )
@@ -176,6 +175,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -187,9 +187,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -205,4 +203,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:05.352-->

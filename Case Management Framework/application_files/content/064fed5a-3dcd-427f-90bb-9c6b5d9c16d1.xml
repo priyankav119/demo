@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_updateProduct</name>
         <uuid>064fed5a-3dcd-427f-90bb-9c6b5d9c16d1</uuid>
@@ -14,33 +13,33 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_formLayout&quot; (&#xD;
-  label: &quot;Update Product: &quot;&amp;ri!product.name,&#xD;
-  firstColumnContents: {&#xD;
-    #&quot;8af7ef67-8654-48e5-bab2-825cea2dae0f&quot;(&#xD;
-      product:ri!product,&#xD;
-      productImage:ri!productImage,&#xD;
-      isCreate:false&#xD;
-    )&#xD;
-  },&#xD;
-  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
-    primaryButtons: {&#xD;
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-          label: &quot;Submit&quot;,&#xD;
-          style: &quot;PRIMARY&quot;,&#xD;
-          confirmMessage:&quot;Are you sure?&quot;,&#xD;
-          value: &quot;submit&quot;,&#xD;
-          saveInto: ri!button&#xD;
-      ),&#xD;
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-          label: &quot;Cancel&quot;,&#xD;
-          value: &quot;cancel&quot;,&#xD;
-          saveInto: ri!button,&#xD;
-          skipValidation: true&#xD;
-      )&#xD;
-    }&#xD;
-  ) &#xD;
-)&#xD;
+        <definition>#"SYSTEM_SYSRULES_formLayout" (&#13;
+  label: "Update Product: "&amp;ri!product.name,&#13;
+  firstColumnContents: {&#13;
+    #"8af7ef67-8654-48e5-bab2-825cea2dae0f"(&#13;
+      product:ri!product,&#13;
+      productImage:ri!productImage,&#13;
+      isCreate:false&#13;
+    )&#13;
+  },&#13;
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(&#13;
+    primaryButtons: {&#13;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+          label: "Submit",&#13;
+          style: "PRIMARY",&#13;
+          confirmMessage:"Are you sure?",&#13;
+          value: "submit",&#13;
+          saveInto: ri!button&#13;
+      ),&#13;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+          label: "Cancel",&#13;
+          value: "cancel",&#13;
+          saveInto: ri!button,&#13;
+          skipValidation: true&#13;
+      )&#13;
+    }&#13;
+  ) &#13;
+)&#13;
 </definition>
         <namedTypedValue>
             <name>product</name>
@@ -65,6 +64,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -92,4 +92,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:58.055-->

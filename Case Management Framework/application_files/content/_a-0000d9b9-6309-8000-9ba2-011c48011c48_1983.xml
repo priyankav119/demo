@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_displayUser</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983</uuid>
@@ -14,9 +13,9 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>if(isnull(ri!user), &quot;&quot;, 
+        <definition>if(isnull(ri!user), "", 
 if(isusernametaken(ri!user),
-  user(ri!user, &quot;firstName&quot;) &amp; &quot; &quot; &amp; user(ri!user, &quot;lastName&quot;),
+  user(ri!user, "firstName") &amp; " " &amp; user(ri!user, "lastName"),
   tostring(ri!user)
 ))</definition>
         <namedTypedValue>
@@ -25,9 +24,9 @@ if(isusernametaken(ri!user),
                 <name>User</name>
                 <namespace>http://www.appian.com/ae/types/2009</namespace>
             </type>
-            <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -39,9 +38,7 @@ if(isusernametaken(ri!user),
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -57,4 +54,4 @@ if(isusernametaken(ri!user),
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:58.709-->

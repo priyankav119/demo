@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <tempoReport name="Orders Dashboard" a:uuid="8283065a-5c32-45f7-b930-cfe6e7a77dc3">
+<?xml version="1.0" encoding="UTF-8"?><tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport a:uuid="8283065a-5c32-45f7-b930-cfe6e7a77dc3" name="Orders Dashboard">
         <a:description>Summary of performance for all orders</a:description>
-        <a:uiExpr>=#&quot;28747299-7776-4b38-b7ab-e256efc51d9d&quot;()</a:uiExpr>
+        <a:uiExpr>=#"28747299-7776-4b38-b7ab-e256efc51d9d"()</a:uiExpr>
         <a:urlStub>yS9bXA</a:urlStub>
     </tempoReport>
     <roleMap>
@@ -25,4 +24,4 @@
             </groups>
         </role>
     </roleMap>
-</tempoReportHaul>
+</tempoReportHaul><!--updated on 2016-10-24T12:44:08.705-->

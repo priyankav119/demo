@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_restockProduct</name>
         <uuid>6cf7e928-52ce-4d04-bc5a-47c459d54711</uuid>
@@ -14,62 +13,62 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>load(&#xD;
-   local!product: #&quot;_a-0000d9df-3187-8000-9ba2-011c48011c48_9451&quot;(ri!productSKU),&#xD;
-#&quot;SYSTEM_SYSRULES_formLayout&quot; (&#xD;
-  label: &quot;Restock Product: &quot;&amp;local!product.name,&#xD;
-  firstColumnContents: {&#xD;
-	  #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-	    label: &quot;Product SKU&quot;,&#xD;
-	    labelPosition: &quot;ADJACENT&quot;,&#xD;
-	    value: ri!productSKU,&#xD;
-	    readOnly: true()&#xD;
-	  ),&#xD;
-	  #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-	    label: &quot;Current Stock&quot;,&#xD;
-	    labelPosition: &quot;ADJACENT&quot;,&#xD;
-	    value: local!product.quantity,&#xD;
-	    readOnly: true()&#xD;
-	  ),&#xD;
-	  #&quot;SYSTEM_SYSRULES_integerField&quot;(&#xD;
-	    label: &quot;# of New Items&quot;,&#xD;
-	    instructions: &quot;Enter the number of new stock items received and being added to the wareshouse&quot;,&#xD;
-	    value: ri!RestockCount,&#xD;
-	    saveInto: ri!RestockCount,&#xD;
-	    required: true(),&#xD;
-	    requiredMessage: &quot;You must enter a quantity number&quot;,&#xD;
-	    validations: {if(ri!RestockCount&lt;1, &quot;A value greater than 0 must be entered&quot;, null)}&#xD;
-	  )&#xD;
-	  &#xD;
-	  },&#xD;
-    buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
-          primaryButtons: {&#xD;
-            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-                label: &quot;Submit&quot;,&#xD;
-                style: &quot;PRIMARY&quot;,&#xD;
-                confirmMessage:&quot;Are you sure?&quot;,&#xD;
-                value: &quot;submit&quot;,&#xD;
-                saveInto: ri!button&#xD;
-            )&#xD;
-&#xD;
-          },&#xD;
-          secondaryButtons:{&#xD;
-            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-                label: &quot;Cancel&quot;,&#xD;
-                value: &quot;cancel&quot;,&#xD;
-                saveInto: {&#xD;
-                  ri!button,&#xD;
-                  a!save(&#xD;
-                    target: ri!RestockCount,&#xD;
-                    value: 0&#xD;
-                  )&#xD;
-                },&#xD;
-                skipValidation: true&#xD;
-            )            &#xD;
-          }&#xD;
-    ) &#xD;
-)&#xD;
-)&#xD;
+        <definition>load(&#13;
+   local!product: #"_a-0000d9df-3187-8000-9ba2-011c48011c48_9451"(ri!productSKU),&#13;
+#"SYSTEM_SYSRULES_formLayout" (&#13;
+  label: "Restock Product: "&amp;local!product.name,&#13;
+  firstColumnContents: {&#13;
+	  #"SYSTEM_SYSRULES_textField"(&#13;
+	    label: "Product SKU",&#13;
+	    labelPosition: "ADJACENT",&#13;
+	    value: ri!productSKU,&#13;
+	    readOnly: true()&#13;
+	  ),&#13;
+	  #"SYSTEM_SYSRULES_textField"(&#13;
+	    label: "Current Stock",&#13;
+	    labelPosition: "ADJACENT",&#13;
+	    value: local!product.quantity,&#13;
+	    readOnly: true()&#13;
+	  ),&#13;
+	  #"SYSTEM_SYSRULES_integerField"(&#13;
+	    label: "# of New Items",&#13;
+	    instructions: "Enter the number of new stock items received and being added to the wareshouse",&#13;
+	    value: ri!RestockCount,&#13;
+	    saveInto: ri!RestockCount,&#13;
+	    required: true(),&#13;
+	    requiredMessage: "You must enter a quantity number",&#13;
+	    validations: {if(ri!RestockCount&lt;1, "A value greater than 0 must be entered", null)}&#13;
+	  )&#13;
+	  &#13;
+	  },&#13;
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(&#13;
+          primaryButtons: {&#13;
+            #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+                label: "Submit",&#13;
+                style: "PRIMARY",&#13;
+                confirmMessage:"Are you sure?",&#13;
+                value: "submit",&#13;
+                saveInto: ri!button&#13;
+            )&#13;
+&#13;
+          },&#13;
+          secondaryButtons:{&#13;
+            #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+                label: "Cancel",&#13;
+                value: "cancel",&#13;
+                saveInto: {&#13;
+                  ri!button,&#13;
+                  a!save(&#13;
+                    target: ri!RestockCount,&#13;
+                    value: 0&#13;
+                  )&#13;
+                },&#13;
+                skipValidation: true&#13;
+            )            &#13;
+          }&#13;
+    ) &#13;
+)&#13;
+)&#13;
 </definition>
         <namedTypedValue>
             <name>productSKU</name>
@@ -95,6 +94,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -106,9 +106,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -124,4 +122,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:58.177-->

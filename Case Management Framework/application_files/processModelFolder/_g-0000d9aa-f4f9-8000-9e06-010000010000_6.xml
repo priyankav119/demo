@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<processModelFolderHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><processModelFolderHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <processModelFolder>
         <name>CASE_APP Models</name>
         <uuid>_g-0000d9aa-f4f9-8000-9e06-010000010000_6</uuid>
@@ -35,4 +34,4 @@
             <groups/>
         </role>
     </roleMap>
-</processModelFolderHaul>
+</processModelFolderHaul><!--updated on 2016-10-24T12:43:57.854-->

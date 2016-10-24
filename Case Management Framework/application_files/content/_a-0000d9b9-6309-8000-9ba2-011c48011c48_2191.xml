@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_GenerateBulkRecordIdentifiers</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_2191</uuid>
@@ -23,7 +22,7 @@
     length(
       ri!recordAssociations
     ) &lt; 2,
-    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
       ri!recordAssociations[1]
     ),
     if(
@@ -31,10 +30,10 @@
         ri!recordAssociations
       ) &lt; 3,
       append(
-        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
           ri!recordAssociations[1]
         ),
-        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
           ri!recordAssociations[2]
         )
       ),
@@ -43,13 +42,13 @@
           ri!recordAssociations
         ) &lt; 4,
         append(
-          #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+          #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
             ri!recordAssociations[1]
           ),
-          #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+          #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
             ri!recordAssociations[2]
           ),
-          #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+          #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
             ri!recordAssociations[3]
           )
         ),
@@ -58,16 +57,16 @@
             ri!recordAssociations
           ) &lt; 5,
           append(
-            #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+            #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
               ri!recordAssociations[1]
             ),
-            #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+            #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
               ri!recordAssociations[2]
             ),
-            #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+            #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
               ri!recordAssociations[3]
             ),
-            #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+            #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
               ri!recordAssociations[4]
             )
           ),
@@ -76,19 +75,19 @@
               ri!recordAssociations
             ) &lt; 6,
             append(
-              #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+              #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                 ri!recordAssociations[1]
               ),
-              #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+              #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                 ri!recordAssociations[2]
               ),
-              #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+              #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                 ri!recordAssociations[3]
               ),
-              #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+              #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                 ri!recordAssociations[4]
               ),
-              #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+              #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                 ri!recordAssociations[5]
               )
             ),
@@ -97,22 +96,22 @@
                 ri!recordAssociations
               ) &lt; 7,
               append(
-                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                   ri!recordAssociations[1]
                 ),
-                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                   ri!recordAssociations[2]
                 ),
-                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                   ri!recordAssociations[3]
                 ),
-                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                   ri!recordAssociations[4]
                 ),
-                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                   ri!recordAssociations[5]
                 ),
-                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                   ri!recordAssociations[6]
                 )
               ),
@@ -121,25 +120,25 @@
                   ri!recordAssociations
                 ) &lt; 8,
                 append(
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[1]
                   ),
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[2]
                   ),
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[3]
                   ),
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[4]
                   ),
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[5]
                   ),
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[6]
                   ),
-                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                     ri!recordAssociations[7]
                   )
                 ),
@@ -148,28 +147,28 @@
                     ri!recordAssociations
                   ) &lt; 9,
                   append(
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[1]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[2]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[3]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[4]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[5]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[6]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[7]
                     ),
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                       ri!recordAssociations[8]
                     )
                   ),
@@ -178,31 +177,31 @@
                       ri!recordAssociations
                     ) &lt; 10,
                     append(
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[1]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[2]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[3]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[4]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[5]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[6]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[7]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[8]
                       ),
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                         ri!recordAssociations[9]
                       )
                     ),
@@ -211,66 +210,66 @@
                         ri!recordAssociations
                       ) &lt; 11,
                       append(
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[1]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[2]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[3]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[4]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[5]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[6]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[7]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[8]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[9]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[10]
                         )
                       ),
                       append(
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[1]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[2]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[3]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[4]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[5]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[6]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[7]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[8]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[9]
                         ),
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190&quot;(
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190"(
                           ri!recordAssociations[10]
                         )
                       )
@@ -293,6 +292,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -304,9 +304,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -322,4 +320,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.354-->

@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiFormAssignToCaseWorker</name>
         <uuid>bf5b3b0f-ff3c-4efa-bbd5-e40a3a0982d4</uuid>
-        <description></description>
+        <description>Form that allows assigning a Case Worker to a CSR case. The form automatically selects the CW with the most availability, but selection can be overridden.</description>
         <parentUuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2618</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -16,63 +15,73 @@
         </visibility>
         <definition>/* To Test:
 1) Set serviceReq to type!CASE_APP_ServiceRequest(
-  requestNum:&quot;123a-1234&quot;,
+  requestNum:"123a-1234",
   requestDateTime:now(),
-  type:&quot;I need help with an Order&quot;,
+  type:"I need help with an Order",
   relatedCustomer:CASE_APP_getAllCustomerFieldsById(1),
   relatedOrder: CASE_APP_getAllOrderFieldsById(1),
   relatedOrderItemId:1,
-  comments:&quot;Sample comments&quot;,
-  status:&quot;Solution&quot;,
+  comments:"Sample comments",
+  status:"Solution",
   id:53051235
 )
 */
 load(
   local!userWorkload:apply(
-    #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2769&quot;,
-    getdistinctusers(#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2763&quot;)
+    #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2769",
+    getdistinctusers(#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2763")
   ),
-  local!gridPI:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,5,#&quot;SYSTEM_SYSRULES_sortInfo&quot;(&quot;workload&quot;,true)),
+  local!gridPI:#"SYSTEM_SYSRULES_pagingInfo"(1,5,#"SYSTEM_SYSRULES_sortInfo"("workload",true)),
   local!suggestedUser:local!userWorkload.user[wherecontains(tointeger(min(local!userWorkload.workload)),tointeger(local!userWorkload.workload))[1]],
   with(
     local!gridData:todatasubset(local!userWorkload, local!gridPI),
-    #&quot;SYSTEM_SYSRULES_formLayout&quot;(
-      label: &quot;Assign Customer Service Request to Case Worker&quot;,
-      instructions: &quot;Please select a Case Worker for this Request&quot;,
+    #"SYSTEM_SYSRULES_formLayout"(
+      label: "Assign Customer Service Request to Case Worker",
+      instructions: "Please select a Case Worker for this Request",
       firstColumnContents: {
-        #&quot;SYSTEM_SYSRULES_milestoneField&quot;(
-          steps:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2848&quot;,
+        #"SYSTEM_SYSRULES_milestoneField"(
+          steps:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2848",
           active:ri!currentMilestone
         ),
-        #&quot;051657d6-8b7d-4398-b529-edffef50deae&quot;(ri!serviceReq, ri!currentMilestone),
-        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-          label: &quot;Select Case Worker&quot;,
+        #"051657d6-8b7d-4398-b529-edffef50deae"(ri!serviceReq, ri!currentMilestone),
+        #"SYSTEM_SYSRULES_sectionLayout"(
+          label: "Assign Case Worker &amp; Priority",
           firstColumnContents: {
-            #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-              label:&quot;Available Case Workers&quot;,
-              instructions:&quot;User with less workload automatically selected. You may override selection.&quot;,
+            #"SYSTEM_SYSRULES_dropdownField"(
+              label:"Available Case Workers",
+              instructions:"User with less workload automatically selected. You may override selection.",
               choiceLabels:local!userWorkload.userDisplay,
-              placeholderLabel:&quot;---Select a Case Worker---&quot;,
+              placeholderLabel:"---Select a Case Worker---",
               choiceValues:local!userWorkload.user,
               value:local!suggestedUser,
               saveInto:local!suggestedUser,
               required:true
+            ),
+            #"SYSTEM_SYSRULES_dropdownField"(
+              label: "Assign Case Priority",
+              instructions: "CRITICAL: Revenue-impacting enterprise issues that affect the entire company. HIGH: issues that may potentially become revenue impacting but do not affect the entire company. MEDIUM: issues affecting a single user or for enhancement requests that need to be completed to avoid impending revenue loss. LOW: issues that have known workarounds, issues that do not affect revenue, or enhancement suggestions.",
+              choiceLabels: #"_a-0000db86-d3ef-8000-0315-010000010000_3399",
+              placeholderLabel: "---Select a Priority---",
+              choiceValues: #"_a-0000db86-d3ef-8000-0315-010000010000_3399",
+              value: ri!serviceReq.priority,
+              saveInto: ri!serviceReq.priority,
+              required: true
             )
           },
           secondColumnContents:{
-            #&quot;SYSTEM_SYSRULES_gridField&quot;(
-              label:&quot;Workload per Case Worker&quot;,
+            #"SYSTEM_SYSRULES_gridField"(
+              label:"Workload per Case Worker",
               totalCount:length(local!userWorkload),
               columns:{
-                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-                  label:&quot;Case Worker&quot;,
-                  field:&quot;userDisplay&quot;,
-                  data:index(local!gridData.data,&quot;userDisplay&quot;,null)
+                #"SYSTEM_SYSRULES_gridTextColumn"(
+                  label:"Case Worker",
+                  field:"userDisplay",
+                  data:index(local!gridData.data,"userDisplay",null)
                 ),
-                #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-                  label:&quot;Task Workload&quot;,
-                  field:&quot;workload&quot;,
-                  data:index(local!gridData.data,&quot;workload&quot;,null)
+                #"SYSTEM_SYSRULES_gridTextColumn"(
+                  label:"Task Workload",
+                  field:"workload",
+                  data:index(local!gridData.data,"workload",null)
                 )
               },
               value:local!gridPI,
@@ -82,14 +91,15 @@ load(
         )
       },
       secondColumnContents: {},
-      buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+      buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
         primaryButtons: {
-          #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
-            label: &quot;Submit&quot;,
-            style: &quot;PRIMARY&quot;,
+          #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+            label: "Submit",
+            style: "PRIMARY",
             saveInto: {
               a!save(ri!caseWorker,local!suggestedUser),
-              a!save(ri!serviceReq.serviceRep, local!suggestedUser)
+              a!save(ri!serviceReq.serviceRep, local!suggestedUser),
+              a!save(ri!serviceReq.status, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[3])
             }
           )
         },
@@ -102,8 +112,8 @@ load(
         <namedTypedValue>
             <name>serviceReq</name>
             <type>
-                <name>Variant</name>
-                <namespace>http://www.appian.com/ae/types/2009</namespace>
+                <name>CASE_APP_ServiceRequest</name>
+                <namespace>urn:com:appian:types:CASE_APP</namespace>
             </type>
         </namedTypedValue>
         <namedTypedValue>
@@ -112,7 +122,6 @@ load(
                 <name>User</name>
                 <namespace>http://www.appian.com/ae/types/2009</namespace>
             </type>
-            <value/>
         </namedTypedValue>
         <namedTypedValue>
             <name>currentMilestone</name>
@@ -122,6 +131,7 @@ load(
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -133,9 +143,7 @@ load(
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -151,4 +159,4 @@ load(
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.318-->

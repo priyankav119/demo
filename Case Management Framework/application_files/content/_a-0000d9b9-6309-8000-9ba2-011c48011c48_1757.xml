@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_BuildDocDataset</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1757</uuid>
@@ -14,18 +13,18 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!document),
+        <definition>=if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!document),
   {},
   {
   document: ri!document,
-  name: document(ri!document, &quot;name&quot;), 
-  description: document(ri!document, &quot;description&quot;),
-  size: document(ri!document, &quot;size&quot;),
-  extension: upper(document(ri!document, &quot;extension&quot;)),
-  id: document(ri!document, &quot;id&quot;),
-  dateCreated: document(ri!document, &quot;dateCreated&quot;),
-  lastUserToModify: document(ri!document, &quot;lastUserToModify&quot;),
-  totalNumberOfVersions: document(ri!document, &quot;totalNumberOfVersions&quot;)
+  name: document(ri!document, "name"), 
+  description: document(ri!document, "description"),
+  size: document(ri!document, "size"),
+  extension: upper(document(ri!document, "extension")),
+  id: document(ri!document, "id"),
+  dateCreated: document(ri!document, "dateCreated"),
+  lastUserToModify: document(ri!document, "lastUserToModify"),
+  totalNumberOfVersions: document(ri!document, "totalNumberOfVersions")
   }
 )</definition>
         <namedTypedValue>
@@ -36,6 +35,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -47,9 +47,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -65,4 +63,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.930-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_customerOrdersDashboard</name>
         <uuid>f8b4aa69-38ee-44b4-9c22-74945c38e7ee</uuid>
@@ -14,22 +13,23 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+        <definition>=#"SYSTEM_SYSRULES_dashboardLayout"(
   firstColumnContents: {
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Customer Orders&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Customer Orders",
       firstColumnContents: {
-        #&quot;32051912-c19c-4f83-aaea-b8de61766e09&quot;(
+        #"32051912-c19c-4f83-aaea-b8de61766e09"(
           itemsPerPage: 10, 
-          gridLabel: &quot;Orders&quot;,
+          gridLabel: "Orders",
           gridInstructions: null,
           customerId: rp!id)
       }
     ),
-    #&quot;cc00a6c2-5f53-479e-885e-c06a4e714675&quot;(rp!id)
+    #"cc00a6c2-5f53-479e-885e-c06a4e714675"(rp!id)
   }
 )</definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -41,9 +41,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -59,4 +57,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:02.955-->

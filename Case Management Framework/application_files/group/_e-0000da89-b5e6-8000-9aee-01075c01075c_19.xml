@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <group>
         <name>CASE_APP SR Case Workers</name>
         <securityMap>SECURITYMAP_PUBLIC</securityMap>
         <uuid>_e-0000da89-b5e6-8000-9aee-01075c01075c_19</uuid>
         <groupTypeUuid>_f-0000d9ab-7cdd-8000-9e04-010000010000_3</groupTypeUuid>
-        <description></description>
+        <description>Group for all Case Workers for CSR</description>
         <delegatedCreation>false</delegatedCreation>
         <memberPolicy>MEMBERPOLICY_CLOSED</memberPolicy>
         <viewingPolicy>VIEWINGPOLICY_LOW</viewingPolicy>
@@ -13,9 +12,18 @@
     </group>
     <members>
         <users>
-            <userUuid>malcolm.ross@appian.com</userUuid>
+            <userUuid>maria.lopez</userUuid>
+            <userUuid>sandra.taylor</userUuid>
+            <userUuid>paul.rao</userUuid>
+            <userUuid>angela.lewis</userUuid>
             <userUuid>jorge.sanchez</userUuid>
-            <userUuid>zach.messler</userUuid>
+            <userUuid>kenneth.lewis</userUuid>
+            <userUuid>amy.lee</userUuid>
+            <userUuid>jessica.williams</userUuid>
+            <userUuid>michael.cooper</userUuid>
+            <userUuid>malcolm.ross</userUuid>
+            <userUuid>linda.jones</userUuid>
+            <userUuid>phillip.sanchez</userUuid>
         </users>
         <groups/>
     </members>
@@ -26,4 +34,4 @@
         </groups>
     </admins>
     <ruleSet/>
-</groupHaul>
+</groupHaul><!--updated on 2016-10-24T12:43:57.454-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_RecordSearchFields</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1476</uuid>
@@ -18,28 +17,28 @@ Customers;Users;Products;Orders;Investigations;Service Requests</description>
         <definition>choose(
   ri!indexposition,
   {
-    /*  Index position 1 - Corresponds to Customer Record*/
-    &quot;Name&quot;,&quot;GlobalID&quot;
-  },
-  {
-    /* Index position 2 - Corresponds to the User record */
-    &quot;username&quot;
-  },
-  {
+    /* Index position 1 - Corresponds to the User record */
+    "username"
+  }
+  /*{*/
+    /*  Index position 2 - Corresponds to Customer Record*/
+  /*  "Name","GlobalID"*/
+  /*},*/
+  /*{*/
     /* Index position 3 - Corresponds to the Product record */
-    &quot;name&quot;,&quot;description&quot;
-  },
-  {
+  /*  "name","description"*/
+  /*},*/
+  /*{*/
     /* Index position 4 - Corresponds to the Orders record */
-    &quot;OrderNum&quot;,&quot;PurchaserName&quot;,&quot;Customer.Name&quot;
-  },
-  {
+  /*  "OrderNum","PurchaserName","Customer.Name"*/
+  /*},*/
+  /*{*/
     /* Index position 5 - Corresponds to the Service Request record */
-    &quot;srName&quot;
-  }/*,
+  /*  "srName"*/
+  /*}*//*,
   {
     /* Index position 6 - Corresponds to the Investigation record *
-    &quot;icmName&quot;
+    "icmName"
   }*/
 )</definition>
         <namedTypedValue>
@@ -50,6 +49,7 @@ Customers;Users;Products;Orders;Investigations;Service Requests</description>
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -61,9 +61,7 @@ Customers;Users;Products;Orders;Investigations;Service Requests</description>
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -79,4 +77,4 @@ Customers;Users;Products;Orders;Investigations;Service Requests</description>
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.385-->

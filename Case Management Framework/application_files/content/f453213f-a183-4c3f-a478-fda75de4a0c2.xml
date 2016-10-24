@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_PieAvgOrderAmountByIndustry</name>
         <uuid>f453213f-a183-4c3f-a478-fda75de4a0c2</uuid>
@@ -15,37 +14,37 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
-    batchSize: 20,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;Total&quot;,
+    batchSize: 10,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "Total",
       ascending: false
     )
   ),
   with(
     local!datasubset: queryrecord(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        aggregation: #&quot;SYSTEM_SYSRULES_queryAggregation&quot;(aggregationColumns: {
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;Customer.Industry&quot;, alias:&quot;Industry&quot;, isGrouping: true),
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;Total&quot;, aggregationFunction: &quot;AVG&quot;),
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
+      #"SYSTEM_SYSRULES_query"(
+        aggregation: #"SYSTEM_SYSRULES_queryAggregation"(aggregationColumns: {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "Customer.Industry", alias:"Industry", isGrouping: true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "Total", aggregationFunction: "AVG"),
         }),
         pagingInfo: local!pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_barChartField&quot;(
-      label: &quot;Average Order Amount by Industry&quot;,
-      categories: index(local!datasubset.data, &quot;Industry&quot;, {}),
-      series: #&quot;SYSTEM_SYSRULES_chartSeries&quot;(
-        label: &quot;Total Order $&quot;,
-        data: dollar(index(local!datasubset.data, &quot;Total&quot;, {}), 2,0),
+    #"SYSTEM_SYSRULES_barChartField"(
+      label: "Top Order Amount Avg by Industry",
+      categories: index(local!datasubset.data, "Industry", {}),
+      series: #"SYSTEM_SYSRULES_chartSeries"(
+        label: "Total Order $",
+        data: dollar(index(local!datasubset.data, "Total", {}), 2,0),
         links: apply(
-          #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(value:_,saveInto:ri!industryFilter),
-          index(local!datasubset.data, &quot;Industry&quot;, {})
+          #"SYSTEM_SYSRULES_dynamicLink"(value:_,saveInto:ri!industryFilter),
+          index(local!datasubset.data, "Industry", {})
         )
       ),
-      yAxisTitle: &quot;Avg Order Amount in $&quot;,
+      yAxisTitle: "Avg Order Amount in $",
       showLegend: true,
       showDataLabels: false,
       showTooltips: true,
@@ -63,6 +62,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -74,9 +74,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -92,4 +90,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.746-->

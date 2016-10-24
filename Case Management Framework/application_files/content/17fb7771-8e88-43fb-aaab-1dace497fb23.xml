@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_PrepareOrder</name>
         <uuid>17fb7771-8e88-43fb-aaab-1dace497fb23</uuid>
@@ -15,24 +14,24 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>=load(
-  local!Order: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8248&quot;(ri!Order.OrderNum),
-  local!gridSelection:#&quot;SYSTEM_SYSRULES_gridSelection&quot;(pagingInfo:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,10,null)),
-  #&quot;SYSTEM_SYSRULES_formLayout&quot;(
-  label: &quot;Prepare Order&quot;,
+  local!Order: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8248"(ri!Order.OrderNum),
+  local!gridSelection:#"SYSTEM_SYSRULES_gridSelection"(pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(1,10,null)),
+  #"SYSTEM_SYSRULES_formLayout"(
+  label: "Prepare Order",
   firstColumnContents: {
-    #&quot;fcc1ec91-4693-4c90-9074-a5f6642b06a8&quot;(ri!Order, true),
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Verify Order for Shipment&quot;,
-      instructions:&quot;Select all &quot;,
+    #"fcc1ec91-4693-4c90-9074-a5f6642b06a8"(ri!Order, true),
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Verify Order for Shipment",
+      instructions:"Select all ",
       firstColumnContents: {
-        #&quot;SYSTEM_SYSRULES_richTextDisplayField&quot;(
-          labelPosition:&quot;COLLAPSED&quot;,
-          value:#&quot;SYSTEM_SYSRULES_richTextItem&quot;(
-            text:&quot;Please verify that each Order Item is in stock and ready to ship by checking the box on each line.&quot;,
-            style:&quot;EMPHASIS&quot;
+        #"SYSTEM_SYSRULES_richTextDisplayField"(
+          labelPosition:"COLLAPSED",
+          value:#"SYSTEM_SYSRULES_richTextItem"(
+            text:"Please verify that each Order Item is in stock and ready to ship by checking the box on each line.",
+            style:"EMPHASIS"
             )
         ),
-        #&quot;3ad1404e-fd3d-496a-9033-789297edc4cb&quot;(
+        #"3ad1404e-fd3d-496a-9033-789297edc4cb"(
           orderItems:ri!Order.OrderItems,
           isSelectable:true,
           gridSelection:local!gridSelection,
@@ -41,16 +40,16 @@
       },
       isCollapsible: true(),
       validations:if(count(ri!Order.OrderItems.id)&lt;&gt;count(local!gridSelection.selected),
-        &quot;You must verify all items before continuing.&quot;,
+        "You must verify all items before continuing.",
         null
       )
     )
   },
-  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
     primaryButtons: {
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
-        label: &quot;Submit&quot;,
-        style: &quot;PRIMARY&quot;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Submit",
+        style: "PRIMARY"
       )
     }
   )
@@ -64,6 +63,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -75,9 +75,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -93,4 +91,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.780-->

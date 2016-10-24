@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiDashboardCaseHistory</name>
         <uuid>fe81fcd1-3d51-4f39-88c7-4ad34c060ca1</uuid>
@@ -14,9 +13,9 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+        <definition>=#"SYSTEM_SYSRULES_dashboardLayout"(
   firstColumnContents: {
-    #&quot;9505777e-cfb8-4b3d-890d-1da3b1a65220&quot;(#&quot;46ffb1fc-c9a4-4386-a27e-e78e6e308389&quot;(ri!caseType,ri!caseId).data,25)
+    #"9505777e-cfb8-4b3d-890d-1da3b1a65220"(#"46ffb1fc-c9a4-4386-a27e-e78e6e308389"(ri!caseType,ri!caseId).data,25)
   }
 )</definition>
         <namedTypedValue>
@@ -35,6 +34,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -46,9 +46,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -64,4 +62,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.386-->

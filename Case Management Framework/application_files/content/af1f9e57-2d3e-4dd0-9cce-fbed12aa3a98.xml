@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_uiGridTopSalesReps</name>
         <uuid>af1f9e57-2d3e-4dd0-9cce-fbed12aa3a98</uuid>
-        <description></description>
+        <description>Displays a grid with details on top sales representatives by total sales $</description>
         <parentUuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_5995</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -15,47 +14,47 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
     batchSize: 10,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;Total&quot;
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "Total"
     )
   ),
   with(
-    local!datasubset: #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-      entity: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6305&quot;,
-      query: #&quot;SYSTEM_SYSRULES_query&quot;(
-        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Customer.AccountOwner&quot;, alias:&quot;AccountOwner&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Total&quot;),
+    local!datasubset: #"SYSTEM_SYSRULES_queryEntity"(
+      entity: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6305",
+      query: #"SYSTEM_SYSRULES_query"(
+        selection: #"SYSTEM_SYSRULES_querySelection"(columns: {
+          #"SYSTEM_SYSRULES_queryColumn"(field: "id"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Customer.AccountOwner", alias:"AccountOwner"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Total"),
         }),
         pagingInfo: local!pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_gridField&quot;(
-      label:&quot;Top Sales Reps by Total Sales&quot;,
+    #"SYSTEM_SYSRULES_gridField"(
+      label:"Top Sales Reps by Total Sales",
       totalCount: local!datasubset.totalCount,
       columns: {
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Account Owner&quot;,
-          field: &quot;AccountOwner&quot;,
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Account Owner",
+          field: "AccountOwner",
           data: apply(
-            #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983&quot;,
-            index(local!datasubset.data, &quot;AccountOwner&quot;, {})
+            #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983",
+            index(local!datasubset.data, "AccountOwner", {})
           ),
           links:apply(
-            #&quot;SYSTEM_SYSRULES_userRecordLink&quot;(user:_),
-            index(local!datasubset.data, &quot;AccountOwner&quot;, {})
+            #"SYSTEM_SYSRULES_userRecordLink"(user:_),
+            index(local!datasubset.data, "AccountOwner", {})
           )
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Total&quot;,
-          field: &quot;Total&quot;,
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Total",
+          field: "Total",
           data: apply(
             fn!dollar,
-            index(local!datasubset.data, &quot;Total&quot;, {})
+            index(local!datasubset.data, "Total", {})
           )
         )
       },
@@ -66,6 +65,7 @@
 )
 </definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -77,9 +77,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -95,4 +93,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.793-->

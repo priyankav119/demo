@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_FindProductGrid</name>
         <uuid>3c080665-5d73-4dcc-b04a-2bec25d26b79</uuid>
@@ -15,11 +14,11 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
     batchSize: 4,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;name&quot;,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "name",
       ascending: true
     )
   ),
@@ -28,35 +27,35 @@
   local!categoryFilter,
   local!itemsToken,
   {
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label:&quot;What product would you like to add?&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label:"What product would you like to add?",
       firstColumnContents: {
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Search Product by Name&quot;,
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Search Product by Name",
           value: local!nameSearch,
           saveInto: local!nameSearch,
-          refreshAfter: &quot;KEYPRESS&quot;
+          refreshAfter: "KEYPRESS"
         ),
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Search product by SKU&quot;,
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Search product by SKU",
           value: local!skuSearch,
           saveInto: local!skuSearch,
-          refreshAfter: &quot;KEYPRESS&quot;
+          refreshAfter: "KEYPRESS"
         )
       },
       secondColumnContents: {
-        #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-          label: &quot;Filter Products by Category&quot;,
-          choiceLabels: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3808&quot;,
-          placeholderLabel: &quot;--Filter by Category--&quot;,
-          choiceValues: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3808&quot;,
+        #"SYSTEM_SYSRULES_dropdownField"(
+          label: "Filter Products by Category",
+          choiceLabels: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3808",
+          placeholderLabel: "--Filter by Category--",
+          choiceValues: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3808",
           value: local!categoryFilter,
           saveInto: local!categoryFilter
         ),
-        #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(primaryButtons:{
-          #&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(
-            label:&quot;Cancel&quot;,
-            style:&quot;DESTRUCTIVE&quot;,
+        #"SYSTEM_SYSRULES_ButtonLayout"(primaryButtons:{
+          #"SYSTEM_SYSRULES_ButtonWidget"(
+            label:"Cancel",
+            style:"DESTRUCTIVE",
             value:true,
             saveInto:{
               a!save(ri!showGrid, true),
@@ -82,37 +81,37 @@
     if(or(not(isnull(local!nameSearch)), not(isnull(local!skuSearch)), not(isnull(local!categoryFilter))), 
     with(
       local!datasubset: queryrecord(
-        #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3830&quot;,
-        #&quot;SYSTEM_SYSRULES_query&quot;(
-          selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;name&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;sku&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;description&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;productCategory&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;price&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;quantity&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;productImageDocId&quot;),
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3830",
+        #"SYSTEM_SYSRULES_query"(
+          selection: #"SYSTEM_SYSRULES_querySelection"(columns: {
+            #"SYSTEM_SYSRULES_queryColumn"(field: "id"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "name"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "sku"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "description"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "productCategory"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "price"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "quantity"),
+            #"SYSTEM_SYSRULES_queryColumn"(field: "productImageDocId"),
           }),
           logicalExpression: {
-            #&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
-              operator: &quot;AND&quot;,
+            #"SYSTEM_SYSRULES_queryLogicalExpression"(
+              operator: "AND",
               filters: {
-                if(isnull(local!nameSearch), null,#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-                  field: &quot;name&quot;,
-                  operator: &quot;includes&quot;,
+                if(isnull(local!nameSearch), null,#"SYSTEM_SYSRULES_queryFilter"(
+                  field: "name",
+                  operator: "includes",
                   value: local!nameSearch
                 )
                 ),
-                if(isnull(local!skuSearch), null,#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-                  field: &quot;sku&quot;,
-                  operator: &quot;includes&quot;,
+                if(isnull(local!skuSearch), null,#"SYSTEM_SYSRULES_queryFilter"(
+                  field: "sku",
+                  operator: "includes",
                   value: local!skuSearch
                 )
                 ),
-                if(isnull(local!categoryFilter), null,#&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-                  field: &quot;productCategory&quot;,
-                  operator: &quot;=&quot;,
+                if(isnull(local!categoryFilter), null,#"SYSTEM_SYSRULES_queryFilter"(
+                  field: "productCategory",
+                  operator: "=",
                   value: local!categoryFilter
                 )
                 )
@@ -122,30 +121,30 @@
           pagingInfo: local!pagingInfo
         )
       ),
-      #&quot;SYSTEM_SYSRULES_gridField&quot;(
-        instructions:&quot;Click or tap on product name to add it to the Orders grid.&quot;,
+      #"SYSTEM_SYSRULES_gridField"(
+        instructions:"Click or tap on product name to add it to the Orders grid.",
         totalCount: local!datasubset.totalCount,
         columns: {
-          #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
-            label: &quot;Image&quot;,
-            field: &quot;productImageDocId&quot;,
+          #"SYSTEM_SYSRULES_gridImageColumn"(
+            label: "Image",
+            field: "productImageDocId",
             data: apply(
-              #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+              #"SYSTEM_SYSRULES_documentImage"(
                 _,
-                &quot;product image&quot;,
+                "product image",
                 null,
                 null
               ),
-              todocument(index(local!datasubset.data, &quot;productImageDocId&quot;, {}))
+              todocument(index(local!datasubset.data, "productImageDocId", {}))
             ),
-            size: &quot;THUMBNAIL&quot;
+            size: "THUMBNAIL"
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label: &quot;Name&quot;,
-            field: &quot;name&quot;,
-            data: index(local!datasubset.data, &quot;name&quot;, {}),
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label: "Name",
+            field: "name",
+            data: index(local!datasubset.data, "name", {}),
             links: apply(
-              #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6077&quot;(
+              #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6077"(
                 productID: _,
                 OrderItem: ri!OrderItems[ri!index],
                 nameSearch:local!nameSearch,
@@ -156,25 +155,25 @@
               local!datasubset.identifiers
             )
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label: &quot;SKU&quot;,
-            field: &quot;sku&quot;,
-            data: index(local!datasubset.data, &quot;sku&quot;, {})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label: "SKU",
+            field: "sku",
+            data: index(local!datasubset.data, "sku", {})
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label: &quot;Description&quot;,
-            field: &quot;description&quot;,
-            data: index(local!datasubset.data, &quot;description&quot;, {})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label: "Description",
+            field: "description",
+            data: index(local!datasubset.data, "description", {})
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label: &quot;Price&quot;,
-            field: &quot;price&quot;,
-            data: index(local!datasubset.data, &quot;price&quot;, {})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label: "Price",
+            field: "price",
+            data: index(local!datasubset.data, "price", {})
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label: &quot;Stock&quot;,
-            field: &quot;quantity&quot;,
-            data: index(local!datasubset.data, &quot;quantity&quot;, {})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label: "Stock",
+            field: "quantity",
+            data: index(local!datasubset.data, "quantity", {})
           )
         },
         value: local!pagingInfo,
@@ -216,6 +215,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -227,9 +227,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -245,4 +243,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.220-->

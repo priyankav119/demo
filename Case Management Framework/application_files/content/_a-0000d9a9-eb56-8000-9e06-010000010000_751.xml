@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_isBlank</name>
         <uuid>_a-0000d9a9-eb56-8000-9e06-010000010000_751</uuid>
@@ -14,7 +13,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=or(ri!singlePV=&quot;&quot;, isnull(ri!singlePV))</definition>
+        <definition>=or(ri!singlePV="", isnull(ri!singlePV))</definition>
         <namedTypedValue>
             <name>singlePV</name>
             <type>
@@ -23,6 +22,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -50,4 +50,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.693-->

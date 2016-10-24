@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ucMultiFileUploadResizeArray</name>
         <uuid>96e0d627-3c44-424e-8ecf-64f1c07c933d</uuid>
@@ -14,24 +13,24 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=if(                                /* Do we need to add?                               */&#xD;
-  and(&#xD;
-    not(isnull(ri!value)),          /* Yes, if the value isn't null                     */&#xD;
-    ri!index = 1 + length(ri!array) /* and we're at the end of the list                 */&#xD;
-  ),&#xD;
-  append(&#xD;
-    ri!array,&#xD;
-    ri!value                        /* Add: Append the new value to the end of the list */&#xD;
-  ),&#xD;
-  if(                               /* Do we need to remove?                            */&#xD;
-    isnull(ri!value),               /* Only if value is now null (value was removed)    */&#xD;
-    remove(ri!array, ri!index),     /* Remove: remove the list item for this field      */&#xD;
-    insert(                         /* Neither add nor remove, so insert at index       */&#xD;
-      ri!array,&#xD;
-      ri!value,&#xD;
-      ri!index&#xD;
-    )&#xD;
-  )&#xD;
+        <definition>=if(                                /* Do we need to add?                               */&#13;
+  and(&#13;
+    not(isnull(ri!value)),          /* Yes, if the value isn't null                     */&#13;
+    ri!index = 1 + length(ri!array) /* and we're at the end of the list                 */&#13;
+  ),&#13;
+  append(&#13;
+    ri!array,&#13;
+    ri!value                        /* Add: Append the new value to the end of the list */&#13;
+  ),&#13;
+  if(                               /* Do we need to remove?                            */&#13;
+    isnull(ri!value),               /* Only if value is now null (value was removed)    */&#13;
+    remove(ri!array, ri!index),     /* Remove: remove the list item for this field      */&#13;
+    insert(                         /* Neither add nor remove, so insert at index       */&#13;
+      ri!array,&#13;
+      ri!value,&#13;
+      ri!index&#13;
+    )&#13;
+  )&#13;
 )</definition>
         <namedTypedValue>
             <name>array</name>
@@ -55,6 +54,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -84,4 +84,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.952-->

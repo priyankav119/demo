@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <folder>
         <name>CASE_APP Customer Logos</name>
         <uuid>_a-0000d9b8-41a7-8000-9e06-010000010000_490</uuid>
-        <description></description>
+        <description/>
         <parentUuid>_a-0000d9b8-41a7-8000-9e06-010000010000_486</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -41,4 +40,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.637-->

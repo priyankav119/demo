@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getOrderDetailsData</name>
         <uuid>728bbb47-6617-433f-960d-5bc63cfa5ad9</uuid>
@@ -20,45 +19,45 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>with(
-  local!pagingInfo:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,ri!batchSize,#&quot;SYSTEM_SYSRULES_sortInfo&quot;(&quot;productId&quot;,false)),
-  #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-    #&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3190&quot;,
-    #&quot;SYSTEM_SYSRULES_query&quot;(
-      selection:if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!columnNames),
+  local!pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(1,ri!batchSize,#"SYSTEM_SYSRULES_sortInfo"("productId",false)),
+  #"SYSTEM_SYSRULES_queryEntity"(
+    #"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3190",
+    #"SYSTEM_SYSRULES_query"(
+      selection:if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!columnNames),
         null,
-        #&quot;SYSTEM_SYSRULES_querySelection&quot;(
+        #"SYSTEM_SYSRULES_querySelection"(
           columns:apply(
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:_),
+            #"SYSTEM_SYSRULES_queryColumn"(field:_),
             ri!columnNames
           )
         )
       ),
       aggregation:if(
         or(
-          not(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!columnNames)),
-          #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!groupByColumns),
-          #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!aggregationFunction),
-          #&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!aggregationFunction)
+          not(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!columnNames)),
+          #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!groupByColumns),
+          #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!aggregationFunction),
+          #"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!aggregationFunction)
         ),
         null,
-        #&quot;SYSTEM_SYSRULES_queryAggregation&quot;(
+        #"SYSTEM_SYSRULES_queryAggregation"(
           {
             apply(
-              #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field:_,isGrouping:true),
+              #"SYSTEM_SYSRULES_queryAggregationColumn"(field:_,isGrouping:true),
               ri!groupByColumns
             ),
             apply(
-              #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field:_,aggregationFunction:ri!aggregationFunction),
+              #"SYSTEM_SYSRULES_queryAggregationColumn"(field:_,aggregationFunction:ri!aggregationFunction),
               ri!aggregationColumns
             ),
           }
         )
       ),
-      filter:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!customerId),
+      filter:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!customerId),
         null,
-        #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-          field:&quot;customerId&quot;,
-          operator:&quot;=&quot;,
+        #"SYSTEM_SYSRULES_queryFilter"(
+          field:"customerId",
+          operator:"=",
           value:ri!customerId
         )
       ),
@@ -110,6 +109,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -121,9 +121,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -139,4 +137,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.655-->

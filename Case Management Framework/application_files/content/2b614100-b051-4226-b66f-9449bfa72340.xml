@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_RecordAssocDisplayGrid</name>
         <uuid>2b614100-b051-4226-b66f-9449bfa72340</uuid>
@@ -15,42 +14,125 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>/* To Test: Pass an ARRAY for ri!recordAssociations */
-#&quot;SYSTEM_SYSRULES_gridLayout&quot;(
+#"SYSTEM_SYSRULES_gridLayout"(
   label: ri!gridLabel,
   instructions: ri!gridInstructions,
   headerCells: {
-                  #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-                  label: &quot;Record Type&quot;,
-                  align: &quot;LEFT&quot;
-                ),
-                #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-                  label: &quot;Record&quot;,
-                  align: &quot;LEFT&quot;
-                )
-              },
+    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+      label: "Record Type",
+      align: "LEFT"
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+      label: "Record",
+      align: "LEFT"
+    )
+  },
   columnConfigs: {
-                #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-                  width: &quot;DISTRIBUTE&quot;
-                ),
-                #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-                  width: &quot;DISTRIBUTE&quot;
-                )
-              },
-  rows: if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(array: ri!recordAssociation),
+    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+      width: "DISTRIBUTE"
+    ),
+    #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+      width: "DISTRIBUTE"
+    )
+  },
+  rows: if(
+    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(
+      array: ri!recordAssociation
+    ),
     {},
     {
       /* Was running into a strange error with apply(),
       so I hardcoded up to 10 associations*/
-      if(length(ri!recordAssociation)&gt;0, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[1]),{}),
-      if(length(ri!recordAssociation)&gt;1, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[2]),{}),
-      if(length(ri!recordAssociation)&gt;2, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[3]),{}),
-      if(length(ri!recordAssociation)&gt;3, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[4]),{}),
-      if(length(ri!recordAssociation)&gt;4, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[5]),{}),
-      if(length(ri!recordAssociation)&gt;5, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[6]),{}),
-      if(length(ri!recordAssociation)&gt;6, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[7]),{}),
-      if(length(ri!recordAssociation)&gt;7, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[8]),{}),
-      if(length(ri!recordAssociation)&gt;8, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[9]),{}),
-      if(length(ri!recordAssociation)&gt;9, #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139&quot;(ri!recordAssociation[10]),{})
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 0,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[1]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 1,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[2]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 2,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[3]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 3,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[4]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 4,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[5]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 5,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[6]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 6,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[7]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 7,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[8]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 8,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[9]
+        ),
+        {}
+      ),
+      if(
+        length(
+          ri!recordAssociation
+        ) &gt; 9,
+        #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139"(
+          ri!recordAssociation[10]
+        ),
+        {}
+      )
     }
   )
 )</definition>
@@ -73,11 +155,12 @@
         <namedTypedValue>
             <name>recordAssociation</name>
             <type>
-                <name>Variant</name>
-                <namespace>http://www.appian.com/ae/types/2009</namespace>
+                <name>CASE_APP_RecordAssociation?list</name>
+                <namespace>urn:com:appian:types:CASE_APP</namespace>
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -89,9 +172,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -107,4 +188,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.069-->

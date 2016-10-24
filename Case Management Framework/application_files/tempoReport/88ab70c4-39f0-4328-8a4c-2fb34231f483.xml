@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <tempoReport name="Products Dashboard" a:uuid="88ab70c4-39f0-4328-8a4c-2fb34231f483">
+<?xml version="1.0" encoding="UTF-8"?><tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport a:uuid="88ab70c4-39f0-4328-8a4c-2fb34231f483" name="Products Dashboard">
         <a:description>A report dashboard showing current product inventory information</a:description>
-        <a:uiExpr>=#&quot;9f4012f6-8eab-4827-884e-0c0501db8244&quot;()</a:uiExpr>
+        <a:uiExpr>=#"9f4012f6-8eab-4827-884e-0c0501db8244"()</a:uiExpr>
         <a:urlStub>xhQ9aA</a:urlStub>
     </tempoReport>
     <roleMap>
@@ -25,4 +24,4 @@
             </groups>
         </role>
     </roleMap>
-</tempoReportHaul>
+</tempoReportHaul><!--updated on 2016-10-24T12:44:08.721-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_validateEmailAddressFormat</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1640</uuid>
@@ -16,22 +15,22 @@
         </visibility>
         <definition>=if(
   or(
-    length(split(trim(ri!address),&quot; &quot;))&gt;1,
-    length(split(ri!address,&quot;@&quot;))&lt;&gt;2
+    length(split(trim(ri!address)," "))&gt;1,
+    length(split(ri!address,"@"))&lt;&gt;2
     ),
   false(),
   
   with(
-    localPart:split(trim(ri!address),&quot;@&quot;)[1],
-    domainPart:split(trim(ri!address),&quot;@&quot;)[2],
+    localPart:split(trim(ri!address),"@")[1],
+    domainPart:split(trim(ri!address),"@")[2],
     
     if(
       or(
-        length(split(domainPart,&quot;.&quot;))&lt;2,
-        contains(split(localPart,&quot;.&quot;),&quot;&quot;),
-        contains(split(domainPart,&quot;.&quot;),&quot;&quot;),
-        not(isnull(stripwith(lower(domainPart),&quot;abcdefghijklmnopqrstuvwxyz1234567890-.&quot;))),
-        not(isnull(stripwith(lower(localPart),&quot;abcdefghijklmnopqrstuvwxyz1234567890-._+&amp;%&quot;)))
+        length(split(domainPart,"."))&lt;2,
+        contains(split(localPart,"."),""),
+        contains(split(domainPart,"."),""),
+        not(isnull(stripwith(lower(domainPart),"abcdefghijklmnopqrstuvwxyz1234567890-."))),
+        not(isnull(stripwith(lower(localPart),"abcdefghijklmnopqrstuvwxyz1234567890-._+&amp;%")))
         ),
         
       false(),
@@ -50,6 +49,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -77,4 +77,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:58.953-->

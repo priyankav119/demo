@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_OrdersGrid</name>
         <uuid>f6ebce54-e12d-42ee-97b9-b37c3c001125</uuid>
@@ -22,14 +21,14 @@
   {
     if(showGrid,
       {
-        #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+        #"SYSTEM_SYSRULES_ButtonLayout"(
           secondaryButtons:
-            if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(local!selectedItems), length(local!selectedItems)&lt;1), {},
+            if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(local!selectedItems), length(local!selectedItems)&lt;1), {},
             {
-              #&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(
-                label: &quot;Remove&quot;,
-                style: &quot;NORMAL&quot;,
-                confirmMessage: &quot;Are you sure you want to delete the selected items?&quot;,
+              #"SYSTEM_SYSRULES_ButtonWidget"(
+                label: "Remove",
+                style: "NORMAL",
+                confirmMessage: "Are you sure you want to delete the selected items?",
                 saveInto:{
                   a!save(
                     target: ri!OrderItems,
@@ -47,71 +46,71 @@
             }
           )
         ),
-        #&quot;SYSTEM_SYSRULES_gridLayout&quot;(
+        #"SYSTEM_SYSRULES_gridLayout"(
           label: ri!gridLabel,
           instructions: ri!gridInstructions,
           headerCells:{
-            #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-              label: &quot;Image&quot;, 
-              align: &quot;LEFT&quot;
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "Image", 
+              align: "LEFT"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-              label: &quot;Product&quot;, 
-              align: &quot;LEFT&quot;
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "Product", 
+              align: "LEFT"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-              label: &quot;SKU&quot;,
-              align: &quot;LEFT&quot;
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "SKU",
+              align: "LEFT"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-              label: &quot;Quantity&quot;,
-              align: &quot;LEFT&quot;
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "Quantity",
+              align: "LEFT"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-              label: &quot;Unit Price&quot;,
-              align: &quot;LEFT&quot;
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "Unit Price",
+              align: "LEFT"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutHeaderCell&quot;(
-              label: &quot;Taxed&quot;,
-              align: &quot;LEFT&quot;
+            #"SYSTEM_SYSRULES_gridLayoutHeaderCell"(
+              label: "Taxed",
+              align: "LEFT"
             )
           },
           columnConfigs:{
-            #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-              width: &quot;DISTRIBUTE&quot; 
+            #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+              width: "DISTRIBUTE" 
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-              width: &quot;DISTRIBUTE&quot; 
+            #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+              width: "DISTRIBUTE" 
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-              width: &quot;DISTRIBUTE&quot;
+            #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+              width: "DISTRIBUTE"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-              width: &quot;NARROW&quot;
+            #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+              width: "NARROW"
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-              width: &quot;NARROW&quot; 
+            #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+              width: "NARROW" 
             ),
-            #&quot;SYSTEM_SYSRULES_gridLayoutColumnConfig&quot;(
-              width: &quot;NARROW&quot;
+            #"SYSTEM_SYSRULES_gridLayoutColumnConfig"(
+              width: "NARROW"
             )
           },
-          rows: #&quot;SYSTEM_SYSRULES_applyComponents&quot;(
-            function: #&quot;1ffac6f0-8bc9-46ee-b624-5a615fbaf482&quot;(
+          rows: #"SYSTEM_SYSRULES_applyComponents"(
+            function: #"1ffac6f0-8bc9-46ee-b624-5a615fbaf482"(
               OrderItems: ri!OrderItems,
               index: _,
               itemsToken: local!itemsToken,
               readOnly: ri!readOnly
             ),
-            array: if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!OrderItems), count(ri!OrderItems) &lt; 1), {}, 1+enumerate(count(ri!OrderItems))),
+            array: if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!OrderItems), count(ri!OrderItems) &lt; 1), {}, 1+enumerate(count(ri!OrderItems))),
             arrayVariable: local!itemsToken
           ),
           selectable: if(ri!readOnly=true(), false(), true()),
           selectionDisabled: ri!readOnly,
           selectionValue: local!selectedItems,
           selectionSaveInto: local!selectedItems,
-          validations: { if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!OrderItems), count(ri!OrderItems)&lt;1), &quot;You must add at least 1 item to the order&quot;, 
-            if(contains(ri!OrderItems.Product.name,null ), &quot;Select a product below to add to the order&quot;, null))
+          validations: { if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!OrderItems), count(ri!OrderItems)&lt;1), "You must add at least 1 item to the order", 
+            if(contains(ri!OrderItems.Product.name,null ), "Select a product below to add to the order", null))
           }
         )
       },
@@ -119,12 +118,12 @@
     ),
     if(ri!readOnly, 
       {}, 
-      if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!OrderItems), not(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!OrderItems[count(ri!OrderItems)].Product))),
-        #&quot;SYSTEM_SYSRULES_linkField&quot;(
-          label: &quot;Add Item&quot;,
-          labelPosition: &quot;COLLAPSED&quot;,
-          links: #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(
-            label: &quot;+Add Item&quot;,
+      if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!OrderItems), not(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!OrderItems[count(ri!OrderItems)].Product))),
+        #"SYSTEM_SYSRULES_linkField"(
+          label: "Add Item",
+          labelPosition: "COLLAPSED",
+          links: #"SYSTEM_SYSRULES_dynamicLink"(
+            label: "+Add Item",
             value: true(),
             saveInto: {
               local!AddItem,
@@ -135,7 +134,7 @@
           
           )
         ),
-        #&quot;3c080665-5d73-4dcc-b04a-2bec25d26b79&quot;(
+        #"3c080665-5d73-4dcc-b04a-2bec25d26b79"(
           OrderItems: ri!OrderItems,
           itemsToken: local!itemsToken,
           index: count(ri!OrderItems),
@@ -177,6 +176,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -188,10 +188,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -207,4 +204,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.252-->

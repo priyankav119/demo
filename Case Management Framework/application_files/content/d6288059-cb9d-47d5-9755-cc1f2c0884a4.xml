@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiDashboardSummaryView</name>
         <uuid>d6288059-cb9d-47d5-9755-cc1f2c0884a4</uuid>
@@ -14,31 +13,34 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+        <definition>=#"SYSTEM_SYSRULES_dashboardLayout"(
   firstColumnContents: {
-    #&quot;SYSTEM_SYSRULES_milestoneField&quot;(
-      steps:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2848&quot;,
+    #"SYSTEM_SYSRULES_milestoneField"(
+      steps:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2848",
       active:ri!currentMilestone
     ),
-    #&quot;051657d6-8b7d-4398-b529-edffef50deae&quot;(
+    #"051657d6-8b7d-4398-b529-edffef50deae"(
       serviceReq:ri!serviceReqData,
       currentMilestone:ri!currentMilestone
     ),
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label:&quot;Case Documents&quot;,
-      firstColumnContents:{
-        #&quot;db22a1b1-edcb-4c87-a893-14880b22e957&quot;(
-          documents:ri!uploadedDocs,
-          gridSelectable:false,
-          showDocImageType:&quot;THUMBNAIL&quot;,
-          showColumns:{&quot;IMAGE&quot;,&quot;NAME&quot;,&quot;DESCRIPTION&quot;,&quot;EXTENSION&quot;,&quot;DATECREATED&quot;},
-          itemsPerPage:5,
-          linkToDoc:true
-        )
-      },
-      isCollapsible:true
+    if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!uploadedDocs),
+      {},
+      #"SYSTEM_SYSRULES_sectionLayout"(
+        label:"Case Documents",
+        firstColumnContents:{
+          #"db22a1b1-edcb-4c87-a893-14880b22e957"(
+            documents:ri!uploadedDocs,
+            gridSelectable:false,
+            showDocImageType:"ICON",
+            showColumns:{"IMAGE","NAME","DESCRIPTION","EXTENSION","DATECREATED"},
+            itemsPerPage:5,
+            linkToDoc:true
+          )
+        },
+        isCollapsible:true
+      )
     ),
-    #&quot;4b363796-1752-4c70-ad51-3bc22d5a27f2&quot;(ri!pId)
+    #"4b363796-1752-4c70-ad51-3bc22d5a27f2"(ri!pId)
   }
 )</definition>
         <namedTypedValue>
@@ -70,6 +72,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -81,9 +84,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -99,4 +100,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:02.002-->

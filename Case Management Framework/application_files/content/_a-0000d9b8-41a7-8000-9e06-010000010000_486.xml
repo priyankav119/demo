@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <communityKnowledgeCenter>
         <name>CASE_APP Customer</name>
         <uuid>_a-0000d9b8-41a7-8000-9e06-010000010000_486</uuid>
@@ -44,4 +43,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.599-->

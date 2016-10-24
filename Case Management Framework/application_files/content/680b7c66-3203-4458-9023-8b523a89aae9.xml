@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <queryRule>
         <name>CASE_APP_getCustomerByOwner</name>
         <uuid>680b7c66-3203-4458-9023-8b523a89aae9</uuid>
@@ -8,7 +7,7 @@
         <dataStoreEntityCompositeUuid>0fd91800-d3d0-47eb-8355-2e65cf3c3d42@_a-0000da5f-b0b8-8000-9ba2-011c48011c48_12642</dataStoreEntityCompositeUuid>
         <params>
             <param>
-                <description></description>
+                <description/>
                 <name>accountOwner</name>
                 <type>{http://www.w3.org/2001/XMLSchema}string</type>
             </param>
@@ -34,7 +33,7 @@
             </ordering>
         </orderings>
     </queryRule>
-    <roleMap public="true">
+    <roleMap public="false">
         <role allowForAll="false" inherit="true" name="readers">
             <users/>
             <groups/>
@@ -44,9 +43,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -62,4 +59,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:05.315-->

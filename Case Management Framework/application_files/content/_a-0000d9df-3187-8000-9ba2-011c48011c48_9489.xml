@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_UpdateProductQuantity</name>
         <uuid>_a-0000d9df-3187-8000-9ba2-011c48011c48_9489</uuid>
@@ -15,7 +14,7 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!product: #&quot;_a-0000d9df-3187-8000-9ba2-011c48011c48_9451&quot;(
+  local!product: #"_a-0000d9df-3187-8000-9ba2-011c48011c48_9451"(
     ri!productSKU
   ),
   'type!{urn:com:appian:types:CASE_APP}CASE_APP_Product'(
@@ -51,6 +50,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -62,9 +62,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -80,4 +78,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:58.155-->

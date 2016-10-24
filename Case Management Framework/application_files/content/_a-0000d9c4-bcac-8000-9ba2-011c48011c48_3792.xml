@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_productListViewItem</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3792</uuid>
@@ -14,23 +13,24 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= #&quot;SYSTEM_SYSRULES_listViewItem&quot;(
+        <definition>= #"SYSTEM_SYSRULES_listViewItem"(
   image: 
-  if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!productImageDocId),
-  	#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3849&quot;,
+  if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!productImageDocId),
+  	#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3849",
   	todocument(rf!productImageDocId)
   ),
-  title: rf!name&amp;&quot; | &quot;&amp;rf!sku,
+  title: rf!name&amp;" | "&amp;rf!sku,
   details: 
-  &quot;Description: &quot; &amp; rf!description
+  "Description: " &amp; rf!description
   &amp; char(10) &amp; 
-  &quot;Category: &quot; &amp; rf!productCategory
+  "Category: " &amp; rf!productCategory
   &amp; char(10) &amp; 
-  &quot;Model Number: &quot; &amp; rf!modelNumber
+  "Model Number: " &amp; rf!modelNumber
   &amp; char(10) &amp; 
-  &quot;Price: &quot; &amp; rf!price
+  "Price: " &amp; rf!price
 )</definition>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -58,4 +58,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:57.839-->

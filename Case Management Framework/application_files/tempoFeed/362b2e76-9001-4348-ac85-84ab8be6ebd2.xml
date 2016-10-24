@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <tempoFeed>
         <uuid>362b2e76-9001-4348-ac85-84ab8be6ebd2</uuid>
         <name>CASE_APP Order Complete</name>
@@ -15,4 +14,4 @@
             </groups>
         </role>
     </roleMap>
-</tempoFeedHaul>
+</tempoFeedHaul><!--updated on 2016-10-24T12:44:08.558-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_productSummaryDashboard</name>
         <uuid>1f91132e-3675-45d6-ad5e-3a0c635e71a7</uuid>
@@ -14,50 +13,50 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= load(&#xD;
-  local!product: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4326&quot;(id:ri!id),&#xD;
-  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(&#xD;
-    firstColumnContents: {&#xD;
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4332&quot;(product:local!product),&#xD;
-      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
-        label:&quot;Shipping Details&quot;,&#xD;
-        firstColumnContents:{&#xD;
-          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-            label:&quot;Shipping Weight (lbs)&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            value:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!shippingDetails.weight),&quot;N/A&quot;,rf!shippingDetails.weight),&#xD;
-            readOnly:true&#xD;
-          ),&#xD;
-          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-            label:&quot;Shipping Height (inches)&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            value:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!shippingDetails.weight),&quot;N/A&quot;,rf!shippingDetails.height),&#xD;
-            readOnly:true&#xD;
-          )&#xD;
-        },&#xD;
-        secondColumnContents:{&#xD;
-          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-            label:&quot;Shipping Width (lbs)&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            value:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!shippingDetails.weight),&quot;N/A&quot;,rf!shippingDetails.width),&#xD;
-            readOnly:true&#xD;
-          ),&#xD;
-          #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-            label:&quot;Shipping Depth (inches)&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            value:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!shippingDetails.weight),&quot;N/A&quot;,rf!shippingDetails.depth),&#xD;
-            readOnly:true&#xD;
-          )&#xD;
-        }&#xD;
-      ),&#xD;
-      #&quot;29674194-7ed2-4a6b-a994-5cb57a7a5b30&quot;(&#xD;
-        productIds:{rf!id},&#xD;
-        productName:{rf!name},&#xD;
-        showAddToOrder:false&#xD;
-        &#xD;
-      )&#xD;
-    }&#xD;
-  )&#xD;
+        <definition>= load(&#13;
+  local!product: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4326"(id:ri!id),&#13;
+  #"SYSTEM_SYSRULES_dashboardLayout"(&#13;
+    firstColumnContents: {&#13;
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4332"(product:local!product),&#13;
+      #"SYSTEM_SYSRULES_sectionLayout"(&#13;
+        label:"Shipping Details",&#13;
+        firstColumnContents:{&#13;
+          #"SYSTEM_SYSRULES_textField"(&#13;
+            label:"Shipping Weight (lbs)",&#13;
+            labelPosition:"ADJACENT",&#13;
+            value:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!shippingDetails.weight),"N/A",rf!shippingDetails.weight),&#13;
+            readOnly:true&#13;
+          ),&#13;
+          #"SYSTEM_SYSRULES_textField"(&#13;
+            label:"Shipping Height (inches)",&#13;
+            labelPosition:"ADJACENT",&#13;
+            value:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!shippingDetails.weight),"N/A",rf!shippingDetails.height),&#13;
+            readOnly:true&#13;
+          )&#13;
+        },&#13;
+        secondColumnContents:{&#13;
+          #"SYSTEM_SYSRULES_textField"(&#13;
+            label:"Shipping Width (lbs)",&#13;
+            labelPosition:"ADJACENT",&#13;
+            value:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!shippingDetails.weight),"N/A",rf!shippingDetails.width),&#13;
+            readOnly:true&#13;
+          ),&#13;
+          #"SYSTEM_SYSRULES_textField"(&#13;
+            label:"Shipping Depth (inches)",&#13;
+            labelPosition:"ADJACENT",&#13;
+            value:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!shippingDetails.weight),"N/A",rf!shippingDetails.depth),&#13;
+            readOnly:true&#13;
+          )&#13;
+        }&#13;
+      ),&#13;
+      #"29674194-7ed2-4a6b-a994-5cb57a7a5b30"(&#13;
+        productIds:{rf!id},&#13;
+        productName:{rf!name},&#13;
+        showAddToOrder:false&#13;
+        &#13;
+      )&#13;
+    }&#13;
+  )&#13;
 )</definition>
         <namedTypedValue>
             <name>id</name>
@@ -67,6 +66,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -94,4 +94,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:57.692-->

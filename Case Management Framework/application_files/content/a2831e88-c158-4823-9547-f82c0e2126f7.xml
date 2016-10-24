@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_DisplayWebandDocImages</name>
         <uuid>a2831e88-c158-4823-9547-f82c0e2126f7</uuid>
@@ -19,15 +18,15 @@
   local!loadDocs,
 {
 
-#&quot;SYSTEM_SYSRULES_imageField&quot;(
+#"SYSTEM_SYSRULES_imageField"(
  label: ri!label,
  instructions: ri!instructions,
  images: {
-          if(or(isnull(ri!documents), length(ri!documents)&lt;1), {}, #&quot;SYSTEM_SYSRULES_applyComponents&quot;(#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2965&quot;(_), ri!documents, local!loadDocs)),
-          if(or(isnull(ri!webImages), length(ri!webImages)&lt;1), {}, #&quot;SYSTEM_SYSRULES_applyComponents&quot;(#&quot;SYSTEM_SYSRULES_webImage&quot;(source: _), ri!webImages, local!loadVariable))
+          if(or(isnull(ri!documents), length(ri!documents)&lt;1), {}, #"SYSTEM_SYSRULES_applyComponents"(#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2965"(_), ri!documents, local!loadDocs)),
+          if(or(isnull(ri!webImages), length(ri!webImages)&lt;1), {}, #"SYSTEM_SYSRULES_applyComponents"(#"SYSTEM_SYSRULES_webImage"(source: _), ri!webImages, local!loadVariable))
 
  },
- size: if(isnull(ri!size), &quot;THUMBNAIL&quot;, ri!size)
+ size: if(isnull(ri!size), "THUMBNAIL", ri!size)
 ),
 
 }
@@ -72,6 +71,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -83,9 +83,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -101,4 +99,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.667-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ReportCustomersByAccountOwner</name>
         <uuid>2b69fc9f-8768-47c2-891c-367954ae718e</uuid>
@@ -15,35 +14,35 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
     batchSize: 10,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;id&quot;,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "id",
       ascending: false
     )
   ),
   with(
     local!datasubset: queryrecord(
-      #&quot;_a-0000d9b8-a7c6-8000-9e06-010000010000_504&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        aggregation: #&quot;SYSTEM_SYSRULES_queryAggregation&quot;(aggregationColumns: {
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;AccountOwner&quot;, isGrouping: true),
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;id&quot;, aggregationFunction: &quot;COUNT&quot;),
+      #"_a-0000d9b8-a7c6-8000-9e06-010000010000_504",
+      #"SYSTEM_SYSRULES_query"(
+        aggregation: #"SYSTEM_SYSRULES_queryAggregation"(aggregationColumns: {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "AccountOwner", isGrouping: true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "id", aggregationFunction: "COUNT"),
         }),
         pagingInfo: local!pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_barChartField&quot;(
-      label: &quot;Top Account Reps by Customer Count&quot;,
+    #"SYSTEM_SYSRULES_barChartField"(
+      label: "Top Account Reps by Customer Count",
       
       categories: apply(
-        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983&quot;,
-        index(local!datasubset.data, &quot;AccountOwner&quot;, {})
+        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983",
+        index(local!datasubset.data, "AccountOwner", {})
       ),
-      series: #&quot;SYSTEM_SYSRULES_chartSeries&quot;(
-        label: &quot;Customers count&quot;,
-        data: index(local!datasubset.data, &quot;id&quot;, {})
+      series: #"SYSTEM_SYSRULES_chartSeries"(
+        label: "Customers count",
+        data: index(local!datasubset.data, "id", {})
       ),
       showlegend: true,
       showdatalabels: false,
@@ -53,6 +52,7 @@
 )
 </definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -64,9 +64,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -82,4 +80,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.947-->

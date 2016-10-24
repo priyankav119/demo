@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getReportDataFormatter</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2909</uuid>
-        <description></description>
+        <description>Utility expression used to identify the proper format to be used in a column for a GridLayout representing a Portal report.</description>
         <parentUuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2880</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -17,38 +16,38 @@
         <definition>/* Not a complete list*/
 with(
   local!formatOptions:{
-    &quot;NORMAL_TEXT&quot;,
-    &quot;NUMBER&quot;,
-    &quot;NUMBER_ROUNDED&quot;,
-    &quot;DATE&quot;,
-    &quot;TIME&quot;,
-    &quot;DATE_TIME&quot;,
-    &quot;USER_NAME&quot;,
-    &quot;USER_OR_GROUP_NAME&quot;,
-    &quot;PRIORITY&quot;,
-    &quot;TASK_STATUS&quot;,
-    &quot;PROCESS_STATUS_ICON&quot;,
-    &quot;DURATION&quot;
+    "NORMAL_TEXT",
+    "NUMBER",
+    "NUMBER_ROUNDED",
+    "DATE",
+    "TIME",
+    "DATE_TIME",
+    "USER_NAME",
+    "USER_OR_GROUP_NAME",
+    "PRIORITY",
+    "TASK_STATUS",
+    "PROCESS_STATUS_ICON",
+    "DURATION"
   },
   local!formatIndex:wherecontains(ri!configuredFormatting,local!formatOptions),
-  if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!columnData[ri!index]),
+  if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!columnData[ri!index]),
     {},
-    if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(local!formatIndex),
-      #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898&quot;(data: ri!columnData, index: ri!index),
+    if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(local!formatIndex),
+      #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898"(data: ri!columnData, index: ri!index),
       choose(
         local!formatIndex,
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898&quot;(data: ri!columnData, index: ri!index),
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898&quot;(data: ri!columnData, index: ri!index),
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898&quot;(data: ri!columnData, index: ri!index),
-        fn!datetext(ri!columnData[ri!index],&quot;MMM dd, yyyy&quot;),
-        fn!datetext(ri!columnData[ri!index],&quot;HH:mm a&quot;),
-        fn!datetext(ri!columnData[ri!index],&quot;MMM dd, yyyy HH:mm a&quot;),
-        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983&quot;(ri!columnData[ri!index]),
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2885&quot;(ri!columnData[ri!index]),
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2890&quot;(ri!columnData[ri!index]),
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2889&quot;(ri!columnData,ri!index),
-        #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898&quot;(data: ri!columnData, index: ri!index),
-        #&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3929&quot;(ri!columnData[ri!index])
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898"(data: ri!columnData, index: ri!index),
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898"(data: ri!columnData, index: ri!index),
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898"(data: ri!columnData, index: ri!index),
+        fn!datetext(ri!columnData[ri!index],"MMM dd, yyyy"),
+        fn!datetext(ri!columnData[ri!index],"HH:mm a"),
+        fn!datetext(ri!columnData[ri!index],"MMM dd, yyyy HH:mm a"),
+        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983"(ri!columnData[ri!index]),
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2885"(ri!columnData[ri!index]),
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2890"(ri!columnData[ri!index]),
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2889"(ri!columnData,ri!index),
+        #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2898"(data: ri!columnData, index: ri!index),
+        #"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3929"(ri!columnData[ri!index])
       )
     )
   )
@@ -76,6 +75,7 @@ with(
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -87,9 +87,7 @@ with(
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -105,4 +103,4 @@ with(
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:01.770-->

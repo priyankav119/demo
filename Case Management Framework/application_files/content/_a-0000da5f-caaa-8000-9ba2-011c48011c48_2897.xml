@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getPortalReportColumn</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897</uuid>
-        <description></description>
+        <description>Utility expression used to retrieve a column of information to be displayed in a Gird Layout field.</description>
         <parentUuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2880</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -17,29 +16,29 @@
         <definition>=with(
   local!columnData: index(ri!data, ri!columnConfig.field, {}),
   local!columnDataCount: count(local!columnData),
-  if(ri!columnConfig.configuredFormatting=&quot;PRIORITY_ICON&quot;,
-    #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+  if(ri!columnConfig.configuredFormatting="PRIORITY_ICON",
+    #"SYSTEM_SYSRULES_gridImageColumn"(
       label: ri!columnConfig.label,
       field: ri!columnConfig.field,
-      data:if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!data),
+      data:if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!data),
         {},
         apply(
-          #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2941&quot;(
+          #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2941"(
             local!columnData,
             _
           ),
           1 + enumerate(local!columnDataCount)
         )
       ),
-      size:&quot;ICON&quot;
+      size:"ICON"
     ),
-    #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+    #"SYSTEM_SYSRULES_gridTextColumn"(
       label: ri!columnConfig.label,
       field: ri!columnConfig.field,
       data: if(
         local!columnDataCount &gt; 0,
         apply(
-          #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2909&quot;(
+          #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2909"(
             ri!columnConfig.configuredFormatting,
             local!columnData,
             _
@@ -50,9 +49,9 @@
       ),
       links: if(and(
         ri!showLink,
-        ri!columnConfig.configuredDrilldown = &quot;TASK_DETAILS&quot;),
+        ri!columnConfig.configuredDrilldown = "TASK_DETAILS"),
         apply(
-          #&quot;SYSTEM_SYSRULES_processTaskLink&quot;(task: _),
+          #"SYSTEM_SYSRULES_processTaskLink"(task: _),
           index(ri!data, ri!columnConfig.drilldownField, {})
         ),
         null
@@ -83,6 +82,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -94,9 +94,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -112,4 +110,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:01.824-->

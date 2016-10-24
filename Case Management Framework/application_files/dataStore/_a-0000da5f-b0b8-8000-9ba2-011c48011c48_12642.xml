@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <dataStore>
         <uuid>_a-0000da5f-b0b8-8000-9ba2-011c48011c48_12642</uuid>
         <name>CASE_APP_Core_DS</name>
-        <description></description>
-        <dataSourceKey>java:/jdbc/Appian</dataSourceKey>
+        <description>Data store for all the main CASE_APP Entities</description>
+        <dataSourceKey>jdbc/AppianAnywhere</dataSourceKey>
         <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
         <entities>
             <entity>
@@ -90,4 +89,4 @@
             <groups/>
         </role>
     </roleMap>
-</dataStoreHaul>
+</dataStoreHaul><!--updated on 2016-10-24T12:43:57.375-->

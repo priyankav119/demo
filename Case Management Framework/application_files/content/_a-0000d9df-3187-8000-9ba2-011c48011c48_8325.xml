@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_safeUserLink</name>
         <uuid>_a-0000d9df-3187-8000-9ba2-011c48011c48_8325</uuid>
@@ -16,7 +15,7 @@
         </visibility>
         <definition>= if(
   or(
-    #&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(
+    #"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(
       ri!user
     ),
     not(
@@ -26,7 +25,7 @@
     )
   ),
   null,
-  #&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+  #"SYSTEM_SYSRULES_userRecordLink"(
     user: ri!user
   )
 )</definition>
@@ -36,9 +35,9 @@
                 <name>User</name>
                 <namespace>http://www.appian.com/ae/types/2009</namespace>
             </type>
-            <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -50,9 +49,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -68,4 +65,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:05.484-->

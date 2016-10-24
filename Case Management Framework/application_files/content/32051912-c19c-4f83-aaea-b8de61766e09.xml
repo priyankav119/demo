@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ordersByCutomer</name>
         <uuid>32051912-c19c-4f83-aaea-b8de61766e09</uuid>
@@ -15,67 +14,67 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
     batchSize: ri!itemsPerPage,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;OrderDate&quot;,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "OrderDate",
       ascending: false
     )
   ),
   with(
     local!datasubset: queryrecord(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;OrderNum&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;OrderDate&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Total&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Status&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;id&quot;),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field: &quot;Customer.id&quot;),          
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
+      #"SYSTEM_SYSRULES_query"(
+        selection: #"SYSTEM_SYSRULES_querySelection"(columns: {
+          #"SYSTEM_SYSRULES_queryColumn"(field: "OrderNum"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "OrderDate"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Total"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Status"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "id"),
+          #"SYSTEM_SYSRULES_queryColumn"(field: "Customer.id"),          
         }),
-        filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-          field: &quot;Customer.id&quot;,
-          operator: &quot;=&quot;,
+        filter: #"SYSTEM_SYSRULES_queryFilter"(
+          field: "Customer.id",
+          operator: "=",
           value: ri!customerId
         ),
         pagingInfo: local!pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_gridField&quot;(
+    #"SYSTEM_SYSRULES_gridField"(
       label: ri!gridLabel,
       instructions: ri!gridInstructions,
       totalCount: local!datasubset.totalCount,
       columns: {
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;OrderNum&quot;,
-          field: &quot;OrderNum&quot;,
-          data: index(local!datasubset.data, &quot;OrderNum&quot;, {}),
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "OrderNum",
+          field: "OrderNum",
+          data: index(local!datasubset.data, "OrderNum", {}),
           links: apply(
-            #&quot;SYSTEM_SYSRULES_recordLink&quot;(
-              label: &quot;Go to record dashboard&quot;,
-              recordType: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
+            #"SYSTEM_SYSRULES_recordLink"(
+              label: "Go to record dashboard",
+              recordType: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
               identifier: _,
-              dashboard: &quot;summary&quot;
+              dashboard: "summary"
             ),
             local!datasubset.identifiers
           )
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;OrderDate&quot;,
-          field: &quot;OrderDate&quot;,
-          data: index(local!datasubset.data, &quot;OrderDate&quot;, {})
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "OrderDate",
+          field: "OrderDate",
+          data: index(local!datasubset.data, "OrderDate", {})
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Total&quot;,
-          field: &quot;Total&quot;,
-          data: dollar(index(local!datasubset.data, &quot;Total&quot;, {}), 2, 0)
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Total",
+          field: "Total",
+          data: dollar(index(local!datasubset.data, "Total", {}), 2, 0)
         ),
-        #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-          label: &quot;Status&quot;,
-          field: &quot;Status&quot;,
-          data: index(local!datasubset.data, &quot;Status&quot;, {})
+        #"SYSTEM_SYSRULES_gridTextColumn"(
+          label: "Status",
+          field: "Status",
+          data: index(local!datasubset.data, "Status", {})
         )
       },
       value: local!pagingInfo,
@@ -115,6 +114,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -126,9 +126,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -144,4 +142,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:02.922-->

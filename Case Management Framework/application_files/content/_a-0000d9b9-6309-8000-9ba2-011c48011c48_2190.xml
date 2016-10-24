@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_GenerateRecordIdentifiers</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_2190</uuid>
@@ -17,44 +16,44 @@
         <definition>= if(
   keyval(
     ri!recordAssociation,
-    &quot;recordUUID&quot;,
-    &quot;=&quot;,
-    &quot;,&quot;
-  ) = &quot;SYSTEM_RECORD_TYPE_USER&quot;,
-  #&quot;SYSTEM_SYSRULES_userRecordIdentifier&quot;(
+    "recordUUID",
+    "=",
+    ","
+  ) = "SYSTEM_RECORD_TYPE_USER",
+  #"SYSTEM_SYSRULES_userRecordIdentifier"(
     touser(
       split(
         stripwith(
           keyval(
             ri!recordAssociation,
-            &quot;identifiers&quot;,
-            &quot;=&quot;,
-            &quot;]&quot;
+            "identifiers",
+            "=",
+            "]"
           ),
-          &quot; &quot;
+          " "
         ),
-        &quot;;&quot;
+        ";"
       )
     )
   ),
-  #&quot;SYSTEM_SYSRULES_toRecordIdentifier&quot;(
-    recordType: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1466&quot;[wherecontains(
+  #"SYSTEM_SYSRULES_toRecordIdentifier"(
+    recordType: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1466"[wherecontains(
       keyval(
-        ri!recordAssociation, &quot;recordName&quot;, &quot;=&quot;, &quot;,&quot;
-      ), #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;
+        ri!recordAssociation, "recordName", "=", ","
+      ), #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464"
     )],
     identifier: tointeger(
       split(
         stripwith(
           keyval(
             ri!recordAssociation,
-            &quot;identifiers&quot;,
-            &quot;=&quot;,
-            &quot;]&quot;
+            "identifiers",
+            "=",
+            "]"
           ),
-          &quot; &quot;
+          " "
         ),
-        &quot;;&quot;
+        ";"
       )
     )
   )
@@ -67,6 +66,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -78,9 +78,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -96,4 +94,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.332-->

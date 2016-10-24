@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiSectionDetailedSrCasesReport</name>
         <uuid>2368f26b-1083-4645-926a-bcc43ae16dc0</uuid>
-        <description></description>
+        <description>Shows a section with filterable grid showing details for each CSR case.</description>
         <parentUuid>_a-0000da89-b5e9-8000-9ba2-011c48011c48_3881</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -15,85 +14,85 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>=load(
-  local!gridPI1:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,10,#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;c2&quot;)),
+  local!gridPI1:#"SYSTEM_SYSRULES_pagingInfo"(1,10,#"SYSTEM_SYSRULES_sortInfo"(field:"c2")),
   with(
     local!srReportData:a!queryProcessAnalytics(
-      report:#&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3922&quot;,
-      contextProcessModels:#&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3923&quot;,
-      query:#&quot;SYSTEM_SYSRULES_query&quot;(
-        logicalExpression:if(and(not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!statusFilter)),not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!typeFilter))),
-          #&quot;SYSTEM_SYSRULES_queryLogicalExpression&quot;(
-            operator:&quot;AND&quot;,
+      report:#"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3922",
+      contextProcessModels:#"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3923",
+      query:#"SYSTEM_SYSRULES_query"(
+        logicalExpression:if(and(not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!statusFilter)),not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!typeFilter))),
+          #"SYSTEM_SYSRULES_queryLogicalExpression"(
+            operator:"AND",
             filters:{
-              #&quot;SYSTEM_SYSRULES_queryFilter&quot;(&quot;c10&quot;,&quot;=&quot;,ri!statusFilter),/* Status column in portal report */
-              #&quot;SYSTEM_SYSRULES_queryFilter&quot;(&quot;c9&quot;,&quot;=&quot;,ri!typeFilter)/* SR Type column in portal report */
+              #"SYSTEM_SYSRULES_queryFilter"("c10","=",ri!statusFilter),/* Status column in portal report */
+              #"SYSTEM_SYSRULES_queryFilter"("c9","=",ri!typeFilter)/* SR Type column in portal report */
             }
           ),
           null
         ),
         filter:if(or(
-          and(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!statusFilter),#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!typeFilter)),
-          and(not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!statusFilter)),not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!typeFilter)))),
+          and(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!statusFilter),#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!typeFilter)),
+          and(not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!statusFilter)),not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!typeFilter)))),
           null,
-          if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!typeFilter),
-            #&quot;SYSTEM_SYSRULES_queryFilter&quot;(&quot;c10&quot;,&quot;=&quot;,ri!statusFilter),/* Status column in portal report */
-            #&quot;SYSTEM_SYSRULES_queryFilter&quot;(&quot;c9&quot;,&quot;=&quot;,ri!typeFilter)/* SR Type column in portal report */
+          if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!typeFilter),
+            #"SYSTEM_SYSRULES_queryFilter"("c10","=",ri!statusFilter),/* Status column in portal report */
+            #"SYSTEM_SYSRULES_queryFilter"("c9","=",ri!typeFilter)/* SR Type column in portal report */
           )
         ),
-        pagingInfo:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,10,null)
+        pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(1,10,null)
       )
     ),
     {
-      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-        label:&quot;Detailed Customer Service Request Report&quot;,
+      #"SYSTEM_SYSRULES_sectionLayout"(
+        label:"Detailed Customer Service Request Report",
         firstColumnContents:{
-          #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-            label:&quot;Status Filter&quot;,
-            choiceLabels:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;,
-            placeholderLabel:&quot;--- Status filter ---&quot;,
-            choiceValues:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;,
+          #"SYSTEM_SYSRULES_dropdownField"(
+            label:"Status Filter",
+            choiceLabels:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630",
+            placeholderLabel:"--- Status filter ---",
+            choiceValues:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630",
             value:ri!statusFilter,
             saveInto:ri!statusFilter
           )
         },
         secondColumnContents:{
-          #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-            label:&quot;Type Filter&quot;,
-            choiceLabels:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620&quot;,
-            placeholderLabel:&quot;--- Type filter ---&quot;,
-            choiceValues:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620&quot;,
+          #"SYSTEM_SYSRULES_dropdownField"(
+            label:"Type Filter",
+            choiceLabels:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620",
+            placeholderLabel:"--- Type filter ---",
+            choiceValues:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620",
             value:ri!typeFilter,
             saveInto:ri!typeFilter
           )
         }
       ),
-      #&quot;SYSTEM_SYSRULES_gridField&quot;(
+      #"SYSTEM_SYSRULES_gridField"(
         totalCount:local!srReportData.totalCount,
         columns:{
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Request Num&quot;,
-            field:&quot;c0&quot;,
-            data:index(local!srReportData.data,&quot;c0&quot;,{}),
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Request Num",
+            field:"c0",
+            data:index(local!srReportData.data,"c0",{}),
             links:apply(
-              #&quot;SYSTEM_SYSRULES_recordLink&quot;(recordType:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950&quot;,identifier:_),
-              index(local!srReportData.data,&quot;dp0&quot;,{})
+              #"SYSTEM_SYSRULES_recordLink"(recordType:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950",identifier:_),
+              index(local!srReportData.data,"dp0",{})
             )
           ),
           apply(
-            #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897&quot;(columnConfig:_, data:local!srReportData.data, showLink:true),
+            #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897"(columnConfig:_, data:local!srReportData.data, showLink:true),
             local!srReportData.columnConfigs[{2,3,4,5,6,7}]
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Related Order&quot;,
-            field:&quot;c12&quot;,
-            data:index(local!srReportData.data,&quot;c12&quot;,{}),
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Related Order",
+            field:"c12",
+            data:index(local!srReportData.data,"c12",{}),
             links:apply(
-              #&quot;SYSTEM_SYSRULES_recordLink&quot;(recordType:#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,identifier:_),
-              index(local!srReportData.data,&quot;dp12&quot;,{})
+              #"SYSTEM_SYSRULES_recordLink"(recordType:#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",identifier:_),
+              index(local!srReportData.data,"dp12",{})
             )
           ),
           apply(
-            #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897&quot;(columnConfig:_, data:local!srReportData.data, showLink:true),
+            #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2897"(columnConfig:_, data:local!srReportData.data, showLink:true),
             local!srReportData.columnConfigs[{9,10}]
           )
         },
@@ -121,6 +120,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -132,9 +132,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -150,4 +148,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.487-->

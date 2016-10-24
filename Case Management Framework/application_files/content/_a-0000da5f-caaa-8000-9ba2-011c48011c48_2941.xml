@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getTaskPriorityImage</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2941</uuid>
-        <description></description>
+        <description>Utility expression used to format a cell in a GridLayout as a Task Priority Image</description>
         <parentUuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2880</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -14,15 +13,15 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!priorities),
+        <definition>= if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!priorities),
   {},
   displayvalue(
     ri!priorities[ri!index],
     enumerate(3),
     {
-      #&quot;SYSTEM_SYSRULES_documentImage&quot;(document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;PRIORITY_LOW&quot;)),
-      #&quot;SYSTEM_SYSRULES_documentImage&quot;(document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon:&quot;TREND_FLAT&quot;)),
-      #&quot;SYSTEM_SYSRULES_documentImage&quot;(document: #&quot;SYSTEM_SYSRULES_iconIndicator&quot;(icon: &quot;PRIORITY_HIGH&quot;))
+      #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"(icon: "PRIORITY_LOW")),
+      #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"(icon:"TREND_FLAT")),
+      #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"(icon: "PRIORITY_HIGH"))
     },
     {}
   )
@@ -42,6 +41,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -53,9 +53,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -71,4 +69,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:01.802-->

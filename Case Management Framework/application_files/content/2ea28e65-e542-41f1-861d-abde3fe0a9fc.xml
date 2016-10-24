@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiChartCasesByType</name>
         <uuid>2ea28e65-e542-41f1-861d-abde3fe0a9fc</uuid>
-        <description></description>
+        <description>Shows all CSR cases by Type in a Pie chart.</description>
         <parentUuid>_a-0000da89-b5e9-8000-9ba2-011c48011c48_3881</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -15,34 +14,34 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
     batchSize: 10,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;count&quot;,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "count",
       ascending: false
     )
   ),
   with(
     local!datasubset: queryrecord(
-      #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        aggregation: #&quot;SYSTEM_SYSRULES_queryAggregation&quot;( {
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;serviceReqData.type&quot;,alias:&quot;type&quot;,isGrouping:true),
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;serviceReqData.id&quot;,alias:&quot;count&quot;, aggregationFunction:&quot;COUNT&quot;),
+      #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950",
+      #"SYSTEM_SYSRULES_query"(
+        aggregation: #"SYSTEM_SYSRULES_queryAggregation"( {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "serviceReqData.type",alias:"type",isGrouping:true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "serviceReqData.id",alias:"count", aggregationFunction:"COUNT"),
         }),
         pagingInfo: local!pagingInfo
       )
     ),
     {
-      #&quot;SYSTEM_SYSRULES_pieChartField&quot;(
-        label:&quot;Customer Service Request Cases by Type&quot;,
+      #"SYSTEM_SYSRULES_pieChartField"(
+        label:"Customer Service Request Cases by Type",
         series:apply(
-          #&quot;SYSTEM_SYSRULES_chartSeries&quot;(label:_,data:_,links:_),
+          #"SYSTEM_SYSRULES_chartSeries"(label:_,data:_,links:_),
           merge(
-            index(local!datasubset.data,&quot;type&quot;,{}),
-            index(local!datasubset.data,&quot;count&quot;,{}),
-            apply(#&quot;SYSTEM_SYSRULES_dynamicLink&quot;(value:_,saveInto:ri!typeFilter),index(local!datasubset.data,&quot;type&quot;,{}))
+            index(local!datasubset.data,"type",{}),
+            index(local!datasubset.data,"count",{}),
+            apply(#"SYSTEM_SYSRULES_dynamicLink"(value:_,saveInto:ri!typeFilter),index(local!datasubset.data,"type",{}))
           )
         ),
         showtooltips: true
@@ -60,6 +59,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -71,9 +71,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -89,4 +87,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.534-->

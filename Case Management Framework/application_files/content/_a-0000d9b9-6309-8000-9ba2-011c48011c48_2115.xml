@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getAllCustomerFieldsById</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_2115</uuid>
@@ -14,79 +13,79 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition> #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-  entity: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2099&quot;,
-  query: #&quot;SYSTEM_SYSRULES_query&quot;(
-    selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(
+        <definition> #"SYSTEM_SYSRULES_queryEntity"(
+  entity: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2099",
+  query: #"SYSTEM_SYSRULES_query"(
+    selection: #"SYSTEM_SYSRULES_querySelection"(
       columns: {
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;id&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "id"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;GlobalID&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "GlobalID"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Name&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Name"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Description&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Description"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;AccountOwner&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "AccountOwner"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;ContactName&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "ContactName"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Email&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Email"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;OfficePhone&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "OfficePhone"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;HomePhone&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "HomePhone"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;MobilePhone&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "MobilePhone"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Website&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Website"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Status&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Status"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;ShippingAddress&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "ShippingAddress"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;BillingAddress&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "BillingAddress"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;FolderID&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "FolderID"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;LogoID&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "LogoID"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;Industry&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "Industry"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;StockTicker&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "StockTicker"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;CustomerSince&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "CustomerSince"
         ),
-        #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-          field: &quot;InactiveFlag&quot;
+        #"SYSTEM_SYSRULES_queryColumn"(
+          field: "InactiveFlag"
         )			
       }
     ),
-    filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-      field: &quot;id&quot;,
-      operator: &quot;=&quot;,
+    filter: #"SYSTEM_SYSRULES_queryFilter"(
+      field: "id",
+      operator: "=",
       value: ri!cid
     ),
-    pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
       startIndex: 1,
       batchSize: 1
     )
@@ -100,6 +99,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -127,4 +127,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.079-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_getImageByStatus</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2838</uuid>
@@ -14,9 +13,9 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=if(caseStatus=#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[4],
-  #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2837&quot;,
-  #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2836&quot;
+        <definition>=if(caseStatus=#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[4],
+  #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2837",
+  #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2836"
 )</definition>
         <namedTypedValue>
             <name>caseStatus</name>
@@ -27,6 +26,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -38,9 +38,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -56,4 +54,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.186-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_RecordPicker</name>
         <uuid>883b3172-4929-4171-98ef-34f0407545bf</uuid>
@@ -14,7 +13,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>/*&#xD;To Test, load these base test values:&#xD;  record: (Point to a Constant of Record Type)&#xD;  primaryKeyField:  (If blank, defaults to &quot;id&quot; - if using a Process Backed Record, primaryKeyField must point to a process variable of Integer type)&#xD;  searchFields: (The name of the fields you want to search)&#xD;&#xD;*/&#xD;  with(&#xD;    local!primaryKeyField: if (isnull(ri!primaryKeyField), &quot;id&quot;, ri!primaryKeyField),&#xD;    local!labelField: if (isnull(ri!labelField), ri!searchFields[1], ri!labelField),&#xD;    #&quot;SYSTEM_SYSRULES_pickerFieldCustom&quot;(&#xD;      label: ri!label,&#xD;      labelPosition: ri!labelPosition,&#xD;      instructions: ri!instructions,&#xD;      required: ri!required,&#xD;      requiredMessage: ri!requiredMessage,&#xD;      readOnly: ri!readOnly,&#xD;      disabled: ri!disabled,&#xD;      maxSelections: ri!maxSelections,&#xD;      validations: ri!validations,&#xD;      validationGroup: ri!validationGroup,&#xD;      suggestFunction: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1458&quot;(&#xD;        record: ri!record,&#xD;        primaryKeyField: local!primaryKeyField,&#xD;        searchFields: ri!searchFields,&#xD;        labelField: local!labelField,&#xD;        searchTerm: _,&#xD;        existingIds: if (ri!requireUniqueValues, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1456&quot;( array: ri!selectedValues, index: local!primaryKeyField, default: {0} ), null)&#xD;      ),&#xD;      value: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1456&quot;( array: ri!selectedValues, index: tostring(local!primaryKeyField) ),&#xD;      selectedLabels: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1456&quot;( array: ri!selectedValues, index: local!labelField ),&#xD;      saveInto: {&#xD;        ri!saveInto,&#xD;        a!save(&#xD;          ri!selectedValues, &#xD;          { /* This bracket is to force an array result */&#xD;            if (or(isnull(save!value), count(save!value) &lt; 1), &#xD;              {},&#xD;              if (and(count(save!value) = 1, not(isnull(save!value[1])), tointeger(save!value[1]) &gt; 0),&#xD;                #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1457&quot;(&#xD;                  record: ri!record,&#xD;                  primaryKeyField: local!primaryKeyField,&#xD;                  primaryKeyValue: save!value[1]&#xD;                ),&#xD;                apply(&#xD;                  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1457&quot;(&#xD;                    record: ri!record,&#xD;                    primaryKeyField: local!primaryKeyField,&#xD;                    primaryKeyValue: _&#xD;                  ),&#xD;                  save!value&#xD;                )&#xD;              )&#xD;            )&#xD;          }&#xD;        )&#xD;      }&#xD;    )&#xD;  )&#xD;</definition>
+        <definition>/*&#13;To Test, load these base test values:&#13;  record: (Point to a Constant of Record Type)&#13;  primaryKeyField:  (If blank, defaults to "id" - if using a Process Backed Record, primaryKeyField must point to a process variable of Integer type)&#13;  searchFields: (The name of the fields you want to search)&#13;&#13;*/&#13;  with(&#13;    local!primaryKeyField: if (isnull(ri!primaryKeyField), "id", ri!primaryKeyField),&#13;    local!labelField: if (isnull(ri!labelField), ri!searchFields[1], ri!labelField),&#13;    #"SYSTEM_SYSRULES_pickerFieldCustom"(&#13;      label: ri!label,&#13;      labelPosition: ri!labelPosition,&#13;      instructions: ri!instructions,&#13;      maxSelections: ri!maxSelections,&#13;      suggestFunction: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1458"(&#13;        record: ri!record,&#13;        primaryKeyField: local!primaryKeyField,&#13;        searchFields: ri!searchFields,&#13;        labelField: local!labelField,&#13;        searchTerm: _,&#13;        existingIds: if (ri!requireUniqueValues, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1456"( array: ri!selectedValues, index: local!primaryKeyField, default: {0} ), null)&#13;      ),&#13;      selectedLabels: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1456"( array: ri!selectedValues, index: local!labelField ),&#13;      value: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1456"( array: ri!selectedValues, index: tostring(local!primaryKeyField) ),&#13;      saveInto: {&#13;        ri!saveInto,&#13;        a!save(&#13;          ri!selectedValues, &#13;          { /* This bracket is to force an array result */&#13;            if (or(isnull(save!value), count(save!value) &lt; 1), &#13;              {},&#13;              if (and(count(save!value) = 1, not(isnull(save!value[1])), tointeger(save!value[1]) &gt; 0),&#13;                #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1457"(&#13;                  record: ri!record,&#13;                  primaryKeyField: local!primaryKeyField,&#13;                  primaryKeyValue: save!value[1]&#13;                ),&#13;                apply(&#13;                  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1457"(&#13;                    record: ri!record,&#13;                    primaryKeyField: local!primaryKeyField,&#13;                    primaryKeyValue: _&#13;                  ),&#13;                  save!value&#13;                )&#13;              )&#13;            )&#13;          }&#13;        )&#13;      },&#13;      required: ri!required,&#13;      requiredMessage: ri!requiredMessage,&#13;      readOnly: ri!readOnly,&#13;      disabled: ri!disabled,&#13;      validations: ri!validations,&#13;      validationGroup: ri!validationGroup&#13;    )&#13;  )&#13;</definition>
         <namedTypedValue>
             <name>label</name>
             <type>
@@ -137,11 +136,13 @@
         <namedTypedValue>
             <name>saveInto</name>
             <type>
-                <name>Variant</name>
+                <name>Save</name>
                 <namespace>http://www.appian.com/ae/types/2009</namespace>
             </type>
+            <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -153,9 +154,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -171,4 +170,100 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>label</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>labelPosition</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>instructions</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>required</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>requiredMessage</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>readOnly</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>disabled</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:int"/>
+                    <a:nameRef>maxSelections</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <a:nameRef>validations</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>validationGroup</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Expression">null</a:value>
+                    <a:nameRef>record</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>primaryKeyField</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                    <a:nameRef>searchFields</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>labelField</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>requireUniqueValues</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>selectedValues</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:Save"/>
+                    <a:nameRef>saveInto</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul><!--updated on 2016-10-24T12:44:04.163-->

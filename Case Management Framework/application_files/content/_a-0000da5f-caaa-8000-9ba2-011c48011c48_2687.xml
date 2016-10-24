@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_createUiMessage</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2687</uuid>
@@ -14,11 +13,11 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_richTextDisplayField&quot;(
-  labelPosition: &quot;COLLAPSED&quot;,
-  value: #&quot;SYSTEM_SYSRULES_richTextItem&quot;(
+        <definition>#"SYSTEM_SYSRULES_richTextDisplayField"(
+  labelPosition: "COLLAPSED",
+  value: #"SYSTEM_SYSRULES_richTextItem"(
     text: ri!msg,
-    style: &quot;HEADER_SMALL&quot;
+    style: "HEADER_SMALL"
   )
 )</definition>
         <namedTypedValue>
@@ -30,6 +29,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -41,9 +41,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -59,4 +57,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:02.187-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiSectionCaseHistory</name>
         <uuid>9505777e-cfb8-4b3d-890d-1da3b1a65220</uuid>
@@ -14,47 +13,47 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-  label:&quot;Case History&quot;,
+        <definition>#"SYSTEM_SYSRULES_sectionLayout"(
+  label:"Case History",
   firstColumnContents:{
     load(
-      local!gridPI:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+      local!gridPI:#"SYSTEM_SYSRULES_pagingInfo"(
         startIndex:1,
         batchSize:ri!batchSize,
-        sort:#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;timestamp&quot;)
+        sort:#"SYSTEM_SYSRULES_sortInfo"(field:"timestamp")
       ),
       with(
         local!gridData:todatasubset(ri!caseHistory, local!gridPI),
-        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+        #"SYSTEM_SYSRULES_gridField"(
           totalCount:local!gridData.totalCount,
           columns:{
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;Date &amp; Time&quot;,
-              field:&quot;timestamp&quot;,
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"Date &amp; Time",
+              field:"timestamp",
               data:apply(
-                datetext(_,&quot;MMM dd, yyyy hh:mm a&quot;),
-                index(local!gridData.data,&quot;timestamp&quot;,{})
+                datetext(_,"MMM dd, yyyy hh:mm a"),
+                index(local!gridData.data,"timestamp",{})
               )
             ),
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;User&quot;,
-              field:&quot;user&quot;,
-              data:index(local!gridData.data,&quot;user&quot;,{})
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"User",
+              field:"user",
+              data:index(local!gridData.data,"user",{})
             ),
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;User Title&quot;,
-              field:&quot;userTitle&quot;,
-              data:index(local!gridData.data,&quot;userTitle&quot;,{})
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"User Title",
+              field:"userTitle",
+              data:index(local!gridData.data,"userTitle",{})
             ),
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;Action&quot;,
-              field:&quot;action&quot;,
-              data:index(local!gridData.data,&quot;action&quot;,{})
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"Action",
+              field:"action",
+              data:index(local!gridData.data,"action",{})
             ),
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;Notes&quot;,
-              field:&quot;notes&quot;,
-              data:index(local!gridData.data,&quot;notes&quot;,{})
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"Notes",
+              field:"notes",
+              data:index(local!gridData.data,"notes",{})
             )
           },
           value:local!gridPI,
@@ -81,6 +80,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -92,9 +92,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -110,4 +108,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.355-->

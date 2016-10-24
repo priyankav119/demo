@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiGetInitialRequestDetails</name>
         <uuid>747235e9-8060-436f-85f8-5c1a2fce0b7d</uuid>
@@ -15,16 +14,16 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>{
-  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+  #"SYSTEM_SYSRULES_sectionLayout"(
     firstColumnContents:{
-      #&quot;883b3172-4929-4171-98ef-34f0407545bf&quot;(
-        label:&quot;1. Select a Customer&quot;,
-        instructions:&quot;Select a customer to begin the service request&quot;,
+      #"883b3172-4929-4171-98ef-34f0407545bf"(
+        label:"1. Select a Customer",
+        instructions:"Select a customer to begin the service request",
         required:true,
         maxSelections:1,
-        record:#&quot;_a-0000d9b8-a7c6-8000-9e06-010000010000_504&quot;,
-        primaryKeyField:&quot;id&quot;,
-        searchFields: {&quot;Name&quot;, &quot;GlobalID&quot;, &quot;ContactName&quot;},
+        record:#"_a-0000d9b8-a7c6-8000-9e06-010000010000_504",
+        primaryKeyField:"id",
+        searchFields: {"Name", "GlobalID", "ContactName"},
         selectedValues:ri!customer,
         saveInto: {
           ri!customer,
@@ -36,13 +35,13 @@
        */
       /*if(fn!isusermemberofgroup(ri!requestUsr,cons!CASE_APP_POWER_USERS),
         rule!CASE_APP_RecordPicker(
-          label:&quot;1. Select a Customer&quot;,
-          instructions:&quot;Select a customer to begin the service request&quot;,
+          label:"1. Select a Customer",
+          instructions:"Select a customer to begin the service request",
           required:true,
           maxSelections:1,
           record:cons!CASE_APP_CUSTOMER_RECORD_TYPE,
-          primaryKeyField:&quot;id&quot;,
-          searchFields: {&quot;Name&quot;, &quot;GlobalID&quot;, &quot;ContactName&quot;},
+          primaryKeyField:"id",
+          searchFields: {"Name", "GlobalID", "ContactName"},
           selectedValues:ri!customer,
           saveInto: {
             ri!customer,
@@ -52,12 +51,12 @@
         load(
           local!customerList:rule!CASE_APP_getCustomerByOwner(ri!requestUsr, a!pagingInfo(startIndex:1,batchSize:-1)),
           if(local!customerList.totalCount=0,
-            rule!CASE_APP_createUiMessage(&quot;There are currently no Customers assigned to you&quot;),
+            rule!CASE_APP_createUiMessage("There are currently no Customers assigned to you"),
             a!dropdownField(
-              label:&quot;1. Select a Customer&quot;,
-              instructions:&quot;Select a customer to begin the service request&quot;,
+              label:"1. Select a Customer",
+              instructions:"Select a customer to begin the service request",
               choiceLabels:local!customerList.data.Name,
-              placeholderLabel:&quot;---Select a Customer---&quot;,
+              placeholderLabel:"---Select a Customer---",
               choiceValues:local!customerList.data,
               value:ri!customer,
               saveInto: {
@@ -74,25 +73,25 @@
       )*/
     },
     secondColumnContents:{
-      if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!customer),
+      if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!customer),
         {},
-        if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!customer.LogoID),
+        if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!customer.LogoID),
           {},
-          #&quot;SYSTEM_SYSRULES_imageField&quot;(
-            images:#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:fn!todocument(ri!customer.LogoID)),
-            size:&quot;THUMBNAIL&quot;
+          #"SYSTEM_SYSRULES_imageField"(
+            images:#"SYSTEM_SYSRULES_documentImage"(document:fn!todocument(ri!customer.LogoID)),
+            size:"THUMBNAIL"
           )
         )
       )
     }
   ),
-  if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!customer),
+  if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!customer),
     {},
-    #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-      label:&quot;2. What do you need help with?&quot;,
-      choiceLabels:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620&quot;,
-      placeholderLabel:&quot;--Select Case Type---&quot;,
-      choiceValues:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620&quot;,
+    #"SYSTEM_SYSRULES_dropdownField"(
+      label:"2. What do you need help with?",
+      placeholderLabel:"--Select Case Type---",
+      choiceLabels:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620",
+      choiceValues:#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620",
       value:ri!serviceReq.type,
       saveInto:{
         ri!serviceReq.type,
@@ -132,8 +131,8 @@
         <namedTypedValue>
             <name>serviceReq</name>
             <type>
-                <name>Variant</name>
-                <namespace>http://www.appian.com/ae/types/2009</namespace>
+                <name>CASE_APP_ServiceRequest</name>
+                <namespace>urn:com:appian:types:CASE_APP</namespace>
             </type>
         </namedTypedValue>
         <namedTypedValue>
@@ -142,9 +141,9 @@
                 <name>User</name>
                 <namespace>http://www.appian.com/ae/types/2009</namespace>
             </type>
-            <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -156,9 +155,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -174,4 +171,40 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+    <typedValue>
+        <type>
+            <name>RuleTestConfig?list</name>
+            <namespace>http://www.appian.com/ae/types/2009</namespace>
+        </type>
+        <value>
+            <el>
+                <a:name/>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string"/>
+                    <a:nameRef>customer</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>q1</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="xsd:boolean"/>
+                    <a:nameRef>hideOkButton</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:n1="urn:com:appian:types:CASE_APP" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="n1:CASE_APP_ServiceRequest"/>
+                    <a:nameRef>serviceReq</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+                <a:ruleInputTestConfigs>
+                    <a:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" xsi:type="a:User"/>
+                    <a:nameRef>requestUsr</a:nameRef>
+                    <a:id/>
+                </a:ruleInputTestConfigs>
+            </el>
+        </value>
+    </typedValue>
+</contentHaul><!--updated on 2016-10-24T12:44:07.271-->

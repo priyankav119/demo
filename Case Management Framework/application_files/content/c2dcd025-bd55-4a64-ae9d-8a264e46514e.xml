@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_uiGridDetailedGridViewByIndustry</name>
         <uuid>c2dcd025-bd55-4a64-ae9d-8a264e46514e</uuid>
@@ -15,77 +14,77 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!gridPI: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!gridPI: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
     batchSize: 10,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;OrderNum&quot;,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "OrderNum",
       ascending: true
     )
   ),
   with(
     local!gridData: queryrecord(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        selection:#&quot;SYSTEM_SYSRULES_querySelection&quot;(
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
+      #"SYSTEM_SYSRULES_query"(
+        selection:#"SYSTEM_SYSRULES_querySelection"(
           columns:{
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;id&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;OrderNum&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;OrderDate&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;Total&quot;, alias:&quot;OrderTotal&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;PurchaserName&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;Customer.Industry&quot;, alias:&quot;Industry&quot;),
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;Status&quot;)
+            #"SYSTEM_SYSRULES_queryColumn"(field:"id"),
+            #"SYSTEM_SYSRULES_queryColumn"(field:"OrderNum"),
+            #"SYSTEM_SYSRULES_queryColumn"(field:"OrderDate"),
+            #"SYSTEM_SYSRULES_queryColumn"(field:"Total", alias:"OrderTotal"),
+            #"SYSTEM_SYSRULES_queryColumn"(field:"PurchaserName"),
+            #"SYSTEM_SYSRULES_queryColumn"(field:"Customer.Industry", alias:"Industry"),
+            #"SYSTEM_SYSRULES_queryColumn"(field:"Status")
           }
         ),
-        filter:if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!industryFilter),
+        filter:if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!industryFilter),
           null,
-          #&quot;SYSTEM_SYSRULES_queryFilter&quot;(field:&quot;Customer.Industry&quot;,operator:&quot;=&quot;,value:ri!industryFilter)
+          #"SYSTEM_SYSRULES_queryFilter"(field:"Customer.Industry",operator:"=",value:ri!industryFilter)
         ),
         pagingInfo: local!gridPI
       )
     ),
     {
-      #&quot;SYSTEM_SYSRULES_gridField&quot;(
-        label:&quot;Detailed Orders View&quot;,
+      #"SYSTEM_SYSRULES_gridField"(
+        label:"Detailed Orders View",
         totalCount:local!gridData.totalCount,
         columns:{
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Order #&quot;,
-            field:&quot;OrderNum&quot;,
-            data:index(local!gridData.data,&quot;OrderNum&quot;,{}),
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Order #",
+            field:"OrderNum",
+            data:index(local!gridData.data,"OrderNum",{}),
             links:apply(
-              #&quot;SYSTEM_SYSRULES_recordLink&quot;(recordType:#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,identifier:_),
-              index(local!gridData.data,&quot;id&quot;,{})
+              #"SYSTEM_SYSRULES_recordLink"(recordType:#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",identifier:_),
+              index(local!gridData.data,"id",{})
             )
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Order Date&quot;,
-            field:&quot;OrderDate&quot;,
-            data:index(local!gridData.data,&quot;OrderDate&quot;,{})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Order Date",
+            field:"OrderDate",
+            data:index(local!gridData.data,"OrderDate",{})
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Order Total&quot;,
-            field:&quot;OrderTotal&quot;,
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Order Total",
+            field:"OrderTotal",
             data:apply(
               fn!dollar,
-              index(local!gridData.data,&quot;OrderTotal&quot;,{})
+              index(local!gridData.data,"OrderTotal",{})
             )
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Purchaser Name&quot;,
-            field:&quot;PurchaserName&quot;,
-            data:index(local!gridData.data,&quot;PurchaserName&quot;,{})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Purchaser Name",
+            field:"PurchaserName",
+            data:index(local!gridData.data,"PurchaserName",{})
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Industry&quot;,
-            field:&quot;Industry&quot;,
-            data:index(local!gridData.data,&quot;Industry&quot;,{})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Industry",
+            field:"Industry",
+            data:index(local!gridData.data,"Industry",{})
           ),
-          #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-            label:&quot;Status&quot;,
-            field:&quot;Status&quot;,
-            data:index(local!gridData.data,&quot;Status&quot;,{})
+          #"SYSTEM_SYSRULES_gridTextColumn"(
+            label:"Status",
+            field:"Status",
+            data:index(local!gridData.data,"Status",{})
           )
         },
         value:local!gridPI,
@@ -103,6 +102,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -114,9 +114,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -132,4 +130,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.762-->

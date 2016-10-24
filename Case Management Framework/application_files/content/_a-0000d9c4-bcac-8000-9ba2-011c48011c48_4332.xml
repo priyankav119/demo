@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ProductDashboardDetailsSection</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4332</uuid>
@@ -15,62 +14,62 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>= {
-  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-    label: &quot;Product Details&quot;,
+  #"SYSTEM_SYSRULES_sectionLayout"(
+    label: "Product Details",
     firstColumnContents: {
-      if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!product.productImageDocId),
+      if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!product.productImageDocId),
         {},
-        #&quot;SYSTEM_SYSRULES_imageField&quot;(
-          images:#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:todocument(ri!product.productImageDocId))
+        #"SYSTEM_SYSRULES_imageField"(
+          images:#"SYSTEM_SYSRULES_documentImage"(document:todocument(ri!product.productImageDocId))
         )
       ),
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        label: &quot;Model Number&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Model Number",
+        labelPosition: "ADJACENT",
         value: ri!product.modelNumber,
         readOnly: true
       ),         
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        label: &quot;SKU&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "SKU",
+        labelPosition: "ADJACENT",
         value: ri!product.sku,
         readOnly: true
       ),
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        label: &quot;Category&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Category",
+        labelPosition: "ADJACENT",
         value: ri!product.productCategory,
         readOnly: true
       )
     },
     secondColumnContents: {
-      #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
-        label: &quot;Description&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_paragraphField"(
+        label: "Description",
+        labelPosition: "ADJACENT",
         value: ri!product.description,
         readOnly: true
       ),
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        label: &quot;Manufacturer&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Manufacturer",
+        labelPosition: "ADJACENT",
         value: ri!product.manufacturer,
         readOnly: true
       ),  
-      #&quot;SYSTEM_SYSRULES_dateField&quot;(
-        label:&quot;Release Date&quot;,
-	      labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_dateField"(
+        label:"Release Date",
+	      labelPosition: "ADJACENT",
         value: ri!product.releaseDate,
         readOnly:true
       ),
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        label: &quot;Price&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Price",
+        labelPosition: "ADJACENT",
         value: dollar(ri!product.price),
         readOnly: true
       ),          
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        label: &quot;Quantity&quot;,
-        labelPosition: &quot;ADJACENT&quot;,
+      #"SYSTEM_SYSRULES_textField"(
+        label: "Quantity",
+        labelPosition: "ADJACENT",
         value: ri!product.quantity,
         readOnly: true
       )
@@ -85,6 +84,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -96,9 +96,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -114,4 +112,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:57.676-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_GenerateAllOrderItemHTMLRows</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6190</uuid>
@@ -15,7 +14,7 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>=apply(
-#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6188&quot;(_),
+#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6188"(_),
 
 ri!OrderItems
 )</definition>
@@ -27,6 +26,7 @@ ri!OrderItems
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -38,9 +38,7 @@ ri!OrderItems
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -56,4 +54,4 @@ ri!OrderItems
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.595-->

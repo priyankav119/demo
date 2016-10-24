@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getURLforNewLogo</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_5436</uuid>
@@ -15,13 +14,13 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>if(
-  ri!labelValue.label = &quot;New Logo&quot;,
+  ri!labelValue.label = "New Logo",
   cleanwith(
     right(
       ri!labelValue.value,
       15
     ),
-    &quot;1234567890&quot;
+    "1234567890"
   ),
   null
 )</definition>
@@ -33,6 +32,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -44,9 +44,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -62,4 +60,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.025-->

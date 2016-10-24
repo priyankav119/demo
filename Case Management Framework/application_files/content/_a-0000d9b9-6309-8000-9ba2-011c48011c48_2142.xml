@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_CustomerDashboardContactSection</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_2142</uuid>
@@ -14,36 +13,36 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>    #&quot;SYSTEM_SYSRULES_sectionLayout&quot; (
-        label: &quot;Contact Information&quot;,
+        <definition>    #"SYSTEM_SYSRULES_sectionLayout" (
+        label: "Contact Information",
         firstColumnContents: {
         if(
-            #&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(
+            #"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(
               ri!c.Email
             ),
-            #&quot;SYSTEM_SYSRULES_textField&quot;(
-            label: &quot;Contact Name&quot;,
-            labelPosition: &quot;ADJACENT&quot;,
+            #"SYSTEM_SYSRULES_textField"(
+            label: "Contact Name",
+            labelPosition: "ADJACENT",
             value: ri!c.ContactName,
             readOnly: true,
             saveInto: ri!c.ContactName
             ),
-            #&quot;SYSTEM_SYSRULES_linkField&quot;(
-              label: &quot;Contact Name&quot;,
-              labelPosition: &quot;ADJACENT&quot;,
+            #"SYSTEM_SYSRULES_linkField"(
+              label: "Contact Name",
+              labelPosition: "ADJACENT",
               links: {
-                #&quot;SYSTEM_SYSRULES_safeLink&quot;(
+                #"SYSTEM_SYSRULES_safeLink"(
                   label: ri!c.ContactName,
-                  uri: &quot;mailto:&quot; &amp; ri!c.Email
+                  uri: "mailto:" &amp; ri!c.Email
                 )
               }
             )
           ),
-          #&quot;SYSTEM_SYSRULES_textField&quot;(
-            label: &quot;Email&quot;,
-            labelPosition: &quot;ADJACENT&quot;,
-      validations:if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1640&quot;(ri!c.Email),null,
-      &quot;Please enter a valid email address&quot;)
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Email",
+            labelPosition: "ADJACENT",
+      validations:if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1640"(ri!c.Email),null,
+      "Please enter a valid email address")
       ,
             value: ri!c.Email,
             readOnly: true,
@@ -51,24 +50,24 @@
             )
           },
         secondColumnContents: {  
-          #&quot;SYSTEM_SYSRULES_textField&quot;(
-            label: &quot;Office Phone&quot;,
-            labelPosition: &quot;ADJACENT&quot;,
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Office Phone",
+            labelPosition: "ADJACENT",
             required: false(),
             value: ri!c.OfficePhone,
             readOnly: true,
             saveInto: ri!c.OfficePhone
           ),
-          #&quot;SYSTEM_SYSRULES_textField&quot;(
-            label: &quot;Home Phone&quot;,
-            labelPosition: &quot;ADJACENT&quot;,
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Home Phone",
+            labelPosition: "ADJACENT",
             value: ri!c.HomePhone,
             readOnly: true,
             saveInto: ri!c.HomePhone
             ),
-          #&quot;SYSTEM_SYSRULES_textField&quot;(
-            label: &quot;Mobile Phone&quot;,
-            labelPosition: &quot;ADJACENT&quot;,
+          #"SYSTEM_SYSRULES_textField"(
+            label: "Mobile Phone",
+            labelPosition: "ADJACENT",
             value: ri!c.MobilePhone,
             readOnly: true,
             saveInto: ri!c.MobilePhone
@@ -83,6 +82,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -110,4 +110,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:58.994-->

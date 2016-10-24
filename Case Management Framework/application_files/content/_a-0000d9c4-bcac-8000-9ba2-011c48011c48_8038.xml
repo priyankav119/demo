@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_generateRecordAssocRow</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8038</uuid>
@@ -19,25 +18,25 @@
     isnull(
       ri!primaryKeyField
     ),
-    &quot;id&quot;,
+    "id",
     ri!primaryKeyField
   ),
-  local!labelField:#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8051&quot;(ri!record),
+  local!labelField:#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8051"(ri!record),
   local!datasubset: if(
-    ri!record.@attributes.uuid = &quot;SYSTEM_RECORD_TYPE_USER&quot;,
+    ri!record.@attributes.uuid = "SYSTEM_RECORD_TYPE_USER",
     todatasubset(
       ri!primaryKeyValue,
-      #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+      #"SYSTEM_SYSRULES_pagingInfo"(
         startIndex: 1,
         batchSize: 1
       )
     ),
     queryrecord(
       recordType: ri!record,
-      query: #&quot;SYSTEM_SYSRULES_query&quot;(
-        filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
+      query: #"SYSTEM_SYSRULES_query"(
+        filter: #"SYSTEM_SYSRULES_queryFilter"(
           field: local!primaryKeyField,
-          operator: &quot;=&quot;,
+          operator: "=",
           value: if(
             isnull(
               tointeger(
@@ -50,14 +49,14 @@
             )
           )
         ),
-        selection:#&quot;SYSTEM_SYSRULES_querySelection&quot;(
+        selection:#"SYSTEM_SYSRULES_querySelection"(
           columns:{
-            #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
+            #"SYSTEM_SYSRULES_queryColumn"(
               field:local!labelField
             )
           }
         ),
-        pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+        pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
           startIndex: 1,
           batchSize: 1
         )
@@ -67,39 +66,39 @@
   if(
     local!datasubset.totalCount &gt; 0,
     if(
-    ri!record.@attributes.uuid = &quot;SYSTEM_RECORD_TYPE_USER&quot;,
-    #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(
+    ri!record.@attributes.uuid = "SYSTEM_RECORD_TYPE_USER",
+    #"SYSTEM_SYSRULES_gridRowLayout"(
       contents: {
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Record Type&quot;,
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Record Type",
           readOnly: true(),
-          value: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8048&quot;(ri!record)
+          value: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8048"(ri!record)
         ),
-        #&quot;SYSTEM_SYSRULES_linkField&quot;(
-          label: &quot;Record Link&quot;,
-          links: #&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
-            label: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983&quot;(local!datasubset.data[1]),
+        #"SYSTEM_SYSRULES_linkField"(
+          label: "Record Link",
+          links: #"SYSTEM_SYSRULES_userRecordLink"(
+            label: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983"(local!datasubset.data[1]),
             user: touser(local!datasubset.data[1]),
-            view: &quot;summary&quot;
+            view: "summary"
           )
         )
       }
     )
     ,
-    #&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(
+    #"SYSTEM_SYSRULES_gridRowLayout"(
       contents: {
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Record Type&quot;,
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Record Type",
           readOnly: true(),
-          value: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8048&quot;(ri!record)
+          value: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8048"(ri!record)
         ),
-        #&quot;SYSTEM_SYSRULES_linkField&quot;(
-          label: &quot;Record Link&quot;,
-          links: #&quot;SYSTEM_SYSRULES_recordLink&quot;(
+        #"SYSTEM_SYSRULES_linkField"(
+          label: "Record Link",
+          links: #"SYSTEM_SYSRULES_recordLink"(
             recordType: ri!record,
-            label: index(local!datasubset.data,local!labelField,&quot;N/A&quot;),
+            label: index(local!datasubset.data,local!labelField,"N/A"),
             identifier: ri!primaryKeyValue,
-            view: &quot;summary&quot;
+            view: "summary"
           )
         )
       }
@@ -132,6 +131,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -143,9 +143,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -161,4 +159,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.201-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_uiReportTopCustomersByOrders</name>
         <uuid>642c11ac-a327-423e-bd2b-1d4931779af4</uuid>
@@ -15,23 +14,23 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!chartPI:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,10,#&quot;SYSTEM_SYSRULES_sortInfo&quot;(&quot;numOrders&quot;,false)),
+  local!chartPI:#"SYSTEM_SYSRULES_pagingInfo"(1,10,#"SYSTEM_SYSRULES_sortInfo"("numOrders",false)),
   local!viewAsGrid:true,
   with(
-    local!data:#&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6305&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        aggregation:#&quot;SYSTEM_SYSRULES_queryAggregation&quot;(
+    local!data:#"SYSTEM_SYSRULES_queryEntity"(
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6305",
+      #"SYSTEM_SYSRULES_query"(
+        aggregation:#"SYSTEM_SYSRULES_queryAggregation"(
           {
-            #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(
-              field:&quot;Customer.Name&quot;,
-              alias:&quot;customerName&quot;,
+            #"SYSTEM_SYSRULES_queryAggregationColumn"(
+              field:"Customer.Name",
+              alias:"customerName",
               isGrouping:true
             ),
-            #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(
-              field:&quot;id&quot;,
-              alias:&quot;numOrders&quot;,
-              aggregationFunction:&quot;COUNT&quot;
+            #"SYSTEM_SYSRULES_queryAggregationColumn"(
+              field:"id",
+              alias:"numOrders",
+              aggregationFunction:"COUNT"
             )
           }
         ),
@@ -40,21 +39,21 @@
     ),
     if(local!viewAsGrid,
       {
-        #&quot;SYSTEM_SYSRULES_linkField&quot;(
-          labelPosition:&quot;COLLAPSED&quot;,
-          links: #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label:&quot;View as chart&quot;, value:false, saveInto:local!viewAsGrid)
+        #"SYSTEM_SYSRULES_linkField"(
+          labelPosition:"COLLAPSED",
+          links: #"SYSTEM_SYSRULES_dynamicLink"(label:"View as chart", value:false, saveInto:local!viewAsGrid)
         ),
-        #&quot;SYSTEM_SYSRULES_gridField&quot;(
-          label:&quot;Top Customers by number of Orders&quot;,
+        #"SYSTEM_SYSRULES_gridField"(
+          label:"Top Customers by number of Orders",
           totalCount:local!data.totalCount,
           columns:{
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;Customer&quot;,
-              data:index(local!data.data,&quot;customerName&quot;,{})
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"Customer",
+              data:index(local!data.data,"customerName",{})
             ),
-            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-              label:&quot;Num Orders&quot;,
-              data:index(local!data.data,&quot;numOrders&quot;,{})
+            #"SYSTEM_SYSRULES_gridTextColumn"(
+              label:"Num Orders",
+              data:index(local!data.data,"numOrders",{})
             )
           },
           value:local!chartPI,
@@ -62,16 +61,16 @@
         )
       },
       {
-        #&quot;SYSTEM_SYSRULES_linkField&quot;(
-          labelPosition:&quot;COLLAPSED&quot;,
-          links: #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(label:&quot;View as grid&quot;, value:true, saveInto:local!viewAsGrid)
+        #"SYSTEM_SYSRULES_linkField"(
+          labelPosition:"COLLAPSED",
+          links: #"SYSTEM_SYSRULES_dynamicLink"(label:"View as grid", value:true, saveInto:local!viewAsGrid)
         ),
-        #&quot;SYSTEM_SYSRULES_barChartField&quot;(
-          label:&quot;Top Customers by number of Orders&quot;,
-          categories:index(local!data.data,&quot;customerName&quot;,{}),
-          series:#&quot;SYSTEM_SYSRULES_chartSeries&quot;(
-            label:&quot;Number of Orders&quot;,
-            data:index(local!data.data,&quot;numOrders&quot;,{})
+        #"SYSTEM_SYSRULES_barChartField"(
+          label:"Top Customers by number of Orders",
+          categories:index(local!data.data,"customerName",{}),
+          series:#"SYSTEM_SYSRULES_chartSeries"(
+            label:"Number of Orders",
+            data:index(local!data.data,"numOrders",{})
           )
         )
       }
@@ -79,6 +78,7 @@
   )
 )</definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -90,9 +90,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -108,4 +106,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.686-->

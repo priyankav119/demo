@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_MultiDynamicRecordPicker</name>
         <uuid>491c66b8-0f82-4215-8039-88f783e3405c</uuid>
@@ -16,8 +15,8 @@
         </visibility>
         <definition>/* To test this - set ri!values to {} */
 {
-  #&quot;SYSTEM_SYSRULES_applyComponents&quot;( 
-    function: #&quot;8b8bfc98-272d-4c58-8c40-85983cc70449&quot;(
+  #"SYSTEM_SYSRULES_applyComponents"( 
+    function: #"8b8bfc98-272d-4c58-8c40-85983cc70449"(
         sectionLabel: ri!sectionLabel,
         labelPosition: ri!labelPosition,
         required: ri!required,
@@ -28,7 +27,7 @@
         index: _
     ),
     array: if(
-      or(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!readOnly),ri!readOnly),
+      or(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!readOnly),ri!readOnly),
       1+fn!enumerate(1+count(ri!values))
       1+fn!enumerate(count(ri!values))
     )
@@ -89,6 +88,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -100,9 +100,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -118,4 +116,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.254-->

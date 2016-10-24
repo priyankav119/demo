@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_OrderItemsRow</name>
         <uuid>1ffac6f0-8bc9-46ee-b624-5a615fbaf482</uuid>
@@ -14,62 +13,62 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_gridRowLayout&quot;(
+        <definition>=#"SYSTEM_SYSRULES_gridRowLayout"(
   contents: {
-    #&quot;SYSTEM_SYSRULES_imageField&quot;(
+    #"SYSTEM_SYSRULES_imageField"(
       label: ri!OrderItems[ri!index].Product.name,
       images: {
-        #&quot;SYSTEM_SYSRULES_documentImage&quot;(
-          document: todocument(if(isnull(ri!OrderItems[ri!index].Product.productImageDocId), #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3836&quot;, ri!OrderItems[ri!index].Product.productImageDocId))	
+        #"SYSTEM_SYSRULES_documentImage"(
+          document: todocument(if(isnull(ri!OrderItems[ri!index].Product.productImageDocId), #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3836", ri!OrderItems[ri!index].Product.productImageDocId))	
         )
       },
-      size: &quot;THUMBNAIL&quot;
+      size: "THUMBNAIL"
     ),
-    #&quot;SYSTEM_SYSRULES_textField&quot;(
-      label:&quot;Product&quot;,
-      labelPosition:&quot;ADJACENT&quot;,
-      value: #&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3580&quot;(ri!OrderItems[ri!index].Product.name,55),
+    #"SYSTEM_SYSRULES_textField"(
+      label:"Product",
+      labelPosition:"ADJACENT",
+      value: #"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3580"(ri!OrderItems[ri!index].Product.name,55),
       readOnly:true
     ),
-    #&quot;SYSTEM_SYSRULES_linkField&quot;(
-      label: &quot;SKU&quot;,
-      instructions: &quot;SKU and link to product &quot;,
-      links: #&quot;SYSTEM_SYSRULES_recordLink&quot;(
+    #"SYSTEM_SYSRULES_linkField"(
+      label: "SKU",
+      instructions: "SKU and link to product ",
+      links: #"SYSTEM_SYSRULES_recordLink"(
         label: ri!OrderItems[ri!index].Product.sku,
-        recordType: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3830&quot;,
+        recordType: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_3830",
         identifier: ri!OrderItems[ri!index].Product.id,
-        dashboard: &quot;summary&quot;
+        dashboard: "summary"
       )
     ),
-    #&quot;SYSTEM_SYSRULES_integerField&quot;(
-      label: &quot;Quantity&quot;,
+    #"SYSTEM_SYSRULES_integerField"(
+      label: "Quantity",
       value: ri!OrderItems[ri!index].Quantity,
       saveInto: ri!OrderItems[ri!index].Quantity,
-      refreshAfter:&quot;KEYPRESS&quot;,
+      refreshAfter:"KEYPRESS",
       required: true(),
-      requiredMessage: &quot;A quantity must be specified&quot;,
-      readOnly: if(not(ri!readOnly),#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!OrderItems[ri!index].Product.name),ri!readOnly),
-      validations: if(ri!readOnly, null, if(ri!OrderItems[ri!index].Quantity &gt; ri!OrderItems[ri!index].Product.quantity, &quot;Not enough stock to  fulfill order.  Only &quot; &amp; ri!OrderItems[ri!index].Product.quantity &amp; &quot; items are available.&quot;, null))
+      requiredMessage: "A quantity must be specified",
+      readOnly: if(not(ri!readOnly),#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!OrderItems[ri!index].Product.name),ri!readOnly),
+      validations: if(ri!readOnly, null, if(ri!OrderItems[ri!index].Quantity &gt; ri!OrderItems[ri!index].Product.quantity, "Not enough stock to  fulfill order.  Only " &amp; ri!OrderItems[ri!index].Product.quantity &amp; " items are available.", null))
     ),
-    #&quot;SYSTEM_SYSRULES_floatingPointField&quot;(
-      label: &quot;Unit Price&quot;,
+    #"SYSTEM_SYSRULES_floatingPointField"(
+      label: "Unit Price",
       value: if(isnull(ri!OrderItems[ri!index].OrderItemUnitPrice), ri!OrderItems[ri!index].Product.price, ri!OrderItems[ri!index].OrderItemUnitPrice),
       saveInto: ri!OrderItems[ri!index].OrderItemUnitPrice,
-      refreshAfter:&quot;KEYPRESS&quot;,
+      refreshAfter:"KEYPRESS",
       required: true(),
-      requiredMessage: &quot;A unit price must be specified&quot;,
-      readOnly: if(not(ri!readOnly),#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!OrderItems[ri!index].Product.name),ri!readOnly)
+      requiredMessage: "A unit price must be specified",
+      readOnly: if(not(ri!readOnly),#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!OrderItems[ri!index].Product.name),ri!readOnly)
     ),
-    #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-      label: &quot;Taxed&quot;,
-      instructions: &quot;Indicate whether this item is subject to sales tax&quot;,
-      choiceLabels: {&quot;Yes&quot;, &quot;No&quot;},
+    #"SYSTEM_SYSRULES_dropdownField"(
+      label: "Taxed",
+      instructions: "Indicate whether this item is subject to sales tax",
+      choiceLabels: {"Yes", "No"},
       choiceValues: {true(), false()},
       value: if(isnull(ri!OrderItems[ri!index].Taxed), true(), ri!OrderItems[ri!index].Taxed),
       saveInto: ri!OrderItems[ri!index].Taxed,
       required: true(),
-      requiredMessage: &quot;Each item must be specified whether it is subject to sales tax&quot;,
-      disabled: if(not(ri!readOnly),#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!OrderItems[ri!index].Product.name),ri!readOnly)
+      requiredMessage: "Each item must be specified whether it is subject to sales tax",
+      disabled: if(not(ri!readOnly),#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!OrderItems[ri!index].Product.name),ri!readOnly)
     )    
 
   },
@@ -104,6 +103,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -115,9 +115,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -133,4 +131,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.167-->

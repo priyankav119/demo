@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <group>
         <name>CASE_APP Legal</name>
         <securityMap>SECURITYMAP_PUBLIC</securityMap>
@@ -68,4 +67,4 @@
         </groups>
     </admins>
     <ruleSet/>
-</groupHaul>
+</groupHaul><!--updated on 2016-10-24T12:43:56.990-->

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_customerDashboardFinancialNews</name>
         <uuid>41cb3b7b-8bdf-4d84-b53d-26611aacdbb1</uuid>
@@ -14,53 +13,53 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
-  label:&quot;Finances &amp; News: &quot;&amp;rf!Name,
+        <definition>#"SYSTEM_SYSRULES_dashboardLayout"(
+  label:"Finances &amp; News: "&amp;rf!Name,
   firstColumnContents:{
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label:&quot;Financials&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label:"Financials",
       firstColumnContents:{
-        #&quot;SYSTEM_SYSRULES_imageField&quot;(
-          labelPosition: &quot;COLLAPSED&quot;,
+        #"SYSTEM_SYSRULES_imageField"(
+          labelPosition: "COLLAPSED",
           images: {
-            if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!LogoID),
+            if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!LogoID),
               {},
-              #&quot;SYSTEM_SYSRULES_documentImage&quot;(document:rf!LogoID)
+              #"SYSTEM_SYSRULES_documentImage"(document:rf!LogoID)
             )
           },
-          size: &quot;THUMBNAIL&quot;
+          size: "THUMBNAIL"
         ),
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Company Type&quot;,
-          labelPosition: &quot;ADJACENT&quot;,
-          value: if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!StockTicker),
-            &quot;Private&quot;,
-            &quot;Public&quot;
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Company Type",
+          labelPosition: "ADJACENT",
+          value: if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!StockTicker),
+            "Private",
+            "Public"
           ),
           readOnly: true
         ),
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Stock Ticker&quot;,
-          labelPosition: &quot;ADJACENT&quot;,
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Stock Ticker",
+          labelPosition: "ADJACENT",
           value: rf!StockTicker,
           readOnly: true
         )
       },
       secondColumnContents: {
-        #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
-          labelPosition: &quot;COLLAPSED&quot;,
+        #"SYSTEM_SYSRULES_paragraphField"(
+          labelPosition: "COLLAPSED",
           value: rf!Description,
           required: false(),
           readOnly: true
         )
       }
     ),
-    if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(rf!StockTicker),
-      #&quot;SYSTEM_SYSRULES_textField&quot;(
-        value:&quot;Financial news is only available for public companies with a loaded stock ticker.&quot;,
+    if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(rf!StockTicker),
+      #"SYSTEM_SYSRULES_textField"(
+        value:"Financial news is only available for public companies with a loaded stock ticker.",
         readOnly:true
       ),
-      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2196&quot;(symbols:rf!StockTicker,isSmall:false)
+      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2196"(symbols:rf!StockTicker,isSmall:false)
     )
   }
 )</definition>
@@ -72,6 +71,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -99,4 +99,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.295-->

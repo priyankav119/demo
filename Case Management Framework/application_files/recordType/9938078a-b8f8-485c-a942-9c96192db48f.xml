@@ -1,72 +1,112 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
-    <recordType name="Customer Service Request" a:uuid="9938078a-b8f8-485c-a942-9c96192db48f">
+<?xml version="1.0" encoding="UTF-8"?><recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <recordType a:uuid="9938078a-b8f8-485c-a942-9c96192db48f" name="Customer Service Request">
         <a:pluralName>Customer Service Requests</a:pluralName>
         <a:description>Shows current and recently closed Customer Service Requests in the system.</a:description>
         <a:urlStub>QFhJXQ</a:urlStub>
-        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:ProcessModel" a:uuid="000ada67-7d6e-8000-f92f-7f0000014e7a"/>
-        <a:listViewTemplateExpr>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2839&quot;()</a:listViewTemplateExpr>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" a:uuid="000ada67-7d6e-8000-f92f-7f0000014e7a" xsi:type="a:ProcessModel"/>
+        <a:listViewTemplateExpr>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2839"()</a:listViewTemplateExpr>
         <a:fieldCfg name="By Status">
-            <a:description></a:description>
+            <a:description/>
             <a:sourceRef>serviceReqData.status</a:sourceRef>
             <a:isSortable>false</a:isSortable>
             <a:isSearchable>false</a:isSearchable>
             <a:isFacet>true</a:isFacet>
             <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
             <a:isExclusiveFacet>true</a:isExclusiveFacet>
-            <a:facetLabelExpr>=&quot;Status&quot;</a:facetLabelExpr>
+            <a:facetLabelExpr>="Status"</a:facetLabelExpr>
             <a:facetOption>
-                <a:labelExpr>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[1]</a:labelExpr>
+                <a:labelExpr>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[1]</a:labelExpr>
                 <a:facetOperator>IN</a:facetOperator>
-                <a:lowerLimitExpr></a:lowerLimitExpr>
-                <a:upperLimitExpr></a:upperLimitExpr>
-                <a:values>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[1]</a:values>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[1]</a:values>
             </a:facetOption>
             <a:facetOption>
-                <a:labelExpr>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[2]</a:labelExpr>
+                <a:labelExpr>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[2]</a:labelExpr>
                 <a:facetOperator>IN</a:facetOperator>
-                <a:lowerLimitExpr></a:lowerLimitExpr>
-                <a:upperLimitExpr></a:upperLimitExpr>
-                <a:values>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[2]</a:values>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[2]</a:values>
             </a:facetOption>
             <a:facetOption>
-                <a:labelExpr>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[3]</a:labelExpr>
+                <a:labelExpr>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[3]</a:labelExpr>
                 <a:facetOperator>IN</a:facetOperator>
-                <a:lowerLimitExpr></a:lowerLimitExpr>
-                <a:upperLimitExpr></a:upperLimitExpr>
-                <a:values>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[3]</a:values>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[3]</a:values>
             </a:facetOption>
             <a:facetOption>
-                <a:labelExpr>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[4]</a:labelExpr>
+                <a:labelExpr>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[4]</a:labelExpr>
                 <a:facetOperator>IN</a:facetOperator>
-                <a:lowerLimitExpr></a:lowerLimitExpr>
-                <a:upperLimitExpr></a:upperLimitExpr>
-                <a:values>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[4]</a:values>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[4]</a:values>
             </a:facetOption>
             <a:facetOption>
-                <a:labelExpr>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[5]</a:labelExpr>
+                <a:labelExpr>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[5]</a:labelExpr>
                 <a:facetOperator>IN</a:facetOperator>
-                <a:lowerLimitExpr></a:lowerLimitExpr>
-                <a:upperLimitExpr></a:upperLimitExpr>
-                <a:values>#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[5]</a:values>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630"[5]</a:values>
             </a:facetOption>
             <a:sortOrderIndex>0</a:sortOrderIndex>
             <a:facetOrderIndex>0</a:facetOrderIndex>
         </a:fieldCfg>
+        <a:fieldCfg name="By Priority">
+            <a:description/>
+            <a:sourceRef>serviceReqData.priority</a:sourceRef>
+            <a:isSortable>false</a:isSortable>
+            <a:isSearchable>false</a:isSearchable>
+            <a:isFacet>true</a:isFacet>
+            <a:facetType>CUSTOM_BUCKETS_CLOSED</a:facetType>
+            <a:isExclusiveFacet>true</a:isExclusiveFacet>
+            <a:facetLabelExpr>="By Priority"</a:facetLabelExpr>
+            <a:facetOption>
+                <a:labelExpr>"1 - Critical"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>"1 - Critical"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"2 - High"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>"2 - High"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"3 - Medium"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>"3 - Medium"</a:values>
+            </a:facetOption>
+            <a:facetOption>
+                <a:labelExpr>"4 - Low"</a:labelExpr>
+                <a:facetOperator>IN</a:facetOperator>
+                <a:lowerLimitExpr/>
+                <a:upperLimitExpr/>
+                <a:values>"4 - Low"</a:values>
+            </a:facetOption>
+            <a:sortOrderIndex>1</a:sortOrderIndex>
+            <a:facetOrderIndex>1</a:facetOrderIndex>
+        </a:fieldCfg>
         <a:detailViewCfg>
-            <a:nameExpr>=&quot;Summary&quot;</a:nameExpr>
-            <a:uiExpr>#&quot;d6288059-cb9d-47d5-9755-cc1f2c0884a4&quot;(  rf!currentMilestone,rf!serviceReqData, rf!uploadedDocs, rf!pp.id
+            <a:nameExpr>="Summary"</a:nameExpr>
+            <a:uiExpr>#"d6288059-cb9d-47d5-9755-cc1f2c0884a4"(  rf!currentMilestone,rf!serviceReqData, rf!uploadedDocs, rf!pp.id
 )</a:uiExpr>
             <a:visibilityExpr>=true()</a:visibilityExpr>
             <a:urlStub>summary</a:urlStub>
-            <a:headerExpr></a:headerExpr>
+            <a:headerExpr/>
         </a:detailViewCfg>
         <a:detailViewCfg>
-            <a:nameExpr>&quot;Case History&quot;</a:nameExpr>
-            <a:uiExpr>=#&quot;fe81fcd1-3d51-4f39-88c7-4ad34c060ca1&quot;(#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2773&quot;,rf!pp.id)</a:uiExpr>
+            <a:nameExpr>"Case History"</a:nameExpr>
+            <a:uiExpr>#"_a-0000db86-d3ef-8000-0315-010000010000_3491"(#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950", rp!id)</a:uiExpr>
             <a:visibilityExpr>=true()</a:visibilityExpr>
             <a:urlStub>_zJFWFw</a:urlStub>
-            <a:headerExpr></a:headerExpr>
+            <a:headerExpr/>
+            <a:relatedActionCfg>e22616cc-56c9-4e65-bc50-a51c089f9747</a:relatedActionCfg>
         </a:detailViewCfg>
         <a:defaultFilter>
             <a:field>isCancel</a:field>
@@ -77,10 +117,19 @@
             <field>serviceReqData.requestDateTime</field>
             <ascending>false</ascending>
         </a:defaultSortInfo>
+        <a:relatedActionCfg>
+            <a:target xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" a:uuid="0010dab3-000f-8000-6ee0-010000010000" xsi:type="a:ProcessModel"/>
+            <a:contextExpr>={
+  recordType: #"SYSTEM_SYSRULES_toJson"(#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950"),
+  recordId: rp!id
+}</a:contextExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:refId>e22616cc-56c9-4e65-bc50-a51c089f9747</a:refId>
+        </a:relatedActionCfg>
         <a:isSystem>false</a:isSystem>
-        <a:dataSrcExpr></a:dataSrcExpr>
-        <a:facetsListExpr></a:facetsListExpr>
-        <a:defaultFiltersExpr></a:defaultFiltersExpr>
+        <a:dataSrcExpr/>
+        <a:facetsListExpr/>
+        <a:defaultFiltersExpr/>
         <a:security>32767</a:security>
     </recordType>
     <roleMap>
@@ -97,4 +146,4 @@
             </groups>
         </role>
     </roleMap>
-</recordTypeHaul>
+</recordTypeHaul><!--updated on 2016-10-24T12:44:02.471-->

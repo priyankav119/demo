@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_TotalOrderAmountByIndustry</name>
         <uuid>7c34cb8a-4a6e-406f-bfeb-d1e17ad23adb</uuid>
@@ -15,36 +14,36 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
-    batchSize: 20,
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;Total&quot;,
+    batchSize: 8,
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "Total",
       ascending: false
     )
   ),
   with(
     local!datasubset: queryrecord(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
-      #&quot;SYSTEM_SYSRULES_query&quot;(
-        aggregation: #&quot;SYSTEM_SYSRULES_queryAggregation&quot;(aggregationColumns: {
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;Customer.Industry&quot;, alias:&quot;Industry&quot;,isGrouping: true),
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;Total&quot;, aggregationFunction: &quot;SUM&quot;),
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
+      #"SYSTEM_SYSRULES_query"(
+        aggregation: #"SYSTEM_SYSRULES_queryAggregation"(aggregationColumns: {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "Customer.Industry", alias:"Industry",isGrouping: true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "Total", aggregationFunction: "SUM"),
         }),
         pagingInfo: local!pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_pieChartField&quot;(
-      label: &quot;Total Order Amount by Industry&quot;,
+    #"SYSTEM_SYSRULES_pieChartField"(
+      label: "Total Order Amount by Industry",
       series: {
         apply(
-          #&quot;SYSTEM_SYSRULES_chartSeries&quot;(label: _, data: _, links:_),
+          #"SYSTEM_SYSRULES_chartSeries"(label: _, data: _, links:_),
           merge(
-            index(local!datasubset.data,&quot;Industry&quot; , {}),
-            index(local!datasubset.data, &quot;Total&quot;, {}),
+            index(local!datasubset.data,"Industry" , {}),
+            index(local!datasubset.data, "Total", {}),
             apply(
-              #&quot;SYSTEM_SYSRULES_dynamicLink&quot;(value:_,saveInto:ri!industryFilter),
-              index(local!datasubset.data,&quot;Industry&quot; , {})
+              #"SYSTEM_SYSRULES_dynamicLink"(value:_,saveInto:ri!industryFilter),
+              index(local!datasubset.data,"Industry" , {})
             )
           )
         )
@@ -65,6 +64,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -76,9 +76,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -94,4 +92,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.708-->

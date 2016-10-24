@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_customerRecordListView</name>
         <uuid>_a-0000d9a9-8a1d-8000-9e06-010000010000_719</uuid>
@@ -19,14 +18,15 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= #&quot;SYSTEM_SYSRULES_listViewItem&quot;(
+        <definition>= #"SYSTEM_SYSRULES_listViewItem"(
   image: todocument(rf!LogoID),
-  title: rf!Name &amp;&quot; | &quot;&amp; rf!GlobalID &amp;&quot; | Owner: &quot;&amp;user(rf!AccountOwner,&quot;firstName&quot;)&amp;&quot; &quot;&amp;user(rf!AccountOwner,&quot;lastName&quot;),
-  details: &quot;Contact Info: &quot;&amp; rf!ContactName &amp;&quot; | &quot;&amp;rf!Email&amp;&quot; | &quot;&amp;rf!OfficePhone &amp;&quot;
-Industry: &quot;&amp;rf!Industry,  
+  title: rf!Name &amp;" | "&amp; rf!GlobalID &amp;" | Owner: "&amp;user(rf!AccountOwner,"firstName")&amp;" "&amp;user(rf!AccountOwner,"lastName"),
+  details: "Contact Info: "&amp; rf!ContactName &amp;" | "&amp;rf!Email&amp;" | "&amp;rf!OfficePhone &amp;"
+Industry: "&amp;rf!Industry,  
   timestamp: rf!CustomerSince
 )</definition>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -54,4 +54,4 @@ Industry: &quot;&amp;rf!Industry,
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:02.981-->

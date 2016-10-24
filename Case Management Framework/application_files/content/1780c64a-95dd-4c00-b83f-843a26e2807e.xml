@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiShowCustomerOrders</name>
         <uuid>1780c64a-95dd-4c00-b83f-843a26e2807e</uuid>
@@ -23,21 +22,21 @@
 with(
   /* Check to see if Customer has any orders*/
   local!datasubset: queryrecord(
-    #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210&quot;,
-    #&quot;SYSTEM_SYSRULES_query&quot;(
-      selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(columns: {#&quot;SYSTEM_SYSRULES_queryColumn&quot;(field:&quot;id&quot;)}),
-      filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(&quot;Customer.id&quot;,&quot;=&quot;,ri!selectedCustomer.id[1]),
-      pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1,1,null)
+    #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6210",
+    #"SYSTEM_SYSRULES_query"(
+      selection: #"SYSTEM_SYSRULES_querySelection"(columns: {#"SYSTEM_SYSRULES_queryColumn"(field:"id")}),
+      filter: #"SYSTEM_SYSRULES_queryFilter"("Customer.id","=",ri!selectedCustomer.id[1]),
+      pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(1,1,null)
     )
   ),
-  /* Display Orders or &quot;No Orders&quot; Message */
+  /* Display Orders or "No Orders" Message */
   if(local!datasubset.totalCount &gt; 0,
     {
       /* We have orders. Show orders grid */
-      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-        label:if(ri!isSelectable,&quot;Please choose the order you need help with&quot;,&quot;These are your Orders&quot;),
+      #"SYSTEM_SYSRULES_sectionLayout"(
+        label:if(ri!isSelectable,"Please choose the order you need help with","These are your Orders"),
         firstColumnContents:{
-          #&quot;6d0b94c1-374a-4090-bb16-9ea3ed219bd6&quot;(
+          #"6d0b94c1-374a-4090-bb16-9ea3ed219bd6"(
             customerId:ri!selectedCustomer.id,
             itemsPerPage:5,
             isSelectable:ri!isSelectable,
@@ -49,11 +48,11 @@ with(
         }
       ),
       /* Only show question if the grid is selectable and they have selected something */
-      if(and(ri!isSelectable,not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!serviceReq.relatedOrder))),
+      if(and(ri!isSelectable,not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!serviceReq.relatedOrder))),
         {
-          #&quot;SYSTEM_SYSRULES_radioButtonField&quot;(
-            label:&quot;Do you need help with a specific product in your order?&quot;,
-            choiceLabels:{&quot;Yes&quot;,&quot;No&quot;},
+          #"SYSTEM_SYSRULES_radioButtonField"(
+            label:"Do you need help with a specific product in your order?",
+            choiceLabels:{"Yes","No"},
             choiceValues:{true,false},
             value:ri!q2,
             saveInto:{
@@ -63,45 +62,45 @@ with(
             },
             required:true
           ),
-          /* Only show OrderItems grid if they answered &quot;Yes&quot; */
-          if(and(not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!q2)),ri!q2),
+          /* Only show OrderItems grid if they answered "Yes" */
+          if(and(not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!q2)),ri!q2),
             {
-              #&quot;3ad1404e-fd3d-496a-9033-789297edc4cb&quot;(
+              #"3ad1404e-fd3d-496a-9033-789297edc4cb"(
                 orderItems:ri!serviceReq.relatedOrder.OrderItems,
                 isSelectable:true,
                 selectedOrderItem:ri!serviceReq.relatedOrderItemId,
                 gridSelection:ri!gridSelection
               ),
-              if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!serviceReq.relatedOrderItemId),
+              if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!serviceReq.relatedOrderItemId),
                 {},
-                #&quot;8328117a-7d23-4f27-bcb8-306068f7a080&quot;(ri!serviceReq,ri!selectedCustomer,ri!uploadedDocs,ri!caseDocs)
+                #"8328117a-7d23-4f27-bcb8-306068f7a080"(ri!serviceReq,ri!selectedCustomer,ri!uploadedDocs,ri!caseDocs)
               )
             },
             /* If not related to a product, get requesters details */
-            if(and(not(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!q2)),not(ri!q2)),
-              #&quot;8328117a-7d23-4f27-bcb8-306068f7a080&quot;(ri!serviceReq,ri!selectedCustomer,ri!uploadedDocs,ri!caseDocs),
+            if(and(not(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!q2)),not(ri!q2)),
+              #"8328117a-7d23-4f27-bcb8-306068f7a080"(ri!serviceReq,ri!selectedCustomer,ri!uploadedDocs,ri!caseDocs),
               {}
             )
           )
         },
         if(ri!isSelectable,
           {},
-          #&quot;SYSTEM_SYSRULES_radioButtonField&quot;(
-            label:&quot;Do you need help with an order?&quot;,
-            choiceLabels:{&quot;Yes&quot;,&quot;No&quot;},
+          #"SYSTEM_SYSRULES_radioButtonField"(
+            label:"Do you need help with an order?",
+            choiceLabels:{"Yes","No"},
             choiceValues:{true,false},
             value:ri!q1,
             saveInto:{
               ri!q1,
               a!save(target:ri!hideOkButton, value:ri!q1),
-              a!save(target:ri!serviceReq.type, value:if(ri!q1,#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620&quot;[2],#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620&quot;[1]))
+              a!save(target:ri!serviceReq.type, value:if(ri!q1,#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620"[2],#"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2620"[1]))
             },
             required:true
           )
         )
       )
     },
-    #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2687&quot;(&quot;There are currently no orders for the selected customer&quot;)
+    #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2687"("There are currently no orders for the selected customer")
   )
 )</definition>
         <namedTypedValue>
@@ -168,6 +167,7 @@ with(
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -179,9 +179,7 @@ with(
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -197,4 +195,4 @@ with(
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.233-->

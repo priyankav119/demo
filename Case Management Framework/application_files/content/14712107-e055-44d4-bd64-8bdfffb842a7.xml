@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_updateCustomer</name>
         <uuid>14712107-e055-44d4-bd64-8bdfffb842a7</uuid>
@@ -14,29 +13,29 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_formLayout&quot; (&#xD;
-  label: &quot;Update Customer: &quot;&amp;ri!customerData.Name,&#xD;
-  firstColumnContents: {&#xD;
-	#&quot;d3b95f27-f45a-4d97-812f-ef8de3681197&quot;(customerData:ri!customerData,logo:ri!logo,isCreate:false,isShippingBillingSame:ri!isShippingBillingSame),&#xD;
-    },&#xD;
-    buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
-          primaryButtons: {&#xD;
-            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-                label: &quot;Submit&quot;,&#xD;
-                confirmMessage:&quot;Are you sure?&quot;,&#xD;
-                style: &quot;PRIMARY&quot;,&#xD;
-                value: &quot;submit&quot;,&#xD;
-                saveInto: ri!button&#xD;
-            ),&#xD;
-            #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-                label: &quot;Cancel&quot;,&#xD;
-                skipValidation: true,&#xD;
-                value: &quot;cancel&quot;,&#xD;
-                saveInto: ri!button&#xD;
-            )&#xD;
-          }&#xD;
-    ) &#xD;
-)&#xD;
+        <definition>#"SYSTEM_SYSRULES_formLayout" (&#13;
+  label: "Update Customer: "&amp;ri!customerData.Name,&#13;
+  firstColumnContents: {&#13;
+	#"d3b95f27-f45a-4d97-812f-ef8de3681197"(customerData:ri!customerData,logo:ri!logo,isCreate:false,isShippingBillingSame:ri!isShippingBillingSame),&#13;
+    },&#13;
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(&#13;
+          primaryButtons: {&#13;
+            #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+                label: "Submit",&#13;
+                confirmMessage:"Are you sure?",&#13;
+                style: "PRIMARY",&#13;
+                value: "submit",&#13;
+                saveInto: ri!button&#13;
+            ),&#13;
+            #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+                label: "Cancel",&#13;
+                skipValidation: true,&#13;
+                value: "cancel",&#13;
+                saveInto: ri!button&#13;
+            )&#13;
+          }&#13;
+    ) &#13;
+)&#13;
 </definition>
         <namedTypedValue>
             <name>customerData</name>
@@ -67,6 +66,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -94,4 +94,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:01.122-->

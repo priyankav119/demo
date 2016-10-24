@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getImageForDocumentType</name>
         <uuid>_a-0000da89-b5e9-8000-9ba2-011c48011c48_3514</uuid>
-        <description></description>
+        <description>Retrieves an icon representing the passed in document based on its extension.</description>
         <parentUuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1751</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -14,15 +13,15 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_documentImage&quot;(document: with(
-  local!ext:upper(document(ri!doc,&quot;extension&quot;)),
-  local!isImage:contains(#&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3516&quot;, local!ext),
-  local!isDoc:contains(#&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3515&quot;, local!ext),
+        <definition>=#"SYSTEM_SYSRULES_documentImage"(document: with(
+  local!ext:upper(document(ri!doc,"extension")),
+  local!isImage:contains(#"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3516", local!ext),
+  local!isDoc:contains(#"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3515", local!ext),
   if(and(not(local!isImage),not(local!isDoc)),
-    #&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3518&quot;[1],
+    #"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3518"[1],
     if(local!isImage,
       ri!doc,
-      #&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3518&quot;[wherecontains(local!ext,#&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3519&quot;)]
+      #"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3518"[wherecontains(local!ext,#"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3519")]
     )
   )
 ))</definition>
@@ -34,6 +33,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -45,9 +45,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -63,4 +61,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:05.584-->

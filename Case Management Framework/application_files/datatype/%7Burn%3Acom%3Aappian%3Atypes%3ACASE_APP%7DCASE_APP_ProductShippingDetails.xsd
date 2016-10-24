@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="urn:com:appian:types:CASE_APP"
-  xmlns:tns="urn:com:appian:types:CASE_APP" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:appian:types:CASE_APP" targetNamespace="urn:com:appian:types:CASE_APP">
   <xsd:complexType name="CASE_APP_ProductShippingDetails">
     <xsd:annotation>
       <xsd:documentation><![CDATA[For CASE_APP product shipping details]]></xsd:documentation>
@@ -12,4 +11,4 @@
       <xsd:element name="depth" nillable="true" type="xsd:double"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema>
+</xsd:schema><!--updated on 2016-10-24T12:43:57.175-->

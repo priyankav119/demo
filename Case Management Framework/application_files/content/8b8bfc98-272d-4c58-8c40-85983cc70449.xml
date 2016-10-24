@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_DynamicRecordPickerFromRecordAssociation</name>
         <uuid>8b8bfc98-272d-4c58-8c40-85983cc70449</uuid>
@@ -15,45 +14,45 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!selectedRecordName:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index),null,ri!value[ri!index].recordName),
-  local!selectedValues:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index),null,#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6214&quot;(ri!value[ri!index])),
-  local!recordType:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index),null,#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1466&quot;[wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;)]),
-  local!recordIndex:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index),null,wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;)),
-  local!searchFields:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index,#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(local!selectedRecordName)),null,#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1476&quot;(wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;))),
-  local!primaryKeyField:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index),null,#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1467&quot;[wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;)]),
-  #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+  local!selectedRecordName:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index),null,ri!value[ri!index].recordName),
+  local!selectedValues:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index),null,#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6214"(ri!value[ri!index])),
+  local!recordType:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index),null,#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1466"[wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464")]),
+  local!recordIndex:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index),null,wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464")),
+  local!searchFields:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index,#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(local!selectedRecordName)),null,#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1476"(wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464"))),
+  local!primaryKeyField:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index),null,#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1467"[wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464")]),
+  #"SYSTEM_SYSRULES_sectionLayout"(
     label: ri!sectionLabel,
     firstColumnContents: {
-      #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-        label: &quot;Record Type&quot;,
+      #"SYSTEM_SYSRULES_dropdownField"(
+        label: "Record Type",
         labelPosition: ri!labelPosition,
-        instructions: &quot;Select a record type to change the context of the picker&quot;,
+        instructions: "Select a record type to change the context of the picker",
         required: ri!required,
         disabled: if(ri!readOnly, true(), if(or(isnull(local!selectedValues), length(local!selectedValues)=0), false, true)),
-        choiceLabels: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;,
-        choiceValues: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;,
-        placeholderLabel: &quot;-- Select a Record Type --&quot;,
+        choiceLabels: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464",
+        choiceValues: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464",
+        placeholderLabel: "-- Select a Record Type --",
         value: local!selectedRecordName,
         saveInto: {
                     local!selectedRecordName,
                     a!save(
                       local!recordIndex,
-                      wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;)
+                      wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464")
                     ),
                     a!save(
                       local!recordType,
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1466&quot;[wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;)]
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1466"[wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464")]
                     ),
                     a!save(
                       local!searchFields,
-                      if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(save!value),
+                      if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(save!value),
                         null,
-                        #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1476&quot;(wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;))
+                        #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1476"(wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464"))
                       )
                     ),
                     a!save(
                       local!primaryKeyField,
-                      #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1467&quot;[wherecontains(local!selectedRecordName, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464&quot;)]
+                      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1467"[wherecontains(local!selectedRecordName, #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1464")]
                     ),
                     a!save(
                       local!selectedValues,
@@ -66,12 +65,12 @@
     secondColumnContents: {
 
         
-      if(local!recordType.@attributes.uuid=&quot;SYSTEM_RECORD_TYPE_USER&quot;,
+      if(local!recordType.@attributes.uuid="SYSTEM_RECORD_TYPE_USER",
         {
-          #&quot;SYSTEM_SYSRULES_pickerFieldUsers&quot;(
-            label: &quot;Selected users&quot;,
+          #"SYSTEM_SYSRULES_pickerFieldUsers"(
+            label: "Selected users",
             labelPosition: ri!labelPosition,
-            instructions: &quot;Type the name of the users to find and select them&quot;,
+            instructions: "Type the name of the users to find and select them",
             required: ri!required,
             requiredMessage: ri!requiredMessage,
             readOnly: ri!readOnly,
@@ -86,7 +85,7 @@
                   count(ri!value)&lt;ri!index, 
                   append(
                     ri!value, 
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960"(
                       recordType: local!recordType,
                       recordName: local!selectedRecordName,
                       recordUUID: local!recordType.@attributes.uuid,
@@ -96,7 +95,7 @@
                   updatearray(
                     ri!value, 
                     ri!index,
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960"(
                       recordType: local!recordType,
                       recordName: local!selectedRecordName,
                       recordUUID: local!recordType.@attributes.uuid,
@@ -109,16 +108,16 @@
           )
         },
         {
-          #&quot;6ec7ea86-c593-4d4b-b4b2-3f75b954ffc9&quot;(
-            label: &quot;Selected records &quot;,
+          #"6ec7ea86-c593-4d4b-b4b2-3f75b954ffc9"(
+            label: "Selected records ",
             labelPosition: ri!labelPosition,
-            instructions: &quot;Type the name of the records to find and select them&quot;,
+            instructions: "Type the name of the records to find and select them",
             required: ri!required,
             requiredMessage: ri!requiredMessage,
             readOnly: if(ri!readOnly, true, isnull(local!selectedRecordName)),
             disabled: isnull(local!selectedRecordName),
             maxSelections: ri!maxSelections,
-            associatedRecords:if(or(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!value),count(ri!value)&lt;ri!index),null,ri!value[ri!index]),
+            associatedRecords:if(or(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!value),count(ri!value)&lt;ri!index),null,ri!value[ri!index]),
             record: local!recordType,
             primaryKeyField: local!primaryKeyField,
             searchFields: local!searchFields,
@@ -130,7 +129,7 @@
                 if(count(ri!value)&lt;ri!index, 
                   append(
                     ri!value, 
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960"(
                       recordType: local!recordType,
                       recordName: local!selectedRecordName,
                       recordUUID: local!recordType.@attributes.uuid,
@@ -140,7 +139,7 @@
                   updatearray(
                     ri!value,
                     ri!index,
-                    #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960&quot;(
+                    #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1960"(
                       recordType: local!recordType,
                       recordName: local!selectedRecordName,
                       recordUUID: local!recordType.@attributes.uuid,
@@ -217,6 +216,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -228,9 +228,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -246,4 +244,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.232-->

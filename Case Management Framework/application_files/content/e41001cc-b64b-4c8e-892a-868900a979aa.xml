@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_uiReportDashboard</name>
         <uuid>e41001cc-b64b-4c8e-892a-868900a979aa</uuid>
-        <description></description>
+        <description>Report Dashboard for CSR cases.</description>
         <parentUuid>_a-0000da89-b5e9-8000-9ba2-011c48011c48_3881</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -17,21 +16,22 @@
         <definition>load(
   local!statusFilter,
   local!typeFilter,
-  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+  #"SYSTEM_SYSRULES_dashboardLayout"(
     firstColumnContents: {
-      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      #"SYSTEM_SYSRULES_sectionLayout"(
         firstColumnContents:{
-          #&quot;2ea28e65-e542-41f1-861d-abde3fe0a9fc&quot;(local!typeFilter)
+          #"2ea28e65-e542-41f1-861d-abde3fe0a9fc"(local!typeFilter)
         },
         secondColumnContents:{
-          #&quot;a3093848-adcc-4981-b555-d16e43088843&quot;(local!statusFilter)
+          #"a3093848-adcc-4981-b555-d16e43088843"(local!statusFilter)
         }
       ),
-      #&quot;2368f26b-1083-4645-926a-bcc43ae16dc0&quot;(local!statusFilter,local!typeFilter)
+      #"2368f26b-1083-4645-926a-bcc43ae16dc0"(local!statusFilter,local!typeFilter)
     }
   )
 )</definition>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -43,9 +43,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -61,4 +59,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.555-->

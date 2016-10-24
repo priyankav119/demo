@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_getAllProductFieldsById</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4326</uuid>
@@ -18,61 +17,61 @@
   typeof(
     'type!{urn:com:appian:types:CASE_APP}CASE_APP_Product'()
   ),
-  #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-    entity: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4329&quot;,
-    query: #&quot;SYSTEM_SYSRULES_query&quot;(
-      selection: #&quot;SYSTEM_SYSRULES_querySelection&quot;(
+  #"SYSTEM_SYSRULES_queryEntity"(
+    entity: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_4329",
+    query: #"SYSTEM_SYSRULES_query"(
+      selection: #"SYSTEM_SYSRULES_querySelection"(
         columns: {
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;id&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "id"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;name&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "name"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;sku&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "sku"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;description&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "description"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;category&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "category"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;manufacturer&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "manufacturer"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;modelNumber&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "modelNumber"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;releaseDate&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "releaseDate"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;isActive&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "isActive"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;price&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "price"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;quantity&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "quantity"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;shippingDetails&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "shippingDetails"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;productImageDocId&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "productImageDocId"
           ),
-          #&quot;SYSTEM_SYSRULES_queryColumn&quot;(
-            field: &quot;productCategory&quot;
+          #"SYSTEM_SYSRULES_queryColumn"(
+            field: "productCategory"
           )
         }
       ),
-      filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
-        field: &quot;id&quot;,
-        operator: &quot;=&quot;,
+      filter: #"SYSTEM_SYSRULES_queryFilter"(
+        field: "id",
+        operator: "=",
         value: ri!id
       ),
-      pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+      pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
         startIndex: 1,
         batchSize: 1
       )
@@ -87,6 +86,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -114,4 +114,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:57.576-->

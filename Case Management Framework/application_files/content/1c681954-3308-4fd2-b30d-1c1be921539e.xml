@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_UpdateOrderStatus</name>
         <uuid>1c681954-3308-4fd2-b30d-1c1be921539e</uuid>
@@ -14,53 +13,53 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_formLayout&quot;(
-  label: &quot;Update Order&quot;,
+        <definition>=#"SYSTEM_SYSRULES_formLayout"(
+  label: "Update Order",
   firstColumnContents: {
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Order Items&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Order Items",
       isCollapsible: true(),
       firstColumnContents: {
-        #&quot;f6ebce54-e12d-42ee-97b9-b37c3c001125&quot;(OrderItems: ri!Order.OrderItems, gridLabel: null, gridInstructions: null, readOnly: true())
+        #"f6ebce54-e12d-42ee-97b9-b37c3c001125"(OrderItems: ri!Order.OrderItems, gridLabel: null, gridInstructions: null, readOnly: true())
       }
     ),
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Update Order Status&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Update Order Status",
       firstColumnContents:
       {
-        #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
-          label: &quot;Status&quot;,
-          labelPosition: &quot;ADJACENT&quot;,
-          instructions: &quot;Select the new order status&quot;,
+        #"SYSTEM_SYSRULES_dropdownField"(
+          label: "Status",
+          labelPosition: "ADJACENT",
+          instructions: "Select the new order status",
           required: true(),
-          requiredMessage: &quot;A order status must be selected&quot;,
-          choiceLabels: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146&quot;,
-          choiceValues: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146&quot;,
-          placeholderLabel: &quot;--Set Order Status--&quot;,
+          requiredMessage: "A order status must be selected",
+          choiceLabels: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146",
+          choiceValues: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146",
+          placeholderLabel: "--Set Order Status--",
           value: ri!Order.Status,
           saveInto: ri!Order.Status
         )
       }
     ),
-    if(ri!Order.Status=#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146&quot;[2],
+    if(ri!Order.Status=#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146"[2],
       {
-        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-          label: &quot;Verify Order for Shipment&quot;
+        #"SYSTEM_SYSRULES_sectionLayout"(
+          label: "Verify Order for Shipment"
         ),
-        #&quot;SYSTEM_SYSRULES_applyComponents&quot;(
-          function: #&quot;799e1fbe-6876-4320-9096-54d3bab97ee2&quot;(_),
+        #"SYSTEM_SYSRULES_applyComponents"(
+          function: #"799e1fbe-6876-4320-9096-54d3bab97ee2"(_),
           array: ri!Order.OrderItems
         )
       },
-    if(ri!Order.Status=#&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146&quot;[3],
+    if(ri!Order.Status=#"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6146"[3],
       {
-            #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-            label: &quot;Complete Order Shipment&quot;,
+            #"SYSTEM_SYSRULES_sectionLayout"(
+            label: "Complete Order Shipment",
             firstColumnContents:{
-              #&quot;SYSTEM_SYSRULES_textField&quot;(
-                label: &quot;Tracking Number&quot;,
-                labelPosition: &quot;ADJACENT&quot;,
-                instructions: &quot;Input the shipment tracking number&quot;,
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Tracking Number",
+                labelPosition: "ADJACENT",
+                instructions: "Input the shipment tracking number",
                 required: true(),
                 readOnly: false(),
                 value: ri!Order.TrackingNumber,
@@ -72,11 +71,11 @@
         {}))
     
   },
-  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
     primaryButtons: {
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
-        label: &quot;Submit&quot;,
-        style: &quot;PRIMARY&quot;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Submit",
+        style: "PRIMARY"
       )
     }
   )
@@ -89,6 +88,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -100,9 +100,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -118,4 +116,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.521-->

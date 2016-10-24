@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_CalculateOrderTotal</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6123</uuid>
@@ -14,7 +13,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!Order.OrderItems),
+        <definition>=if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!Order.OrderItems),
 null,
 trunc(
   round(
@@ -33,12 +32,12 @@ trunc(
       0,
       ri!Order.ShippingCost + sum(
         apply(
-          #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6126&quot;(
+          #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6126"(
             if(
               isnull(
                 ri!Order.TaxRate
               ),
-              #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6120&quot;,
+              #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6120",
               ri!Order.TaxRate
             ),
             _
@@ -60,6 +59,7 @@ trunc(
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -71,9 +71,7 @@ trunc(
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -89,4 +87,4 @@ trunc(
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.210-->

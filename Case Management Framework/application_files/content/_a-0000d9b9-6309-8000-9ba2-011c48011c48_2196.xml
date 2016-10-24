@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_stockQuoteGraph</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_2196</uuid>
@@ -18,18 +17,18 @@ Needs to be in some kind of SAIL container / section.</description>
         <definition>=load(
   local!dr: 3,
 {
-  #&quot;SYSTEM_SYSRULES_dropdownFieldByIndex&quot;(
-    label: &quot;Range&quot;,
+  #"SYSTEM_SYSRULES_dropdownFieldByIndex"(
+    label: "Range",
     choiceLabels: {
-      &quot;1 Month&quot;,&quot;3 Months&quot;,&quot;6 Months&quot;,&quot;1 Year&quot;,&quot;2 Years&quot;
+      "1 Month","3 Months","6 Months","1 Year","2 Years"
     },
     value: local!dr,
     saveInto: local!dr
   ),
-#&quot;SYSTEM_SYSRULES_externalImageField&quot;(
-  label: &quot;&quot;,
-  source: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2200&quot;(symbols:ri!symbols,range:index(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2205&quot;,local!dr,&quot;1y&quot;),size:if(ri!isSmall,&quot;s&quot;,&quot;l&quot;)),
-  altText: &quot;Yahoo Stock Graph&quot;
+#"SYSTEM_SYSRULES_externalImageField"(
+  label: "",
+  source: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2200"(symbols:ri!symbols,range:index(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2205",local!dr,"1y"),size:if(ri!isSmall,"s","l")),
+  altText: "Yahoo Stock Graph"
 )
 
 })</definition>
@@ -48,6 +47,7 @@ Needs to be in some kind of SAIL container / section.</description>
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -75,4 +75,4 @@ Needs to be in some kind of SAIL container / section.</description>
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.275-->

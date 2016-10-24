@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_documentImage</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2965</uuid>
@@ -14,12 +13,12 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+        <definition>= #"SYSTEM_SYSRULES_documentImage"(
   document: if(
     isnull(
       ri!document
     ),
-    #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2691&quot;,
+    #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2691",
     ri!document
   ),
   caption: if(
@@ -27,12 +26,12 @@
       ri!document
     ),
     document(
-      #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2691&quot;,
-      &quot;name&quot;
+      #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_2691",
+      "name"
     ),
     document(
       ri!document,
-      &quot;name&quot;
+      "name"
     )
   )
 )</definition>
@@ -44,6 +43,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -55,9 +55,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -73,4 +71,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.630-->

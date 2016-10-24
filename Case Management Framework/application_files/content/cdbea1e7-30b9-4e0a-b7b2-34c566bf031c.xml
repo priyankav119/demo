@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_deleteCustomer</name>
         <uuid>cdbea1e7-30b9-4e0a-b7b2-34c566bf031c</uuid>
@@ -14,28 +13,28 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>#&quot;SYSTEM_SYSRULES_formLayout&quot;(&#xD;
-  label: &quot;Confirm deletion of customer: &quot; &amp; ri!customerData.Name,  &#xD;
-  firstColumnContents: {&#xD;
-  #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2134&quot;(c:ri!customerData)  &#xD;
-  },&#xD;
-  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
-    primaryButtons: {&#xD;
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-        label: &quot;Delete&quot;,&#xD;
-        style: &quot;DESTRUCTIVE&quot;,&#xD;
-        value: &quot;submit&quot;,&#xD;
-        confirmMessage:&quot;Are you sure you want to delete this customer?&quot;,&#xD;
-        saveInto: ri!button&#xD;
-      ),&#xD;
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(&#xD;
-        label: &quot;Cancel&quot;,&#xD;
-        skipValidation: true,&#xD;
-        value: &quot;cancel&quot;,&#xD;
-        saveInto: ri!button&#xD;
-      )&#xD;
-    } &#xD;
-  ) &#xD;
+        <definition>#"SYSTEM_SYSRULES_formLayout"(&#13;
+  label: "Confirm deletion of customer: " &amp; ri!customerData.Name,  &#13;
+  firstColumnContents: {&#13;
+  #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2134"(c:ri!customerData)  &#13;
+  },&#13;
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(&#13;
+    primaryButtons: {&#13;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+        label: "Delete",&#13;
+        style: "DESTRUCTIVE",&#13;
+        value: "submit",&#13;
+        confirmMessage:"Are you sure you want to delete this customer?",&#13;
+        saveInto: ri!button&#13;
+      ),&#13;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(&#13;
+        label: "Cancel",&#13;
+        skipValidation: true,&#13;
+        value: "cancel",&#13;
+        saveInto: ri!button&#13;
+      )&#13;
+    } &#13;
+  ) &#13;
 )</definition>
         <namedTypedValue>
             <name>customerData</name>
@@ -59,6 +58,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -86,4 +86,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:03.306-->

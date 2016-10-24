@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_fetchRecord</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1457</uuid>
-        <description>Fetches a single record instance (as a Dictionary). If primaryKeyField is null, defaults to &quot;id&quot;. Primary key must be an integer.
+        <description>Fetches a single record instance (as a Dictionary). If primaryKeyField is null, defaults to "id". Primary key must be an integer.
 
-If creating a process backed record, create a process variable called &quot;processId&quot; to store the pp!id value and use as a primary key
+If creating a process backed record, create a process variable called "processId" to store the pp!id value and use as a primary key
 
 record: a record type value, likely from a Constant of type Record Type
-primaryKeyField: the name of the field that has the @Id annotation in the entityType. If null, defaults to &quot;id&quot;.
+primaryKeyField: the name of the field that has the @Id annotation in the entityType. If null, defaults to "id".
 primaryKeyValue: the integer primary key value to select.</description>
         <parentUuid>_a-0000da20-55d5-8000-9ba2-011c48011c48_11112</parentUuid>
         <visibility>
@@ -22,42 +21,34 @@ primaryKeyValue: the integer primary key value to select.</description>
         </visibility>
         <definition>= with(
   local!primaryKeyField: if(
-    isnull(
-      ri!primaryKeyField
-    ),
-    &quot;id&quot;,
+    isnull(ri!primaryKeyField),
+    "id",
     ri!primaryKeyField
   ),
   local!datasubset: if(
-    ri!record.@attributes.uuid = &quot;SYSTEM_RECORD_TYPE_USER&quot;,
+    ri!record.@attributes.uuid = "SYSTEM_RECORD_TYPE_USER",
     todatasubset(
       {
         username: ri!primaryKeyValue
       },
-      #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+      #"SYSTEM_SYSRULES_pagingInfo"(
         startIndex: 1,
         batchSize: 1
       )
     ),
     queryrecord(
       recordType: ri!record,
-      query: #&quot;SYSTEM_SYSRULES_query&quot;(
-        filter: #&quot;SYSTEM_SYSRULES_queryFilter&quot;(
+      query: #"SYSTEM_SYSRULES_query"(
+        filter: #"SYSTEM_SYSRULES_queryFilter"(
           field: local!primaryKeyField,
-          operator: &quot;=&quot;,
+          operator: "=",
           value: if(
-            isnull(
-              tointeger(
-                ri!primaryKeyValue
-              )
-            ),
+            isnull(tointeger(ri!primaryKeyValue)),
             ri!primaryKeyValue,
-            tointeger(
-              ri!primaryKeyValue
-            )
+            tointeger(ri!primaryKeyValue)
           )
         ),
-        pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+        pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
           startIndex: 1,
           batchSize: 1
         )
@@ -94,6 +85,7 @@ primaryKeyValue: the integer primary key value to select.</description>
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -105,9 +97,7 @@ primaryKeyValue: the integer primary key value to select.</description>
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -123,4 +113,4 @@ primaryKeyValue: the integer primary key value to select.</description>
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.714-->

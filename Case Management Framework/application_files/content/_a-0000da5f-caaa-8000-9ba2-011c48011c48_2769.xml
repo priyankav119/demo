@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_SR_getUserWorkload</name>
         <uuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2769</uuid>
-        <description></description>
+        <description>Retrieves the task workload for the specified user.</description>
         <parentUuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2617</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -15,10 +14,10 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>{
-  userDisplay: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983&quot;(ri!user),
+  userDisplay: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1983"(ri!user),
   user:ri!user,
   workload: a!queryProcessAnalytics(
-    report: #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2768&quot;,
+    report: #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2768",
     contextUsers: {ri!user}
   ).totalCount
 }</definition>
@@ -28,9 +27,9 @@
                 <name>User</name>
                 <namespace>http://www.appian.com/ae/types/2009</namespace>
             </type>
-            <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -42,9 +41,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -60,4 +57,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:07.155-->

@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema
-  targetNamespace="https://caseappstaging.appiancloud.com/suite/types/"
-  xmlns:tns="https://caseappstaging.appiancloud.com/suite/types/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://caseappstaging.appiancloud.com/suite/types/" targetNamespace="https://caseappstaging.appiancloud.com/suite/types/">
   <xsd:complexType name="CASE_APP_VW_OrderDetailsByCustomer">
     <xsd:annotation>
       <xsd:appinfo source="appian.jpa">
@@ -118,4 +116,4 @@
       <xsd:element name="productCategory" nillable="true" type="xsd:string"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema>
+</xsd:schema><!--updated on 2016-10-24T12:43:57.354-->

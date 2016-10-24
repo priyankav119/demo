@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_UsesStates</name>
         <uuid>_a-0000d9b9-57db-8000-9e06-010000010000_808</uuid>
@@ -14,7 +13,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=contains(#&quot;_a-0000d9b9-57db-8000-9e06-010000010000_807&quot;, ri!Country)</definition>
+        <definition>=contains(#"_a-0000d9b9-57db-8000-9e06-010000010000_807", ri!Country)</definition>
         <namedTypedValue>
             <name>Country</name>
             <type>
@@ -24,6 +23,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -53,4 +53,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.937-->

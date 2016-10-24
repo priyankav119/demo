@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_generateGridRowsForRecordAssoc</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8139</uuid>
-        <description></description>
+        <description>Generates grid rows for a record association object.</description>
         <parentUuid>_a-0000da20-55d5-8000-9ba2-011c48011c48_11112</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -14,12 +13,12 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= #&quot;SYSTEM_SYSRULES_applyComponents&quot;(
-  #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8038&quot;(
-    #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6122&quot;(
+        <definition>= #"SYSTEM_SYSRULES_applyComponents"(
+  #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8038"(
+    #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6122"(
       ri!recordAssociation
     ),
-    #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6179&quot;(
+    #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6179"(
       ri!recordAssociation
     ),
     _
@@ -35,6 +34,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -46,9 +46,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -64,4 +62,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:06.301-->

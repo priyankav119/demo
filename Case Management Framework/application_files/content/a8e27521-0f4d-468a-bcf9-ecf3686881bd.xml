@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_createDynamicAddDocSection</name>
         <uuid>a8e27521-0f4d-468a-bcf9-ecf3686881bd</uuid>
@@ -14,77 +13,92 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=#&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
-  label: ri!sectionLabel&amp;&quot; #&quot; &amp; ri!index &amp; &quot; &quot; &amp; index(ri!records,ri!index,&quot;docName&quot;,&quot;&quot;),&#xD;
-  isCollapsible: true(),&#xD;
-  firstColumnContents:{&#xD;
-    #&quot;SYSTEM_SYSRULES_fileUploadField&quot;(&#xD;
-      label:&quot;Upload Document&quot;,&#xD;
-      required:ri!isRequired,&#xD;
-      target:ri!targetFolder,&#xD;
-      documentName: ri!records[ri!index].docName,&#xD;
-      documentDescription: ri!records[ri!index].docDescription,&#xD;
-      value:ri!uploadedDocs[ri!index],&#xD;
-      saveInto: {&#xD;
-        ri!records[ri!index].currentDocId,&#xD;
-        a!save(target:ri!records[ri!index].parentCaseType,value:ri!parentCaseType),&#xD;
-        a!save(target:ri!records[ri!index].parentCaseId,value:ri!parentCaseId),&#xD;
-        a!save(target:ri!records[ri!index].author,value:fn!loggedInUser()),&#xD;
-        a!save(target:ri!records[ri!index].dateCreated,value:now()),&#xD;
-        a!save(target:ri!records[ri!index].isActive,value:true),&#xD;
-        ri!uploadedDocs[ri!index]&#xD;
-      }&#xD;
-    ),&#xD;
-    if(&#xD;
-      count(ri!records) &gt; 1,&#xD;
-      #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(&#xD;
-        secondaryButtons:&#xD;
-        #&quot;SYSTEM_SYSRULES_ButtonWidget&quot;(&#xD;
-          label: &quot;Remove&quot;,&#xD;
-          style: &quot;DESTRUCTIVE&quot;,&#xD;
-          value: ri!index,&#xD;
-          saveInto: {&#xD;
-            a!save(ri!records, #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2785&quot;(index:save!value, array:ri!records)),&#xD;
-            a!save(ri!uploadedDocs, #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2785&quot;(index:save!value, array:ri!uploadedDocs)),&#xD;
-            a!save(ri!recordTokens, #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2785&quot;(index:save!value,  array:ri!recordTokens))&#xD;
-          }&#xD;
-        )&#xD;
-      ),&#xD;
-      {}&#xD;
-    ),&#xD;
-    if(count(ri!records) = ri!index,&#xD;
-      #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
-        labelPosition:&quot;COLLAPSED&quot;,&#xD;
-        links:#&quot;SYSTEM_SYSRULES_dynamicLink&quot;(&#xD;
-          label:&quot;+Add Another&quot;,&#xD;
-          value:1,&#xD;
-          saveInto: {&#xD;
-            a!save(ri!records, #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2788&quot;(array:ri!records, index:ri!index)),&#xD;
-            a!save(ri!uploadedDocs, #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2788&quot;(array:ri!uploadedDocs, index:ri!index)),&#xD;
-            a!save(ri!recordTokens, #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2788&quot;(array:ri!recordTokens, index:ri!index))&#xD;
-          }&#xD;
-        )&#xD;
-      ),&#xD;
-      {}&#xD;
-    )&#xD;
-  },&#xD;
-  secondColumnContents:&#xD;
-  {&#xD;
-    #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-      label: &quot;Document Name&quot;,&#xD;
-      instructions:&quot;If left blank, the original file name will be used.&quot;,&#xD;
-      refreshAfter: &quot;KEYPRESS&quot;,&#xD;
-      value: index(ri!records,ri!index,&quot;docName&quot;,&quot;&quot;),&#xD;
-      saveInto: ri!records[ri!index].docName&#xD;
-    ),&#xD;
-    #&quot;SYSTEM_SYSRULES_textField&quot;(&#xD;
-      label: &quot;Document Description&quot;,&#xD;
-      refreshAfter: &quot;KEYPRESS&quot;,&#xD;
-      value: index(ri!records,ri!index,&quot;docDescription&quot;,&quot;&quot;),&#xD;
-      saveInto: ri!records[ri!index].docDescription&#xD;
-    )&#xD;
-  }&#xD;
-)&#xD;
+        <definition>=#"SYSTEM_SYSRULES_sectionLayout"(&#13;
+  label: ri!sectionLabel&amp;" #" &amp; ri!index &amp; " " &amp; index(ri!records,ri!index,"docName",""),&#13;
+  isCollapsible: true(),&#13;
+  firstColumnContents:{&#13;
+    #"SYSTEM_SYSRULES_fileUploadField"(&#13;
+      label: "Upload Document",&#13;
+      required: ri!isRequired,&#13;
+      target: ri!targetFolder,&#13;
+      documentName: if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!records),&#13;
+        "",&#13;
+        ri!records[ri!index].docName&#13;
+      ),&#13;
+      documentDescription: if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!records),&#13;
+        "",&#13;
+        ri!records[ri!index].docDescription&#13;
+      ),&#13;
+      value: if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!uploadedDocs),&#13;
+        todocument(null),&#13;
+        ri!uploadedDocs[ri!index]&#13;
+      ),&#13;
+      saveInto: {&#13;
+        if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!records),&#13;
+          a!save(ri!records, {'type!{urn:com:appian:types:CASE_APP}CASE_APP_CaseDocument'(currentDocId: save!value)}),&#13;
+          ri!records[ri!index].currentDocId&#13;
+        ),&#13;
+        a!save(target:ri!records[ri!index].parentCaseType,value:ri!parentCaseType),&#13;
+        a!save(target:ri!records[ri!index].parentCaseId,value:ri!parentCaseId),&#13;
+        a!save(target:ri!records[ri!index].author,value:fn!loggedInUser()),&#13;
+        a!save(target:ri!records[ri!index].dateCreated,value:now()),&#13;
+        a!save(target:ri!records[ri!index].isActive,value:true),&#13;
+        if(#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982"(ri!uploadedDocs),&#13;
+          ri!uploadedDocs,&#13;
+          ri!uploadedDocs[ri!index]&#13;
+        )&#13;
+      }&#13;
+    ),&#13;
+    if(&#13;
+      count(ri!records) &gt; 1,&#13;
+      #"SYSTEM_SYSRULES_ButtonLayout"(&#13;
+        secondaryButtons:&#13;
+        #"SYSTEM_SYSRULES_ButtonWidget"(&#13;
+          label: "Remove",&#13;
+          style: "DESTRUCTIVE",&#13;
+          value: ri!index,&#13;
+          saveInto: {&#13;
+            a!save(ri!records, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2785"(index:save!value, array:ri!records)),&#13;
+            a!save(ri!uploadedDocs, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2785"(index:save!value, array:ri!uploadedDocs)),&#13;
+            a!save(ri!recordTokens, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2785"(index:save!value,  array:ri!recordTokens))&#13;
+          }&#13;
+        )&#13;
+      ),&#13;
+      {}&#13;
+    ),&#13;
+    if(count(ri!records) = ri!index,&#13;
+      #"SYSTEM_SYSRULES_linkField"(&#13;
+        labelPosition:"COLLAPSED",&#13;
+        links:#"SYSTEM_SYSRULES_dynamicLink"(&#13;
+          label:"+Add Another",&#13;
+          value:1,&#13;
+          saveInto: {&#13;
+            a!save(ri!records, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2788"(array:ri!records, index:ri!index)),&#13;
+            a!save(ri!uploadedDocs, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2788"(array:ri!uploadedDocs, index:ri!index)),&#13;
+            a!save(ri!recordTokens, #"_a-0000da5f-caaa-8000-9ba2-011c48011c48_2788"(array:ri!recordTokens, index:ri!index))&#13;
+          }&#13;
+        )&#13;
+      ),&#13;
+      {}&#13;
+    )&#13;
+  },&#13;
+  secondColumnContents:&#13;
+  {&#13;
+    #"SYSTEM_SYSRULES_textField"(&#13;
+      label: "Document Name",&#13;
+      instructions:"If left blank, the original file name will be used.",&#13;
+      refreshAfter: "KEYPRESS",&#13;
+      value: index(ri!records,ri!index,"docName",""),&#13;
+      saveInto: ri!records[ri!index].docName&#13;
+    ),&#13;
+    #"SYSTEM_SYSRULES_textField"(&#13;
+      label: "Document Description",&#13;
+      refreshAfter: "KEYPRESS",&#13;
+      value: index(ri!records,ri!index,"docDescription",""),&#13;
+      saveInto: ri!records[ri!index].docDescription&#13;
+    )&#13;
+  }&#13;
+)&#13;
 </definition>
         <namedTypedValue>
             <name>index</name>
@@ -96,8 +110,8 @@
         <namedTypedValue>
             <name>records</name>
             <type>
-                <name>Variant</name>
-                <namespace>http://www.appian.com/ae/types/2009</namespace>
+                <name>CASE_APP_CaseDocument?list</name>
+                <namespace>urn:com:appian:types:CASE_APP</namespace>
             </type>
         </namedTypedValue>
         <namedTypedValue>
@@ -152,6 +166,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -163,9 +178,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -181,4 +194,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:02.371-->

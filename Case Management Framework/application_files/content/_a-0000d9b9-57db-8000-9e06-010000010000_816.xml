@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ReturnStatesforCountry</name>
         <uuid>_a-0000d9b9-57db-8000-9e06-010000010000_816</uuid>
@@ -14,7 +13,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=choose(wherecontains(ri!country, #&quot;_a-0000d9b9-57db-8000-9e06-010000010000_807&quot;), #&quot;_a-0000d9b8-0d4a-8000-9e06-010000010000_782&quot;, #&quot;_a-0000d9b5-6c6c-8000-9e06-010000010000_767&quot;, #&quot;_a-0000d9b5-6c6c-8000-9e06-010000010000_768&quot;, #&quot;_a-0000d9b5-6c6c-8000-9e06-010000010000_766&quot;, #&quot;_a-0000d9b5-6c6c-8000-9e06-010000010000_770&quot;, #&quot;_a-0000d9b9-57db-8000-9e06-010000010000_806&quot;, #&quot;_a-0000d9b8-0d4a-8000-9e06-010000010000_784&quot;, #&quot;_a-0000d9b5-6c6c-8000-9e06-010000010000_764&quot;, #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2078&quot;)</definition>
+        <definition>=choose(wherecontains(ri!country, #"_a-0000d9b9-57db-8000-9e06-010000010000_807"), #"_a-0000d9b8-0d4a-8000-9e06-010000010000_782", #"_a-0000d9b5-6c6c-8000-9e06-010000010000_767", #"_a-0000d9b5-6c6c-8000-9e06-010000010000_768", #"_a-0000d9b5-6c6c-8000-9e06-010000010000_766", #"_a-0000d9b5-6c6c-8000-9e06-010000010000_770", #"_a-0000d9b9-57db-8000-9e06-010000010000_806", #"_a-0000d9b8-0d4a-8000-9e06-010000010000_784", #"_a-0000d9b5-6c6c-8000-9e06-010000010000_764", #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2078")</definition>
         <namedTypedValue>
             <name>country</name>
             <type>
@@ -24,6 +23,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -53,4 +53,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.900-->

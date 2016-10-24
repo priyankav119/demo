@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_CustomerDashboard</name>
         <uuid>_a-0000d9a9-8a1d-8000-9e06-010000010000_721</uuid>
@@ -14,75 +13,75 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>= load(&#xD;
-  local!c: #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2115&quot;(cid:ri!cid),&#xD;
-  local!shippingAddr:fn!stripwith(fn!concat(&#xD;
-    local!c.ShippingAddress.Address,&quot;, &quot;,&#xD;
-    local!c.ShippingAddress.City,&quot;, &quot;,&#xD;
-    local!c.ShippingAddress.State,&quot;, &quot;,&#xD;
-    local!c.ShippingAddress.ZIP,&quot;, &quot;,&#xD;
-    local!c.ShippingAddress.Country&#xD;
-  ),&quot;'&quot;),&#xD;
-  local!billingAddr:fn!stripwith(fn!concat(&#xD;
-    local!c.BillingAddress.Address,&quot;, &quot;,&#xD;
-    local!c.BillingAddress.City,&quot;, &quot;,&#xD;
-    local!c.BillingAddress.State,&quot;, &quot;,&#xD;
-    local!c.BillingAddress.ZIP,&quot;, &quot;,&#xD;
-    local!c.BillingAddress.Country&#xD;
-  ),&quot;'&quot;),&#xD;
-  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(&#xD;
-    firstColumnContents: {&#xD;
-    	#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2134&quot;(c:local!c),&#xD;
-    	#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_2142&quot;(c:local!c),&#xD;
-      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
-        label: &quot;Customer Locations&quot;,&#xD;
-        firstColumnContents: {&#xD;
-          #&quot;SYSTEM_SYSRULES_richTextDisplayField&quot;(&#xD;
-            label:&quot;Shipping Address&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            value:{&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.ShippingAddress.Address, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;, &quot;&amp;char(10),&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.ShippingAddress.City, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;, &quot;,&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.ShippingAddress.State, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;, &quot;,&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.ShippingAddress.ZIP, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;,&quot;&amp;char(10),&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.ShippingAddress.Country, style:&quot;EMPHASIS&quot;)&#xD;
-            }&#xD;
-          ),&#xD;
-          #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
-            label:&quot;Map&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            links:#&quot;SYSTEM_SYSRULES_safeLink&quot;(label:&quot;View address on map&quot;, uri:#&quot;_a-0000d513-8ab8-8000-3ca7-0a000064044c_20749&quot;(local!shippingAddr))&#xD;
-          )&#xD;
-        },&#xD;
-        secondColumnContents: {&#xD;
-          #&quot;SYSTEM_SYSRULES_richTextDisplayField&quot;(&#xD;
-            label:&quot;Billing Address&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            value:{&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.BillingAddress.Address, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;, &quot;&amp;char(10),&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.BillingAddress.City, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;, &quot;,&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.BillingAddress.State, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;, &quot;,&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.BillingAddress.ZIP, style:&quot;EMPHASIS&quot;),&#xD;
-              &quot;,&quot;&amp;char(10),&#xD;
-              #&quot;SYSTEM_SYSRULES_richTextItem&quot;(text:local!c.BillingAddress.Country, style:&quot;EMPHASIS&quot;)&#xD;
-            }&#xD;
-          ),&#xD;
-          #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
-            label:&quot;Map&quot;,&#xD;
-            labelPosition:&quot;ADJACENT&quot;,&#xD;
-            links:#&quot;SYSTEM_SYSRULES_safeLink&quot;(label:&quot;View address on map&quot;, uri:#&quot;_a-0000d513-8ab8-8000-3ca7-0a000064044c_20749&quot;(local!billingAddr))&#xD;
-          )&#xD;
-        }&#xD;
-      )&#xD;
-    }&#xD;
-  )&#xD;
+        <definition>= load(&#13;
+  local!c: #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2115"(cid:ri!cid),&#13;
+  local!shippingAddr:fn!stripwith(fn!concat(&#13;
+    local!c.ShippingAddress.Address,", ",&#13;
+    local!c.ShippingAddress.City,", ",&#13;
+    local!c.ShippingAddress.State,", ",&#13;
+    local!c.ShippingAddress.ZIP,", ",&#13;
+    local!c.ShippingAddress.Country&#13;
+  ),"'"),&#13;
+  local!billingAddr:fn!stripwith(fn!concat(&#13;
+    local!c.BillingAddress.Address,", ",&#13;
+    local!c.BillingAddress.City,", ",&#13;
+    local!c.BillingAddress.State,", ",&#13;
+    local!c.BillingAddress.ZIP,", ",&#13;
+    local!c.BillingAddress.Country&#13;
+  ),"'"),&#13;
+  #"SYSTEM_SYSRULES_dashboardLayout"(&#13;
+    firstColumnContents: {&#13;
+    	#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2134"(c:local!c),&#13;
+    	#"_a-0000d9b9-6309-8000-9ba2-011c48011c48_2142"(c:local!c),&#13;
+      #"SYSTEM_SYSRULES_sectionLayout"(&#13;
+        label: "Customer Locations",&#13;
+        firstColumnContents: {&#13;
+          #"SYSTEM_SYSRULES_richTextDisplayField"(&#13;
+            label:"Shipping Address",&#13;
+            labelPosition:"ADJACENT",&#13;
+            value:{&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.ShippingAddress.Address, style:"EMPHASIS"),&#13;
+              ", "&amp;char(10),&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.ShippingAddress.City, style:"EMPHASIS"),&#13;
+              ", ",&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.ShippingAddress.State, style:"EMPHASIS"),&#13;
+              ", ",&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.ShippingAddress.ZIP, style:"EMPHASIS"),&#13;
+              ","&amp;char(10),&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.ShippingAddress.Country, style:"EMPHASIS")&#13;
+            }&#13;
+          ),&#13;
+          #"SYSTEM_SYSRULES_linkField"(&#13;
+            label:"Map",&#13;
+            labelPosition:"ADJACENT",&#13;
+            links:#"SYSTEM_SYSRULES_safeLink"(label:"View address on map", uri:#"_a-0000d513-8ab8-8000-3ca7-0a000064044c_20749"(local!shippingAddr))&#13;
+          )&#13;
+        },&#13;
+        secondColumnContents: {&#13;
+          #"SYSTEM_SYSRULES_richTextDisplayField"(&#13;
+            label:"Billing Address",&#13;
+            labelPosition:"ADJACENT",&#13;
+            value:{&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.BillingAddress.Address, style:"EMPHASIS"),&#13;
+              ", "&amp;char(10),&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.BillingAddress.City, style:"EMPHASIS"),&#13;
+              ", ",&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.BillingAddress.State, style:"EMPHASIS"),&#13;
+              ", ",&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.BillingAddress.ZIP, style:"EMPHASIS"),&#13;
+              ","&amp;char(10),&#13;
+              #"SYSTEM_SYSRULES_richTextItem"(text:local!c.BillingAddress.Country, style:"EMPHASIS")&#13;
+            }&#13;
+          ),&#13;
+          #"SYSTEM_SYSRULES_linkField"(&#13;
+            label:"Map",&#13;
+            labelPosition:"ADJACENT",&#13;
+            links:#"SYSTEM_SYSRULES_safeLink"(label:"View address on map", uri:#"_a-0000d513-8ab8-8000-3ca7-0a000064044c_20749"(local!billingAddr))&#13;
+          )&#13;
+        }&#13;
+      )&#13;
+    }&#13;
+  )&#13;
 )</definition>
         <namedTypedValue>
             <name>cid</name>
@@ -92,6 +91,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -119,4 +119,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:59.176-->

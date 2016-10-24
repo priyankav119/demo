@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_DocColumn</name>
         <uuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1860</uuid>
         <description>Generates columns given the column type name.   Valid column names include
 
-&quot;NAME&quot;, &quot;DESCRIPTION&quot;, &quot;EXTENSION&quot;, &quot;DATECREATED&quot;, &quot;LASTUSERTOMODIFY&quot;, &quot;TOTALNUMBEROFVERSIONS&quot;, &quot;SIZE&quot;, &quot;IMAGE&quot;, </description>
+"NAME", "DESCRIPTION", "EXTENSION", "DATECREATED", "LASTUSERTOMODIFY", "TOTALNUMBEROFVERSIONS", "SIZE", "IMAGE", </description>
         <parentUuid>_a-0000d9b9-6309-8000-9ba2-011c48011c48_1751</parentUuid>
         <visibility>
             <advertise>false</advertise>
@@ -16,88 +15,89 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=choose(wherecontains(upper(ri!columnType), #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1861&quot;),
+        <definition>=choose(wherecontains(upper(ri!columnType), #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1861"),
   /*NAME*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Name&quot;,
-    field: &quot;Name&quot;,
-    data: index(ri!datasubset.data, &quot;name&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Name",
+    field: "Name",
+    data: index(ri!datasubset.data, "name", null),
+    alignment: "LEFT",
     links:
      if(ri!LinktoDoc, 
-        apply(#&quot;SYSTEM_SYSRULES_documentDownloadLink&quot;(document: _), ri!datasubset.data.document),
+        apply(#"SYSTEM_SYSRULES_documentDownloadLink"(document: _), index(ri!datasubset.data, "document", {})),
         {})
   ),
   /*DESCRIPTION*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Description&quot;,
-    field: &quot;Description&quot;,
-    data: index(ri!datasubset.data, &quot;description&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Description",
+    field: "Description",
+    data: index(ri!datasubset.data, "description", null),
+    alignment: "LEFT",
     links:
      if(ri!LinktoDoc, 
-        apply(#&quot;SYSTEM_SYSRULES_documentDownloadLink&quot;(document: _), ri!datasubset.data.document),
+        apply(#"SYSTEM_SYSRULES_documentDownloadLink"(document: _), index(ri!datasubset.data, "document", {})),
         {})
   ),
   /*EXTENSION*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Extension&quot;,
-    field: &quot;Extension&quot;,
-    data: index(ri!datasubset.data, &quot;extension&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Extension",
+    field: "Extension",
+    data: index(ri!datasubset.data, "extension", null),
+    alignment: "LEFT",
     links:
      if(ri!LinktoDoc, 
-        apply(#&quot;SYSTEM_SYSRULES_documentDownloadLink&quot;(document: _), ri!datasubset.data.document),
+        apply(#"SYSTEM_SYSRULES_documentDownloadLink"(document: _), index(ri!datasubset.data, "document", {})),
         {})
   ),
   /*DATECREATED*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Last Modified&quot;,
-    field: &quot;Last Modified&quot;,
-    data: index(ri!datasubset.data, &quot;dateCreated&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Last Modified",
+    field: "Last Modified",
+    data: index(ri!datasubset.data, "dateCreated", null),
+    alignment: "LEFT",
     links:
      if(ri!LinktoDoc, 
-        apply(#&quot;SYSTEM_SYSRULES_documentDownloadLink&quot;(document: _), ri!datasubset.data.document),
+        apply(#"SYSTEM_SYSRULES_documentDownloadLink"(document: _), index(ri!datasubset.data, "document", {})),
         {})
   ),
   /*LASTUSERTOMODIFY*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Modified By&quot;,
-    field: &quot;Modified By&quot;,
-    data: index(ri!datasubset.data, &quot;lastUserToModify&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Modified By",
+    field: "Modified By",
+    data: index(ri!datasubset.data, "lastUserToModify", null),
+    alignment: "LEFT",
     links: apply(
-       #&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1876&quot;(user: _), 
-       ri!datasubset.data.lastUserToModify)
+      #"_a-0000d9b9-6309-8000-9ba2-011c48011c48_1876"(user: _),
+      index(ri!datasubset.data, "lastUserToModify", {})
+    )
   ),
   /*TOTALNUMBEROFVERSIONS*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Versions&quot;,
-    field: &quot;Versions&quot;,
-    data: index(ri!datasubset.data, &quot;totalNumberOfVersions&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Versions",
+    field: "Versions",
+    data: index(ri!datasubset.data, "totalNumberOfVersions", null),
+    alignment: "LEFT",
     links:
      if(ri!LinktoDoc, 
-        apply(#&quot;SYSTEM_SYSRULES_documentDownloadLink&quot;(document: _), ri!datasubset.data.document),
+        apply(#"SYSTEM_SYSRULES_documentDownloadLink"(document: _), index(ri!datasubset.data, "document", {})),
         {})
   ),
   /*SIZE*/
-  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
-    label: &quot;Size&quot;,
-    field: &quot;Size&quot;,
-    data: index(ri!datasubset.data, &quot;size&quot;, null),
-    alignment: &quot;LEFT&quot;,
+  #"SYSTEM_SYSRULES_gridTextColumn"(
+    label: "Size",
+    field: "Size",
+    data: index(ri!datasubset.data, "size", null),
+    alignment: "LEFT",
     links:
      if(ri!LinktoDoc, 
-        apply(#&quot;SYSTEM_SYSRULES_documentDownloadLink&quot;(document: _), ri!datasubset.data.document),
+        apply(#"SYSTEM_SYSRULES_documentDownloadLink"(document: _), index(ri!datasubset.data, "document", {})),
         {})
   ),
   /*IMAGE*/
-  #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
-    label: &quot;Images&quot;,
-    field: &quot;Images&quot;,
-    data: apply(#&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3514&quot;(doc: _), ri!documents),
+  #"SYSTEM_SYSRULES_gridImageColumn"(
+    label: "Images",
+    field: "Images",
+    data: apply(#"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3514"(doc: _), if(#"SYSTEM_SYSRULES_isNullOrEmpty"(ri!documents), {}, ri!documents)),
     size: upper(ri!showDocImageType)
   )
 )</definition>
@@ -139,6 +139,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -150,9 +151,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -168,4 +167,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.852-->

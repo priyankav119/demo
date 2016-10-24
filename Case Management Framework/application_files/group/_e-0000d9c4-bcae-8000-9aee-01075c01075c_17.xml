@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><groupHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <group>
         <name>CASE_APP Designers</name>
         <securityMap>SECURITYMAP_PUBLIC</securityMap>
@@ -13,18 +12,15 @@
     </group>
     <members>
         <users>
-            <userUuid>malcolm.ross@appian.com</userUuid>
-            <userUuid>jorge.sanchez</userUuid>
-            <userUuid>zach.messler</userUuid>
+            <userUuid>jorge.sanchez.s</userUuid>
+            <userUuid>jorge.sanchez.d</userUuid>
+            <userUuid>malcolm.ross</userUuid>
         </users>
         <groups/>
     </members>
     <admins>
-        <users>
-            <userUuid>malcolm.ross@appian.com</userUuid>
-            <userUuid>jorge.sanchez</userUuid>
-        </users>
+        <users/>
         <groups/>
     </admins>
     <ruleSet/>
-</groupHaul>
+</groupHaul><!--updated on 2016-10-24T12:43:56.821-->

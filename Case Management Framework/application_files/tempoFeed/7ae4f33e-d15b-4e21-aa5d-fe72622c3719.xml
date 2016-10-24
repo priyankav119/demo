@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><tempoFeedHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <tempoFeed>
         <uuid>7ae4f33e-d15b-4e21-aa5d-fe72622c3719</uuid>
         <name>CASE_APP Delete Product</name>
@@ -15,4 +14,4 @@
             </groups>
         </role>
     </roleMap>
-</tempoFeedHaul>
+</tempoFeedHaul><!--updated on 2016-10-24T12:44:08.605-->

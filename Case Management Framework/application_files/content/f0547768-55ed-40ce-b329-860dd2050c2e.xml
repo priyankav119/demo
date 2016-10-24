@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_uiChartTopPurchasesByCategoriesForCustomer</name>
         <uuid>f0547768-55ed-40ce-b329-860dd2050c2e</uuid>
@@ -15,33 +14,33 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>load(
-  local!pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(
+  local!pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
     startIndex: 1,
-    batchSize: if(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!batchSize),3,ri!batchSize),
-    sort: #&quot;SYSTEM_SYSRULES_sortInfo&quot;(
-      field: &quot;prodTotal&quot;,
+    batchSize: if(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!batchSize),3,ri!batchSize),
+    sort: #"SYSTEM_SYSRULES_sortInfo"(
+      field: "prodTotal",
       ascending: false
     )
   ),
   with(
-    local!datasubset: #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
-      entity: #&quot;_a-0000da89-b5e9-8000-9ba2-011c48011c48_3190&quot;,
-      query: #&quot;SYSTEM_SYSRULES_query&quot;(
-        aggregation: #&quot;SYSTEM_SYSRULES_queryAggregation&quot;(aggregationColumns: {
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;productCategory&quot;, isGrouping: true),
-          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field: &quot;prodTotal&quot;, aggregationFunction: &quot;SUM&quot;),
+    local!datasubset: #"SYSTEM_SYSRULES_queryEntity"(
+      entity: #"_a-0000da89-b5e9-8000-9ba2-011c48011c48_3190",
+      query: #"SYSTEM_SYSRULES_query"(
+        aggregation: #"SYSTEM_SYSRULES_queryAggregation"(aggregationColumns: {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "productCategory", isGrouping: true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "prodTotal", aggregationFunction: "SUM"),
         }),
-        filter:#&quot;SYSTEM_SYSRULES_queryFilter&quot;(&quot;customerId&quot;,&quot;=&quot;,ri!customerId),
+        filter:#"SYSTEM_SYSRULES_queryFilter"("customerId","=",ri!customerId),
         pagingInfo: local!pagingInfo
       )
     ),
-    #&quot;SYSTEM_SYSRULES_pieChartField&quot;(
-      label:&quot;Top Product Category Purchases by $&quot;,
+    #"SYSTEM_SYSRULES_pieChartField"(
+      label:"Top Product Category Purchases by $",
       series: apply(
-        #&quot;SYSTEM_SYSRULES_chartSeries&quot;(label: _,data: _),
+        #"SYSTEM_SYSRULES_chartSeries"(label: _,data: _),
         merge(
-          index(local!datasubset.data, &quot;productCategory&quot;, {}),
-          index(local!datasubset.data, &quot;prodTotal&quot;, {})
+          index(local!datasubset.data, "productCategory", {}),
+          index(local!datasubset.data, "prodTotal", {})
         )
       ),
       showdatalabels: false,
@@ -66,6 +65,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -77,9 +77,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>jorge.sanchez</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -95,4 +93,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:04.429-->

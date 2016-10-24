@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_CustomerDiffLabelValue</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_5393</uuid>
@@ -20,15 +19,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Name&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.Name &amp; &quot; / To: &quot; &amp; ri!customerUpdate.Name
+        label: "Name",
+        value: "From: " &amp; ri!customerOrig.Name &amp; " / To: " &amp; ri!customerUpdate.Name
       }
     )
   ),
@@ -37,15 +36,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Description&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.Description &amp; &quot; / To: &quot; &amp; ri!customerUpdate.Description
+        label: "Description",
+        value: "From: " &amp; ri!customerOrig.Description &amp; " / To: " &amp; ri!customerUpdate.Description
       }
     )
   ),
@@ -54,15 +53,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Account Owner&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.AccountOwner &amp; &quot; / To: &quot; &amp; ri!customerUpdate.AccountOwner
+        label: "Account Owner",
+        value: "From: " &amp; ri!customerOrig.AccountOwner &amp; " / To: " &amp; ri!customerUpdate.AccountOwner
       }
     )
   ),
@@ -71,15 +70,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Contact Name&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.ContactName &amp; &quot; / To: &quot; &amp; ri!customerUpdate.ContactName
+        label: "Contact Name",
+        value: "From: " &amp; ri!customerOrig.ContactName &amp; " / To: " &amp; ri!customerUpdate.ContactName
       }
     )
   ),
@@ -88,15 +87,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Contact Email&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.Email &amp; &quot; / To: &quot; &amp; ri!customerUpdate.Email
+        label: "Contact Email",
+        value: "From: " &amp; ri!customerOrig.Email &amp; " / To: " &amp; ri!customerUpdate.Email
       }
     )
   ),
@@ -105,15 +104,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Contact Office Phone&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.OfficePhone &amp; &quot; / To: &quot; &amp; ri!customerUpdate.OfficePhone
+        label: "Contact Office Phone",
+        value: "From: " &amp; ri!customerOrig.OfficePhone &amp; " / To: " &amp; ri!customerUpdate.OfficePhone
       }
     )
   ),
@@ -122,15 +121,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Contact Home Phone&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.HomePhone &amp; &quot; / To: &quot; &amp; ri!customerUpdate.HomePhone
+        label: "Contact Home Phone",
+        value: "From: " &amp; ri!customerOrig.HomePhone &amp; " / To: " &amp; ri!customerUpdate.HomePhone
       }
     )
   ),
@@ -139,15 +138,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Contact Mobile Phone&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.MobilePhone &amp; &quot; / To: &quot; &amp; ri!customerUpdate.MobilePhone
+        label: "Contact Mobile Phone",
+        value: "From: " &amp; ri!customerOrig.MobilePhone &amp; " / To: " &amp; ri!customerUpdate.MobilePhone
       }
     )
   ),
@@ -156,15 +155,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Status&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.Status &amp; &quot; / To: &quot; &amp; ri!customerUpdate.Status
+        label: "Status",
+        value: "From: " &amp; ri!customerOrig.Status &amp; " / To: " &amp; ri!customerUpdate.Status
       }
     )
   ),
@@ -173,15 +172,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Shipping Country&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.ShippingAddress.Country &amp; &quot; / To: &quot; &amp; ri!customerUpdate.ShippingAddress.Country
+        label: "Shipping Country",
+        value: "From: " &amp; ri!customerOrig.ShippingAddress.Country &amp; " / To: " &amp; ri!customerUpdate.ShippingAddress.Country
       }
     )
   ),
@@ -190,15 +189,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Shipping Address&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.ShippingAddress.Address &amp; &quot; / To: &quot; &amp; ri!customerUpdate.ShippingAddress.Address
+        label: "Shipping Address",
+        value: "From: " &amp; ri!customerOrig.ShippingAddress.Address &amp; " / To: " &amp; ri!customerUpdate.ShippingAddress.Address
       }
     )
   ),
@@ -207,15 +206,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Shipping City&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.ShippingAddress.City &amp; &quot; / To: &quot; &amp; ri!customerUpdate.ShippingAddress.City
+        label: "Shipping City",
+        value: "From: " &amp; ri!customerOrig.ShippingAddress.City &amp; " / To: " &amp; ri!customerUpdate.ShippingAddress.City
       }
     )
   ),
@@ -224,15 +223,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Shipping State/Province&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.ShippingAddress.State &amp; &quot; / To: &quot; &amp; ri!customerUpdate.ShippingAddress.State
+        label: "Shipping State/Province",
+        value: "From: " &amp; ri!customerOrig.ShippingAddress.State &amp; " / To: " &amp; ri!customerUpdate.ShippingAddress.State
       }
     )
   ),
@@ -241,15 +240,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Shipping Postal Code&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.ShippingAddress.ZIP &amp; &quot; / To: &quot; &amp; ri!customerUpdate.ShippingAddress.ZIP
+        label: "Shipping Postal Code",
+        value: "From: " &amp; ri!customerOrig.ShippingAddress.ZIP &amp; " / To: " &amp; ri!customerUpdate.ShippingAddress.ZIP
       }
     )
   ),
@@ -258,15 +257,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Billing Country&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.BillingAddress.Country &amp; &quot; / To: &quot; &amp; ri!customerUpdate.BillingAddress.Country
+        label: "Billing Country",
+        value: "From: " &amp; ri!customerOrig.BillingAddress.Country &amp; " / To: " &amp; ri!customerUpdate.BillingAddress.Country
       }
     )
   ),
@@ -275,15 +274,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Billing Address&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.BillingAddress.Address &amp; &quot; / To: &quot; &amp; ri!customerUpdate.BillingAddress.Address
+        label: "Billing Address",
+        value: "From: " &amp; ri!customerOrig.BillingAddress.Address &amp; " / To: " &amp; ri!customerUpdate.BillingAddress.Address
       }
     )
   ),
@@ -292,15 +291,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Billing City&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.BillingAddress.City &amp; &quot; / To: &quot; &amp; ri!customerUpdate.BillingAddress.City
+        label: "Billing City",
+        value: "From: " &amp; ri!customerOrig.BillingAddress.City &amp; " / To: " &amp; ri!customerUpdate.BillingAddress.City
       }
     )
   ),
@@ -309,15 +308,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Billing State/Province&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.BillingAddress.State &amp; &quot; / To: &quot; &amp; ri!customerUpdate.BillingAddress.State
+        label: "Billing State/Province",
+        value: "From: " &amp; ri!customerOrig.BillingAddress.State &amp; " / To: " &amp; ri!customerUpdate.BillingAddress.State
       }
     )
   ),
@@ -326,15 +325,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Billing Postal Code&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.BillingAddress.ZIP &amp; &quot; / To: &quot; &amp; ri!customerUpdate.BillingAddress.ZIP
+        label: "Billing Postal Code",
+        value: "From: " &amp; ri!customerOrig.BillingAddress.ZIP &amp; " / To: " &amp; ri!customerUpdate.BillingAddress.ZIP
       }
     )
   ),
@@ -343,38 +342,38 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Folder ID&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.FolderID &amp; &quot; / To: &quot; &amp; ri!customerUpdate.FolderID
+        label: "Folder ID",
+        value: "From: " &amp; ri!customerOrig.FolderID &amp; " / To: " &amp; ri!customerUpdate.FolderID
       }
     )
   ),
   local!LogoID: if(
-    or(#&quot;_a-0000d9a9-eb56-8000-9e06-010000010000_751&quot;(ri!customerUpdate.LogoID),ri!customerOrig.LogoID = ri!customerUpdate.LogoID),
+    or(#"_a-0000d9a9-eb56-8000-9e06-010000010000_751"(ri!customerUpdate.LogoID),ri!customerOrig.LogoID = ri!customerUpdate.LogoID),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;New Logo&quot;,
+        label: "New Logo",
         value: extract(
           linktodocument(
             ri!customerUpdate.LogoID,
-            &quot;Hello&quot;
+            "Hello"
           ),
-          &quot;href=&quot;&quot;&quot;,
-          &quot;&quot;&quot; target=&quot;
+          "href=""",
+          """ target="
         )
       }
     )
@@ -384,15 +383,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Industry&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.Industry &amp; &quot; / To: &quot; &amp; ri!customerUpdate.Industry
+        label: "Industry",
+        value: "From: " &amp; ri!customerOrig.Industry &amp; " / To: " &amp; ri!customerUpdate.Industry
       }
     )
   ),
@@ -401,15 +400,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Stock Ticker&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.StockTicker &amp; &quot; / To: &quot; &amp; ri!customerUpdate.StockTicker
+        label: "Stock Ticker",
+        value: "From: " &amp; ri!customerOrig.StockTicker &amp; " / To: " &amp; ri!customerUpdate.StockTicker
       }
     )
   ),
@@ -418,15 +417,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Customer Since&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.CustomerSince &amp; &quot; / To: &quot; &amp; ri!customerUpdate.CustomerSince
+        label: "Customer Since",
+        value: "From: " &amp; ri!customerOrig.CustomerSince &amp; " / To: " &amp; ri!customerUpdate.CustomerSince
       }
     )
   ),
@@ -435,15 +434,15 @@
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
       typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
       {
-        label: &quot;Inactive Flag&quot;,
-        value: &quot;From: &quot; &amp; ri!customerOrig.InactiveFlag &amp; &quot; / To: &quot; &amp; ri!customerUpdate.InactiveFlag
+        label: "Inactive Flag",
+        value: "From: " &amp; ri!customerOrig.InactiveFlag &amp; " / To: " &amp; ri!customerUpdate.InactiveFlag
       }
     )
   ),
@@ -529,8 +528,8 @@
       cast(
         typeof('type!{http://www.appian.com/ae/types/2009}LabelValue'()),
         {
-          label: &quot;none&quot;,
-          value: &quot;none&quot;
+          label: "none",
+          value: "none"
         }
       ),
       append(
@@ -628,6 +627,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -639,9 +639,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -657,4 +655,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:01.154-->

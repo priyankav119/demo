@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ShipOrder</name>
         <uuid>501ae05a-b9c8-4f7f-b80c-cfc4442437d1</uuid>
@@ -15,16 +14,16 @@
             <unlogged>false</unlogged>
         </visibility>
         <definition>=load(
-  local!Order: #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8248&quot;(ri!Order.OrderNum),
-  #&quot;SYSTEM_SYSRULES_formLayout&quot;(
-  label: &quot;Prepare Order&quot;,
+  local!Order: #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_8248"(ri!Order.OrderNum),
+  #"SYSTEM_SYSRULES_formLayout"(
+  label: "Prepare Order",
   firstColumnContents: {
-    #&quot;fcc1ec91-4693-4c90-9074-a5f6642b06a8&quot;(ri!Order,true),
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Order Items&quot;,
+    #"fcc1ec91-4693-4c90-9074-a5f6642b06a8"(ri!Order,true),
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Order Items",
       firstColumnContents: {
-        #&quot;f6ebce54-e12d-42ee-97b9-b37c3c001125&quot;(
-          OrderItems:  #&quot;_a-0000d9c4-bcac-8000-9ba2-011c48011c48_7437&quot;(ri!Order.OrderNum),
+        #"f6ebce54-e12d-42ee-97b9-b37c3c001125"(
+          OrderItems:  #"_a-0000d9c4-bcac-8000-9ba2-011c48011c48_7437"(ri!Order.OrderNum),
           gridLabel: null,
           gridInstructions: null,
           readOnly: true()
@@ -32,13 +31,13 @@
       },
       isCollapsible: true()
     ),
-    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
-      label: &quot;Complete Order Shipment&quot;,
+    #"SYSTEM_SYSRULES_sectionLayout"(
+      label: "Complete Order Shipment",
       firstColumnContents:{
-        #&quot;SYSTEM_SYSRULES_textField&quot;(
-          label: &quot;Tracking Number&quot;,
-          labelPosition: &quot;ADJACENT&quot;,
-          instructions: &quot;Input the shipment tracking number&quot;,
+        #"SYSTEM_SYSRULES_textField"(
+          label: "Tracking Number",
+          labelPosition: "ADJACENT",
+          instructions: "Input the shipment tracking number",
           value: ri!TrackingNumber,
           saveInto: ri!TrackingNumber,
           required: true(),
@@ -48,11 +47,11 @@
     )
 
   },
-  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+  buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
     primaryButtons: {
-      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
-        label: &quot;Submit&quot;,
-        style: &quot;PRIMARY&quot;
+      #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+        label: "Submit",
+        style: "PRIMARY"
       )
     }
   )
@@ -74,6 +73,7 @@
             <value/>
         </namedTypedValue>
         <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -85,9 +85,7 @@
             <groups/>
         </role>
         <role allowForAll="false" inherit="true" name="administrators">
-            <users>
-                <userUuid>malcolm.ross@appian.com</userUuid>
-            </users>
+            <users/>
             <groups/>
         </role>
         <role allowForAll="false" inherit="false" name="denyReaders">
@@ -103,4 +101,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:44:00.321-->

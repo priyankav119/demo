@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8"?><contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <rule>
         <name>CASE_APP_ProductDiffLabelValue</name>
         <uuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_5409</uuid>
@@ -22,8 +21,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -31,8 +30,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Name&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.name &amp; &quot; / To: &quot; &amp; ri!productUpdate.name
+        label: "Name",
+        value: "From: " &amp; ri!productOrig.name &amp; " / To: " &amp; ri!productUpdate.name
       }
     )
   ),
@@ -43,8 +42,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -52,8 +51,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;SKU&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.sku &amp; &quot; / To: &quot; &amp; ri!productUpdate.sku
+        label: "SKU",
+        value: "From: " &amp; ri!productOrig.sku &amp; " / To: " &amp; ri!productUpdate.sku
       }
     )
   ),
@@ -64,8 +63,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -73,8 +72,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Description&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.description &amp; &quot; / To: &quot; &amp; ri!productUpdate.description
+        label: "Description",
+        value: "From: " &amp; ri!productOrig.description &amp; " / To: " &amp; ri!productUpdate.description
       }
     )
   ),
@@ -85,8 +84,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -94,8 +93,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Category&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.category &amp; &quot; / To: &quot; &amp; ri!productUpdate.category
+        label: "Category",
+        value: "From: " &amp; ri!productOrig.category &amp; " / To: " &amp; ri!productUpdate.category
       }
     )
   ),
@@ -106,8 +105,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -115,8 +114,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Manufacturer&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.manufacturer &amp; &quot; / To: &quot; &amp; ri!productUpdate.manufacturer
+        label: "Manufacturer",
+        value: "From: " &amp; ri!productOrig.manufacturer &amp; " / To: " &amp; ri!productUpdate.manufacturer
       }
     )
   ),
@@ -127,8 +126,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -136,8 +135,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Model Number&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.modelNumber &amp; &quot; / To: &quot; &amp; ri!productUpdate.modelNumber
+        label: "Model Number",
+        value: "From: " &amp; ri!productOrig.modelNumber &amp; " / To: " &amp; ri!productUpdate.modelNumber
       }
     )
   ),
@@ -148,8 +147,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -157,8 +156,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Release Date&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.releaseDate &amp; &quot; / To: &quot; &amp; ri!productUpdate.releaseDate
+        label: "Release Date",
+        value: "From: " &amp; ri!productOrig.releaseDate &amp; " / To: " &amp; ri!productUpdate.releaseDate
       }
     )
   ),
@@ -169,8 +168,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -178,8 +177,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Price&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.price &amp; &quot; / To: &quot; &amp; ri!productUpdate.price
+        label: "Price",
+        value: "From: " &amp; ri!productOrig.price &amp; " / To: " &amp; ri!productUpdate.price
       }
     )
   ),
@@ -190,8 +189,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -199,8 +198,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Quantity&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.quantity &amp; &quot; / To: &quot; &amp; ri!productUpdate.quantity
+        label: "Quantity",
+        value: "From: " &amp; ri!productOrig.quantity &amp; " / To: " &amp; ri!productUpdate.quantity
       }
     )
   ),
@@ -211,8 +210,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -220,8 +219,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Shipping Weight&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.shippingDetails.weight &amp; &quot; / To: &quot; &amp; ri!productUpdate.shippingDetails.weight
+        label: "Shipping Weight",
+        value: "From: " &amp; ri!productOrig.shippingDetails.weight &amp; " / To: " &amp; ri!productUpdate.shippingDetails.weight
       }
     )
   ),
@@ -232,8 +231,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -241,8 +240,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Shipping Width&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.shippingDetails.width &amp; &quot; / To: &quot; &amp; ri!productUpdate.shippingDetails.width
+        label: "Shipping Width",
+        value: "From: " &amp; ri!productOrig.shippingDetails.width &amp; " / To: " &amp; ri!productUpdate.shippingDetails.width
       }
     )
   ),
@@ -253,8 +252,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -262,8 +261,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Shipping Height&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.shippingDetails.height &amp; &quot; / To: &quot; &amp; ri!productUpdate.shippingDetails.height
+        label: "Shipping Height",
+        value: "From: " &amp; ri!productOrig.shippingDetails.height &amp; " / To: " &amp; ri!productUpdate.shippingDetails.height
       }
     )
   ),
@@ -274,8 +273,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -283,8 +282,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Shipping Depth&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.shippingDetails.depth &amp; &quot; / To: &quot; &amp; ri!productUpdate.shippingDetails.depth
+        label: "Shipping Depth",
+        value: "From: " &amp; ri!productOrig.shippingDetails.depth &amp; " / To: " &amp; ri!productUpdate.shippingDetails.depth
       }
     )
   ),
@@ -295,8 +294,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;none&quot;,
-        value: &quot;none&quot;
+        label: "none",
+        value: "none"
       }
     ),
     cast(
@@ -304,8 +303,8 @@
         'type!{http://www.appian.com/ae/types/2009}LabelValue'()
       ),
       {
-        label: &quot;Category&quot;,
-        value: &quot;From: &quot; &amp; ri!productOrig.productCategory &amp; &quot; / To: &quot; &amp; ri!productUpdate.productCategory
+        label: "Category",
+        value: "From: " &amp; ri!productOrig.productCategory &amp; " / To: " &amp; ri!productUpdate.productCategory
       }
     )
   ),
@@ -360,8 +359,8 @@
           'type!{http://www.appian.com/ae/types/2009}LabelValue'()
         ),
         {
-          label: &quot;none&quot;,
-          value: &quot;none&quot;
+          label: "none",
+          value: "none"
         }
       ),
       append(
@@ -426,6 +425,7 @@
             </type>
         </namedTypedValue>
         <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
     </rule>
     <roleMap public="true">
         <role allowForAll="false" inherit="true" name="readers">
@@ -453,4 +453,4 @@
             <groups/>
         </role>
     </roleMap>
-</contentHaul>
+</contentHaul><!--updated on 2016-10-24T12:43:57.939-->
