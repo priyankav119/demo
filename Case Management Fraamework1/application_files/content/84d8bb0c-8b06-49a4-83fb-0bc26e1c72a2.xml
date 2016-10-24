@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CASE_APP_SR_uiFormCaseWorkerReview</name>
+        <uuid>84d8bb0c-8b06-49a4-83fb-0bc26e1c72a2</uuid>
+        <description>Task for Case worker to review initial request and pursue further action</description>
+        <parentUuid>_a-0000da5f-caaa-8000-9ba2-011c48011c48_2618</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>/*To Test:
+1. Set servicerReq to: type!CASE_APP_ServiceRequest(
+  requestNum:&quot;123a-1234&quot;,
+  requestDateTime:now(),
+  type:&quot;I need help with an Order&quot;,
+  relatedCustomer:CASE_APP_getAllCustomerFieldsById(1),
+  relatedOrder: CASE_APP_getAllOrderFieldsById(1),
+  relatedOrderItemId:1,
+  comments:&quot;Sample comments&quot;,
+  status:&quot;Solution&quot;,
+  id:53051235
+)
+*/
+load(
+  local!updateCase:wherecontains(ri!serviceReq.status,#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;),
+  local!currentMilestone:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2852&quot;(ri!serviceReq.status),
+  local!originalStatus: ri!serviceReq.status,
+  #&quot;SYSTEM_SYSRULES_formLayout&quot;(
+    label: &quot;Review Customer Service Request #&quot;&amp;ri!serviceReq.requestNum,
+    instructions: &quot;Please complete the form below&quot;,
+    firstColumnContents: {
+      #&quot;SYSTEM_SYSRULES_milestoneField&quot;(
+        steps:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2848&quot;,
+        active:3
+      ),
+      #&quot;051657d6-8b7d-4398-b529-edffef50deae&quot;(ri!serviceReq,local!currentMilestone),
+      #&quot;3125583a-3639-4d2f-afd3-c600a5e07ca6&quot;(recordType: #&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2950&quot;, recordId: ri!serviceReq.id, hideFilters: true),
+      if(#&quot;_a-0000d9b9-6309-8000-9ba2-011c48011c48_1982&quot;(ri!serviceReq.caseDocuments),
+        {},
+        #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+          label:&quot;Case Documents&quot;,
+          firstColumnContents:{
+            #&quot;db22a1b1-edcb-4c87-a893-14880b22e957&quot;(
+              documents:ri!serviceReq.caseDocuments.currentDocId,
+              gridSelectable:false,
+              showDocImageType:&quot;ICON&quot;,
+              showColumns:{&quot;IMAGE&quot;,&quot;NAME&quot;,&quot;DESCRIPTION&quot;,&quot;EXTENSION&quot;,&quot;DATECREATED&quot;},
+              itemsPerPage:5,
+              linkToDoc:true
+            )
+          },
+          isCollapsible:true
+        )
+      ),
+      #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+        label:&quot;Case Worker Action&quot;,
+        firstColumnContents:{
+          #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+            label:&quot;Update Case Status To...&quot;,
+            choiceLabels:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[{3,4,5,6}],
+            placeHolderLabel:&quot;---Select one---&quot;,
+            choiceValues:#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;[{3,4,5,6}],
+            value:ri!serviceReq.status,
+            saveInto:{
+              ri!serviceReq.status,
+              a!save(
+                target:local!updateCase,
+                value:wherecontains(ri!serviceReq.status,#&quot;_a-0000da5f-caaa-8000-9ba2-011c48011c48_2630&quot;)
+              )
+            }
+          ),
+          choose(local!updateCase,
+            /*Case 1: &quot;New&quot; - When keeping new, Case Worker will simply add 
+             * a note or comment to the case
+             */
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label:&quot;Add Comments&quot;,
+              instructions:&quot;Comments will be added to case history and requester will be notified of update.&quot;,
+              value:ri!notes,
+              saveInto:ri!notes,
+              required:true
+            ),
+            /*Case 2: Pending Assignment
+             */
+            {},
+            /*Case 3: Researching
+             */
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label:&quot;Add Comments&quot;,
+              instructions:&quot;Comments will be added to case history and requester will be notified of update.&quot;,
+              value:ri!notes,
+              saveInto:ri!notes,
+              required:true
+            ),
+            /* Case 4: Pending User: Case Worker has requested details from requester.
+             */
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label:&quot;Request Additional Details&quot;,
+              instructions:&quot;Please capture detailed instructions of the information you require from the requester. A notification will be sent including links to the case and its history.&quot;,
+              value:ri!notes,
+              saveInto:ri!notes,
+              required:true
+            ),
+            /*Case 5: Solution
+             */
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label:&quot;Capture Case Solution Notes&quot;,
+              instructions:&quot;Indicate what steps you have taken to resolve this case.&quot;,
+              value:ri!notes,
+              saveInto:ri!notes,
+              required:true
+            ),
+            /*Case 6: Closed
+             */
+            #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+              label:&quot;Comments&quot;,
+              instructions:&quot;Please indicate your reasons for closing the case.&quot;,
+              value:ri!notes,
+              saveInto:ri!notes,
+              required:true
+            ),
+            /*Case 7: Re-Opened
+             */
+            {}
+          )
+        }
+      )
+    },
+    buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+      primaryButtons: {
+        #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
+          label: &quot;Submit&quot;,
+          style: &quot;PRIMARY&quot;,
+          saveInto: {
+            a!save(
+              ri!notes,
+              if(ri!serviceReq.status &lt;&gt; local!originalStatus,
+                &quot;Updated CSR Case Status to [&quot; &amp; ri!serviceReq.status &amp; &quot;]&quot;,
+                &quot;&quot;
+              ) &amp; &quot;. Added comments: &quot; &amp; ri!notes
+            )
+          }
+        )
+      }
+    ),
+    validations: {}
+  )
+)</definition>
+        <namedTypedValue>
+            <name>serviceReq</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>notes</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009">
+  <site a:uuid="f8c90ddf-c310-42f3-81dc-e9410d4fd9e7" name="Service Request Dashboard">
+    <description>Shows all Service Request tasks for a user</description>
+    <urlStub>servicerequest</urlStub>
+    <page name="">
+      <uiObject a:uuid="9a84b4df-a0b6-48f7-bd6a-d9a4989ab0f6"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:TaskReport"/>
+    </page>
+    <visibility>268435456</visibility>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000d9c4-bcae-8000-9aee-01075c01075c_17</groupUuid>
+      </groups>
+    </role>
+    <role name="site_viewer">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000da5f-caa8-8000-9aee-01075c01075c_16</groupUuid>
+        <groupUuid>_e-0000da89-b5e6-8000-9aee-01075c01075c_19</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+</siteHaul>
