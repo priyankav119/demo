@@ -4,7 +4,7 @@
         <uuid>_a-0000daa1-9d78-8000-6ee0-010000010000_1019</uuid>
         <name>AH_AuditHistory_DS</name>
         <description>Datastore for the Audit History News Usage App</description>
-        <dataSourceKey>jdbc/AppianAnywhere</dataSourceKey>
+        <dataSourceKey>jdbc/AppianSecondary</dataSourceKey>
         <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
         <entities>
             <entity>
