@@ -24,6 +24,20 @@
       saveInto: {},
       refreshAfter: &quot;UNFOCUS&quot;,
       validations: {}
+    ),
+    #&quot;SYSTEM_SYSRULES_textField&quot;(
+      label: &quot;Lorem Ipsum1&quot;,
+      labelPosition: &quot;ABOVE&quot;,
+      saveInto: {},
+      refreshAfter: &quot;UNFOCUS&quot;,
+      validations: {}
+    ),
+    #&quot;SYSTEM_SYSRULES_textField&quot;(
+      label: &quot;Lorem Ipsum2&quot;,
+      labelPosition: &quot;ABOVE&quot;,
+      saveInto: {},
+      refreshAfter: &quot;UNFOCUS&quot;,
+      validations: {}
     )
   },
   secondColumnContents: {
