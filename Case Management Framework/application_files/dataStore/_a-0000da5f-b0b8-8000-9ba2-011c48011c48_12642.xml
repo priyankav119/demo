@@ -3,7 +3,7 @@
         <uuid>_a-0000da5f-b0b8-8000-9ba2-011c48011c48_12642</uuid>
         <name>CASE_APP_Core_DS</name>
         <description>Data store for all the main CASE_APP Entities</description>
-        <dataSourceKey>jdbc/AppianAnywhere</dataSourceKey>
+        <dataSourceKey>jdbc/AppianSecondary</dataSourceKey>
         <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
         <entities>
             <entity>
