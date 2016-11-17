@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>TA3_DeleteTicketEntry</name>
+        <uuid>_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38353</uuid>
+        <description>Interface to delete a Ticket</description>
+        <parentUuid>fcbcec0c-b5ed-437a-a110-9dbbfa16a4da</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#&quot;SYSTEM_SYSRULES_formLayout&quot;(
+  label: if(
+    isnull(ri!record.title),
+    &quot;Delete?&quot;,
+    &quot;Delete &quot; &amp; ri!record.title &amp; &quot;?&quot;
+  ),
+  instructions: &quot;&quot;,
+  firstColumnContents: {
+    #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+      labelPosition: &quot;COLLAPSED&quot;,
+      readOnly: true,
+      value: &quot;Submitting this form will delete your record and its attachments. The data will no longer exist or be visible in Tempo.
+
+After deletion, it is recommended to return to the records list, as this record will become unavailable.&quot;
+    )
+  },
+  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+    primaryButtons: {
+      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
+        label: &quot;Delete&quot;,
+        style: &quot;PRIMARY&quot;,
+        confirmMessage: &quot;Are you sure you want to delete this record? This action cannot be undone.&quot;
+      )
+    },
+    secondaryButtons: {
+      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
+        label: &quot;Cancel&quot;,
+        style: &quot;NORMAL&quot;,
+        value: true,
+        saveInto: ri!cancel,
+        skipValidation: true
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>record</name>
+            <type>
+                <name>TA3_Ticket</name>
+                <namespace>urn:com:appian:types:TA3</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

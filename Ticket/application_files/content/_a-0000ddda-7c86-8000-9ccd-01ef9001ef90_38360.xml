@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>TA3_TicketDashboard</name>
+        <uuid>_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38360</uuid>
+        <description>Record dashboard for Tickets</description>
+        <parentUuid>fcbcec0c-b5ed-437a-a110-9dbbfa16a4da</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!record: #&quot;93499927-2bbe-4752-ab79-25114b5b0ca5_GETONERECORD&quot;(ri!id),
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents: {
+      #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38356&quot;(
+        record: local!record,
+        creating: false,
+        readOnly: true,
+        documents: if(
+          isnull(local!record.folderId),
+          {},
+          folder(local!record.folderId, &quot;documentChildren&quot;)
+        )
+      ),
+      #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38357&quot;(ri!id)
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>id</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

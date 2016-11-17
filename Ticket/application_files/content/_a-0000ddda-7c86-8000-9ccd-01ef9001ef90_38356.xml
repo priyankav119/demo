@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>TA3_TicketDetails</name>
+        <uuid>_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38356</uuid>
+        <description>&quot;Base&quot; interface module, with all the basic fields of the record. Used by the Summary record view, create/update, and task forms.</description>
+        <parentUuid>fcbcec0c-b5ed-437a-a110-9dbbfa16a4da</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  /* The local variables store the options for the Pick Single / Multiple from List fields    *
+   * We only show the active options, plus any inactive options already stored on this record */
+  local!TA3_statusOptions: if(ri!record.TA3_status.active,#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38343&quot;(#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38374&quot;(), null),#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38343&quot;(#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38374&quot;(), ri!record.TA3_status.value)),
+  local!TA3_priorityOptions: if(ri!record.TA3_priority.active,#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38343&quot;(#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38375&quot;(), null),#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38343&quot;(#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38375&quot;(), ri!record.TA3_priority.value)),
+  {
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      label: ri!label,
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Title&quot;,
+          labelPosition: if(ri!readOnly, &quot;ADJACENT&quot;, &quot;ABOVE&quot;),
+          instructions: if(ri!readOnly, &quot;&quot;, &quot;&quot;),
+          helpTooltip: if(ri!readOnly, &quot;&quot;, &quot;&quot;),
+          placeholder: if(ri!readOnly, &quot;&quot;, &quot;&quot;),
+          required: not(ri!readOnly),
+          value: ri!record.title,
+          saveInto: ri!record.title,
+          readOnly: ri!readOnly,
+          validations: if(
+            len(ri!record.title) &lt;= 200,
+            &quot;&quot;,
+            &quot;Value may not be longer than 200 characters. You have entered &quot; &amp; len(ri!record.title) &amp; &quot; characters.&quot;
+          )
+        ),
+        if(
+          ri!readOnly,
+          #&quot;SYSTEM_SYSRULES_textField&quot;(
+            label: &quot;Status&quot;,
+            labelPosition: &quot;ADJACENT&quot;,
+            value: ri!record.TA3_status.value,
+            readOnly: true
+          ),
+          #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+            label: &quot;Status&quot;,
+            labelPosition: &quot;ABOVE&quot;,
+            instructions: &quot;&quot;,
+            helpTooltip: &quot;&quot;,
+            placeholderLabel: &quot;--- Select a Value ---&quot;,
+            choiceLabels: local!TA3_statusOptions.value,
+            choiceValues: local!TA3_statusOptions,
+            required: not(ri!readOnly),
+            value: ri!record.TA3_status,
+            saveInto: ri!record.TA3_status
+          )
+        ),
+        if(
+          ri!creating,
+          {},
+          {
+            #&quot;SYSTEM_SYSRULES_linkField&quot;(
+              label: &quot;Created By&quot;,
+              labelPosition: if(ri!readOnly, &quot;ADJACENT&quot;, &quot;ABOVE&quot;),
+              links: #&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+                label: #&quot;139900bb-9a14-4760-86c1-ca091571fd40_FORMATNAME&quot;(ri!record.createdBy),
+                user: ri!record.createdBy
+              )
+            ),
+            #&quot;SYSTEM_SYSRULES_textField&quot;(
+              label: &quot;Created On&quot;,
+              labelPosition: if(ri!readOnly, &quot;ADJACENT&quot;, &quot;ABOVE&quot;),
+              value: #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38338&quot;(ri!record.createdOn),
+              readOnly: true
+            )
+          }
+        )
+      },
+      secondColumnContents: {
+        if(
+          ri!readOnly,
+          #&quot;SYSTEM_SYSRULES_imageField&quot;(
+            label: &quot;Priority&quot;,
+            labelPosition: &quot;ADJACENT&quot;,
+            images: #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38352&quot;(ri!record.TA3_priority.value),
+            size: &quot;ICON&quot;
+          ),
+          #&quot;SYSTEM_SYSRULES_dropdownField&quot;(
+            label: &quot;Priority&quot;,
+            labelPosition: &quot;ABOVE&quot;,
+            instructions: &quot;&quot;,
+            helpTooltip: &quot;&quot;,
+            placeholderLabel: &quot;--- Select a Value ---&quot;,
+            choiceLabels: local!TA3_priorityOptions.value,
+            choiceValues: local!TA3_priorityOptions,
+            required: not(ri!readOnly),
+            value: ri!record.TA3_priority,
+            saveInto: ri!record.TA3_priority
+          )
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Name&quot;,
+          labelPosition: if(ri!readOnly, &quot;ADJACENT&quot;, &quot;ABOVE&quot;),
+          instructions: if(ri!readOnly, &quot;&quot;, &quot;&quot;),
+          helpTooltip: if(ri!readOnly, &quot;&quot;, &quot;&quot;),
+          placeholder: if(ri!readOnly, &quot;&quot;, &quot;&quot;),
+          required: false,
+          value: ri!record.name,
+          saveInto: ri!record.name,
+          readOnly: ri!readOnly,
+          validations: if(
+            len(ri!record.name) &lt;= 200,
+            &quot;&quot;,
+            &quot;Value may not be longer than 200 characters. You have entered &quot; &amp; len(ri!record.name) &amp; &quot; characters.&quot;
+          )
+        ),
+        if(
+          ri!creating,
+          {},
+          {
+            #&quot;SYSTEM_SYSRULES_linkField&quot;(
+              label: &quot;Updated By&quot;,
+              labelPosition: if(ri!readOnly, &quot;ADJACENT&quot;, &quot;ABOVE&quot;),
+              links: #&quot;SYSTEM_SYSRULES_userRecordLink&quot;(
+                label: #&quot;139900bb-9a14-4760-86c1-ca091571fd40_FORMATNAME&quot;(ri!record.updatedBy),
+                user: ri!record.updatedBy
+              )
+            ),
+            #&quot;SYSTEM_SYSRULES_textField&quot;(
+              label: &quot;Updated On&quot;,
+              labelPosition: if(ri!readOnly, &quot;ADJACENT&quot;, &quot;ABOVE&quot;),
+              value: #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38338&quot;(ri!record.updatedOn),
+              readOnly: true
+            )
+          }
+        )
+      }
+    ),
+    #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38351&quot;(
+      documents: ri!documents,
+      deletedDocuments: ri!deletedDocuments,
+      readOnly: ri!readOnly,
+      target: if(ri!creating,
+        #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38329&quot;,
+        ri!record.folderId
+      )
+    )
+  }
+)</definition>
+        <namedTypedValue>
+            <name>record</name>
+            <type>
+                <name>TA3_Ticket</name>
+                <namespace>urn:com:appian:types:TA3</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>creating</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>readOnly</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>documents</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>label</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>deletedDocuments</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

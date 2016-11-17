@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>TA3_GetAllPriority</name>
+        <uuid>_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38375</uuid>
+        <description>Returns all priority options for Tickets</description>
+        <parentUuid>fcbcec0c-b5ed-437a-a110-9dbbfa16a4da</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>cast(
+  'type!{urn:com:appian:types:TA3}TA3_Priority?list',
+  #&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+    entity: #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38371&quot;,
+    query: #&quot;SYSTEM_SYSRULES_query&quot;(
+      pagingInfo: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(1, -1, #&quot;SYSTEM_SYSRULES_sortInfo&quot;(&quot;order&quot;, true))
+    )
+  ).data
+)</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="false">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

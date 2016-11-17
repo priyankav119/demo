@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="Tickets" a:uuid="0f99d3a6-e4b6-4802-bf6c-42b4156d71af">
+        <a:description>Aggregated information and metrics on Tickets</a:description>
+        <a:uiExpr>=#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38362&quot;()</a:uiExpr>
+        <a:urlStub>f21dlw</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0001ddda-5a5e-8000-9ccd-011e94011e94_275</groupUuid>
+            </groups>
+        </role>
+        <role name="report_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0001ddda-5a5e-8000-9ccd-011e94011e94_274</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

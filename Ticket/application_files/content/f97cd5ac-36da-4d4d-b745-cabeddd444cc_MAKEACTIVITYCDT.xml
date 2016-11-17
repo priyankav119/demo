@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>TA3_CreateActivityCDT</name>
+        <uuid>f97cd5ac-36da-4d4d-b745-cabeddd444cc_MAKEACTIVITYCDT</uuid>
+        <description>Constructs the activity CDT based on inputs</description>
+        <parentUuid>fcbcec0c-b5ed-437a-a110-9dbbfa16a4da</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>'type!{urn:com:appian:types:TA3}TA3_Activity'(
+  recordId: ri!recordId,
+  who: ri!who,
+  action: ri!action,
+  /* Use a different Details pattern for each type of activity */
+  details:if(
+    ri!action = #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38321&quot;,
+    &quot;To: &quot; &amp; #&quot;139900bb-9a14-4760-86c1-ca091571fd40_FORMATNAME&quot;(ri!taskAssignee) &amp; char(10) &amp; &quot;Details: &quot; &amp; ri!taskDetails &amp; if(
+      isnull(ri!taskDeadline),
+      &quot;&quot;,
+      char(10) &amp; &quot;Deadline: &quot; &amp; ri!taskDeadline
+    ),
+    if(
+      or(ri!action = #&quot;bcc50718-ce3f-4ca3-83e7-9a643e5607c7_ACTIONCOMPLETED&quot;, ri!action = #&quot;40ceb9ea-6edb-47db-b92b-038111f3be0e_ACTIONSKIPPED&quot;),
+      &quot;From: &quot; &amp; #&quot;139900bb-9a14-4760-86c1-ca091571fd40_FORMATNAME&quot;(ri!taskAssigner) &amp; char(10) &amp; if(isnull(ri!comments), &quot;(No Comments)&quot;, &quot;Comments: &quot; &amp; ri!comments),
+      if(
+        ri!action = #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38320&quot;,
+        &quot;Message: &quot; &amp; ri!message &amp; if(not(isnull(ri!attachment)), char(10) &amp; &quot;Attachment: &quot; &amp; #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38337&quot;(ri!attachment), &quot;&quot;),
+        if(
+          or(ri!action = #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38319&quot;, ri!action = #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38323&quot;),
+          #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38349&quot;(ri!oldCDT, ri!newCDT, #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38366&quot;, #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38365&quot;, #&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38367&quot;) &amp;
+            if(
+              or(isnull(ri!newDocs), count(ri!newDocs)=0),
+              &quot;&quot;,
+              &quot;Attached Files: &quot; &amp; joinarray(apply(#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38337&quot;, ri!newDocs), &quot;, &quot;) &amp; char(10)
+            ) &amp;
+            if(or(isnull(ri!deletedDocs), count(ri!deletedDocs)=0),
+              &quot;&quot;,
+              &quot;Deleted Files: &quot; &amp; joinarray(apply(#&quot;_a-0000ddda-7c86-8000-9ccd-01ef9001ef90_38337&quot;, ri!deletedDocs), &quot;, &quot;)
+            ),
+          &quot;no activity found&quot;
+        )
+      )
+    )
+  ),
+  when: now()
+)</definition>
+        <namedTypedValue>
+            <name>recordId</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>who</name>
+            <type>
+                <name>User</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>action</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>taskAssignee</name>
+            <type>
+                <name>User</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>taskAssigner</name>
+            <type>
+                <name>User</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>taskDetails</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>taskDeadline</name>
+            <type>
+                <name>dateTime</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>comments</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>message</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>attachment</name>
+            <type>
+                <name>CollaborationDocument</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>oldCDT</name>
+            <type>
+                <name>TA3_Ticket</name>
+                <namespace>urn:com:appian:types:TA3</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>newCDT</name>
+            <type>
+                <name>TA3_Ticket</name>
+                <namespace>urn:com:appian:types:TA3</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>newDocs</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>deletedDocs</name>
+            <type>
+                <name>CollaborationDocument?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

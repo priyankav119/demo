@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:TA3"
+  xmlns:tns="urn:com:appian:types:TA3" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3ATA3%7DTA3_Priority.xsd"/>
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3ATA3%7DTA3_Status.xsd"/>
+  <xsd:complexType name="TA3_Ticket">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="qckapp_ta3_main")</xsd:appinfo>
+      <xsd:documentation><![CDATA[Structure of a single Ticket]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="title" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="title")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TA3_status" nillable="true" type="tns:TA3_Status">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@JoinColumn(name="status") @ManyToOne(cascade=REFRESH)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="TA3_priority" nillable="true" type="tns:TA3_Priority">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@JoinColumn(name="priority") @ManyToOne(cascade=REFRESH)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="name" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="name")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="folderId" nillable="true" type="xsd:int"/>
+      <xsd:element name="createdBy" nillable="true" type="xsd:string"/>
+      <xsd:element name="createdOn" nillable="true" type="xsd:dateTime"/>
+      <xsd:element name="updatedBy" nillable="true" type="xsd:string"/>
+      <xsd:element name="updatedOn" nillable="true" type="xsd:dateTime"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
